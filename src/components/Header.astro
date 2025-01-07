@@ -6,7 +6,16 @@ const props = Astro.props;
 const isHome = Astro.url.pathname === '/';
 ---
 
-<header class:list={['relative flex flex-row-reverse justify-between items-center', props.class]}>
-    <ThemeToggle />
-    {!isHome && <Avatar class="w-16 h-16 md:w-12 md:h-12" />}
+<header
+  class:list={[
+    'relative flex flex-row-reverse justify-between items-center',
+    props.class,
+  ]}
+>
+  <ThemeToggle />
+  {!isHome && (
+    <Avatar
+      class="w-36 h-36 sm:w-12 sm:h-12 md:w-10 md:h-10 lg:w-8 lg:h-8 xl:w-6 xl:h-6"
+    />
+  )}
 </header>

@@ -5,7 +5,10 @@ interface Props {
 }
 
 const props = Astro.props;
-const size = props.size || 'w-36 h-36';
+
+// Default responsive sizes for the avatar
+const defaultSize = 'w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 xl:w-36 xl:h-36';
+const size = props.size || defaultSize;
 ---
 <img
     id="avatar"
