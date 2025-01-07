@@ -20,27 +20,17 @@ export const config: Config = {
         {
             name: 'Github',
             icon: 'mdi:github',
-            url: 'https://github.com/boluoim/astroberry'
+            url: 'https://github.com/onurqnel'
         },
         {
-            name: 'Twitter',
-            icon: 'mdi:twitter',
-            url: 'https://github.com/boluoim/astroberry'
+            name: 'X',
+            icon: 'mdi:alpha-x',
+            url: 'https://x.com/honoronel?s=11'
         },
         {
-            name: 'Discord',
-            icon: 'mdi:discord',
-            url: 'https://github.com/boluoim/astroberry'
-        },
-        {
-            name: 'Facebook',
-            icon: 'mdi:facebook',
-            url: 'https://github.com/boluoim/astroberry'
-        },
-        {
-            name: 'Instagram',
+            name: 'LinkedIn',
             icon: 'mdi:linkedin',
-            url: 'https://github.com/boluoim/astroberry'
+            url: 'https://www.linkedin.com/in/onuronel13/'
         }
     ],
     // Google Analytics tracking ID (leave blank to disable)
