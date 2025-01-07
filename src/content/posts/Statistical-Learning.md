@@ -1,10 +1,10 @@
 ---
 title: Statistical Learning
 author: onur
-tags: ["astro", "astroberry"]
-createdAt: "2024-01-28"
-updatedAt: "2024-01-28"
-description: This is a sample description for the post.
+tags: [" Machine Learning", "Python"]
+createdAt: "2025-01-07"
+updatedAt: "2025-01-07"
+description: ML models, predictions and insights in data science.
 ---
 
 Statistical learning is a fundamental concept in the field of data analysis and predictive modeling. At its core, it encompasses a collection of methodologies and algorithms aimed at estimating a function `f`, which represents the relationship between a set of inputs and corresponding outputs. This process enables us to understand patterns in data, make predictions, and derive actionable insights from complex datasets. By leveraging statistical principles, mathematical models, and computational techniques, statistical learning bridges theory and application, serving as a cornerstone for modern data science and machine learning.
