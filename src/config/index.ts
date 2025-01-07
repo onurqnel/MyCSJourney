@@ -44,5 +44,5 @@ export const config: Config = {
         }
     ],
     // Google Analytics tracking ID (leave blank to disable)
-    ga: 'G-F544SMQW96'
+    ga: ''
 };
