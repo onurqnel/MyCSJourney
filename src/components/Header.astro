@@ -1,21 +1,22 @@
 ---
-import ThemeToggle from "~components/ThemeToggle.astro"
-import Avatar from '~components/Avatar.astro'
+import ThemeToggle from "~components/ThemeToggle.astro";
+import Avatar from "~components/Avatar.astro";
 
 const props = Astro.props;
-const isHome = Astro.url.pathname === '/';
+const isHome = Astro.url.pathname === "/";
 ---
 
 <header
   class:list={[
-    'relative flex flex-row-reverse justify-between items-center',
+    "relative flex flex-row-reverse justify-between items-center",
     props.class,
   ]}
 >
   <ThemeToggle />
   {!isHome && (
     <Avatar
-      class="w-36 h-36 sm:w-12 sm:h-12 md:w-10 md:h-10 xl:w-16 xl:h-16"
+      size="w-16 h-16 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-32 xl:h-32"
+      class="blog-avatar-class"
     />
   )}
 </header>
