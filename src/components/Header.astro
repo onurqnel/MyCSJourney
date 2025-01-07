@@ -8,5 +8,5 @@ const isHome = Astro.url.pathname === '/';
 
 <header class:list={['relative flex flex-row-reverse justify-between items-center', props.class]}>
     <ThemeToggle />
-    {!isHome && <Avatar class="w-10 h-10 md:w-12 md:h-12" />}
+    {!isHome && <Avatar class="w-16 h-16 md:w-12 md:h-12" />}
 </header>
