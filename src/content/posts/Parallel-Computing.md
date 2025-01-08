@@ -7,6 +7,12 @@ updatedAt: "2025-01-07"
 description: "Parallel programming, GPU architecture, and CUDA."
 ---
 
+Block math:
+$$
+\sum_{i=1}^n x_i^2
+$$
+
+
 The **latency-oriented design** of CPUs is highly advantageous for sequential operations and workloads that require low parallelism. By reducing execution latency for individual threads, CPUs excel in single-threaded performance and complex tasks involving conditional logic or frequent data accesses. However, this design approach comes with trade-offs: it demands significant chip area and power consumption to support advanced arithmetic units, large caches, and sophisticated control logic. This focus limits the CPU’s ability to handle highly parallel workloads efficiently, as the resources could have been used to include more arithmetic units or memory access channels. 
 
 In contrast, GPUs are designed for parallelism, making them more suitable for workloads involving a large number of threads but less optimized for minimizing latency in individual operations.
