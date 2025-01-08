@@ -21,9 +21,15 @@ const { Content } = await entry.render();
 ---
 
 <script>
-  if (!sessionStorage.getItem("hasReloaded")) {
-    sessionStorage.setItem("hasReloaded", "true");
-    window.location.href = window.location.href;
+  // Check if the current URL starts with "/posts/"
+  const currentPath = window.location.pathname;
+  if (currentPath.startsWith("/posts/")) {
+    // Store the last visited path
+    const lastPath = sessionStorage.getItem("lastVisitedPath");
+    if (lastPath !== currentPath) {
+      sessionStorage.setItem("lastVisitedPath", currentPath);
+      window.location.reload();
+    }
   }
 </script>
 
