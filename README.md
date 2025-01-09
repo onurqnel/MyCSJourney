@@ -2,6 +2,10 @@
 
 A personal blog website built using **Astroberry 🍓**. This project is a showcase of my studies in mathematics, machine learning, parallel computing and CUDA.
 
+![Intro](public/1.jpeg)
+![Blogs](public/2.jpeg)
+
+
 
 ## Tech Stack 🛠️
 
