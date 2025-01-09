@@ -21,5 +21,5 @@ This project is inspired by the following books and resources:
 
 ## Connect With Me 🌐
 
-- [LinkedIn](https://linkedin.com/in/your-profile)
-- [GitHub](https://github.com/your-username)
+- [LinkedIn](https://www.linkedin.com/in/onuronel13/)
+- [X](https://x.com/honoronel?s=11)
