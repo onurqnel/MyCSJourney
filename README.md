@@ -2,11 +2,6 @@
 
 A personal blog website built using **Astroberry 🍓**. This project is a showcase of my studies in mathematics, machine learning, parallel computing and CUDA.
 
-![Intro](public/1.jpeg)
-![Blogs](public/2.jpeg)
-
-
-
 ## Tech Stack 🛠️
 
 - **[Astro](https://astro.build/)**: A modern static site generator for fast and flexible websites.
