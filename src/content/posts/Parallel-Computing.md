@@ -1,10 +1,10 @@
 ---
 title: Parallel Computing
 author: onur
-tags: [" CUDA", " C/C++"]
+tags: [" CUDA", " C/C++", " Acceleration", " Optimization"]
 createdAt: "2025-01-07"
 updatedAt: "2025-01-07"
-description: "Parallel programming, GPU architecture, and CUDA."
+description: "Accelerated computing, GPU architecture, and CUDA with C/C++."
 ---
 
 ### CPU and GPU Design Philosophies
