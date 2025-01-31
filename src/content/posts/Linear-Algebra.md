@@ -31,11 +31,10 @@ $$
 ---
 
 ### Matrix Subtraction
-The difference of two matrices is calculated by **subtracting the elements at the same position**.
-1. **Dimensions must be the same.**
-2. **Subtraction is not commutative:** $$ A - B \neq B - A$$
-3. **Zero-subtraction:** $$ A - 0 = A $$
-4. **Self-subtraction:** $$ A - A = 0 $$
+The difference of two matrices is calculated by **subtracting the elements at the same position** and **Dimensions must be the same.**
+
+1. **Subtraction is not commutative:** $$ A - B \neq B - A$$
+2. **Subtraction is not associative:** $$ (A - B) - C \neq A - (B - C) $$
 
 Example:
 $$
@@ -55,7 +54,7 @@ $$
 ---
 
 ### Matrix Multiplication
-Matrix multiplication has **different rules** compared to addition and subtraction. The following conditions must be met:
+The following conditions must be met:
 1. **The number of columns in the first matrix must be equal to the number of rows in the second matrix.**  
 2. **Multiplication is not commutative:**
 $$
@@ -69,10 +68,7 @@ $$
 $$
 A \times (B + C) = A \times B + A \times C
 $$
-5. **Identity Multiplication = Matrix Itself:**
-$$
-A \times I = I \times A = A
-$$
+
 
 Example:
 $$
@@ -101,13 +97,12 @@ $$
 ---
 
 ### Identity Matrix
-The **identity matrix** **`I`** is a **square matrix** with **1s on the main diagonal** and **0s elsewhere**.
+The **identity matrix** **`I`** is a **square matrix** with **1's on the main diagonal** and **0's at rest**.
 1. **Multiplying any matrix by the identity matrix leaves it unchanged**
    $$ A \times I = I \times A = A $$
 2. **Its inverse is itself**
    $$ I^{-1} = I $$
-3. **Its determinant is 1**
-   $$ \det(I) = 1 $$
+
 
 **Example:**
 $$ I_2 = \begin{bmatrix} 1 & 0 \\\ 0 & 1 \end{bmatrix} $$
@@ -157,7 +152,7 @@ Properties:
    $$
    Example:
    $$ A = \begin{bmatrix} 1 & 2 & 3 \\\ 2 & 4 & 5 \\\ 3 & 5 & 6 \end{bmatrix} $$
-   Its transpose:
+   Resulting in symmetry:
    $$ A^T = \begin{bmatrix} 1 & 2 & 3 \\\ 2 & 4 & 5 \\\ 3 & 5 & 6 \end{bmatrix} $$
 
 ---
@@ -166,21 +161,20 @@ Properties:
 A **diagonal matrix** is a **square matrix** in which only the **main diagonal** elements are **nonzero**, while all other elements are **zero**.
 
 1. **Closed under addition and multiplication**
-   $$ D_1 + D_2 = D_3 \quad \text{(another diagonal matrix)} $$
-   $$ D_1 \times D_2 = D_4 \quad \text{(another diagonal matrix)} $$
+   $$ D_1 + D_2 = D_3 \quad \text{(equals another diagonal matrix)} $$
+   $$ D_1 \times D_2 = D_4 \quad \text{(equals another diagonal matrix)} $$
 2. **The determinant is the product of the diagonal elements**
    $$ \det(D) = d_1 \times d_2 \times \dots \times d_n $$
 3. **If invertible, its inverse is also a diagonal matrix**
    $$ D^{-1} = \begin{bmatrix} \frac{1}{d_1} & 0 & \dots & 0 \\\ 0 & \frac{1}{d_2} & \dots & 0 \\\ \vdots & \vdots & \ddots & \vdots \\\ 0 & 0 & \dots & \frac{1}{d_n} \end{bmatrix}, \quad \text{if } d_i \neq 0 $$
-4. **Any power of a diagonal matrix remains diagonal**
-   $$ D^k = \begin{bmatrix} d_1^k & 0 & \dots & 0 \\\ 0 & d_2^k & \dots & 0 \\\ \vdots & \vdots & \ddots & \vdots \\\ 0 & 0 & \dots & d_n^k \end{bmatrix} $$
-5. **Its transpose is itself**
+4. **Its transpose is itself**
    $$ D^T = D $$
 
 ---
 
 ### Inverse Matrix
-To find the inverse of a square matrix, we can use the **Gauss-Jordan Method**.
+A matrix has an inverse only if it is square matrix and its determinant is nonzero.
+Some square matrices may not have  inverse, in order to find out we can use the **Gauss-Jordan Method**.
 1. **Append the identity matrix `I` to matrix `A`:**
    $$
    [A \ | \ I]
@@ -218,14 +212,41 @@ $$
 \det(A) \quad \text{or} \quad |A|
 $$
 
+For a **2×2** matrix:
+$$
+A = \begin{bmatrix} a & b \\\ c & d \end{bmatrix}
+$$
+The determinant is given by:
+$$
+\det(A) = ad - bc
+$$
+
+For a **3×3** matrix:
+$$
+A = \begin{bmatrix} a & b & c \\\ d & e & f \\\ g & h & i \end{bmatrix}
+$$
+
+The determinant is computed using cofactor expansion:
+
+$$
+\det(A) = a \begin{vmatrix} e & f \\\ h & i \end{vmatrix}  -b \begin{vmatrix} d & f \\\ g & i \end{vmatrix} +  c \begin{vmatrix} d & e \\\ g & h \end{vmatrix}
+$$
+
+Determinant equals:
+$$
+\det(A) = a(ei - fh) - b(di - fg) + c(de - gh)
+$$
+
+
+
 ---
 
 
 ### Singular Matrix
-A square matrix is classified as **singular** or **non-singular** based on its determinant. If the determinant is **zero**, the matrix is **singular**.
+If the determinant is **zero**, the matrix is **singular**.
+Additionaly, matrix will be singular if there are free variables in the solution set. This can be revealed by putting the matrix in RREF
 - **It does not have an inverse.**
-- **A system of linear equations may have no solution or infinitely many solutions.**
-- **Its rows or columns are linearly dependent.**
+- **A system of linear equations may either have no solution or infinitely many**
 
 $$ A = \begin{bmatrix} a & b \\\ c & d \end{bmatrix} $$
 Determinant formula:
@@ -249,9 +270,8 @@ Since the determinant is **0**, the matrix is **singular**.
 A matrix is **non-singular** if its determinant is **non-zero**.
 - **It has an inverse.**
 - **A system of linear equations has a unique solution.**
-- **Its rows and columns are linearly independent.**
 
-If a matrix has an inverse, it is calculated using the formula:
+Its inverse can be easily calculated by the formula:
 $$ A^{-1} = \frac{1}{\det(A)} \times \begin{bmatrix} d & -b \\\ -c & a \end{bmatrix} $$
 
 Given matrix:
@@ -285,17 +305,23 @@ An **elementary matrix** is formed by applying **one of the three fundamental ro
    $$
    E_1 = \begin{bmatrix} 1 & 0 & 0 & 0 \\\ 0 & 3 & 0 & 0 \\\ 0 & 0 & 1 & 0 \\\ 0 & 0 & 0 & 1 \end{bmatrix}
    $$
+   - **To Find Inverse:** Divide the same row by 3 in Identity Matrix 
 
 2. **Swapping two rows**  
    For example, **swapping the 1st and 3rd rows**:
    $$
    E_2 = \begin{bmatrix} 0 & 0 & 1 & 0 \\\ 0 & 1 & 0 & 0 \\\ 1 & 0 & 0 & 0 \\\ 0 & 0 & 0 & 1 \end{bmatrix}
    $$
+   - **To Find Inverse:** Swap the same two rows again.
+
 
 3. **Adding a multiple of one row to another row**  
    For example, **adding 2 times the 1st row to the 2nd row**:
    $$
    E_3 = \begin{bmatrix} 1 & 0 & 0 & 0 \\\ 2 & 1 & 0 & 0 \\\ 0 & 0 & 1 & 0 \\\ 0 & 0 & 0 & 1 \end{bmatrix}
    $$
+   - **Inverse:** Subtract 2 times the 1st row from the 2nd row in Identity Matrix.
+
+This simple trick **applying the inverse of the original row operation to the identity matrix** quickly gives the inverse of an elementary matrix.
 
 ---
