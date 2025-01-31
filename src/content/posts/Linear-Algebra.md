@@ -6,6 +6,13 @@ createdAt: "2025-01-29"
 updatedAt: "2025-01-29"
 description: "Exploring Linear Algebra with Dr. John Talboom"
 ---
+### Introduction
+Linear algebra plays a crucial role in computer science, particularly in Artificial Intelligence, Machine Learning, and Parallel Programming. In AI/ML, matrices form the foundation of operations such as linear transformations, feature representation, and optimization in deep learning models. Neural networks rely heavily on matrix multiplications for forward and backward propagation, enabling efficient computation of weights and biases. Similarly, in CUDA, GPUs leverage matrix operations to accelerate parallel computations, dramatically improving performance in tasks like image processing, simulations, and AI inference.
+### Prerequisites
+Understanding matrices, determinants, vector spaces, and linear transformations requires Understanding in algebra and pre-calculus. Key skills include polynomial operations, exponents, logarithms, solving equations, and working with inequalities. Coordinate geometry and vector concepts in two and three dimensions are essential for geometric intuition. Some calculus, particularly differentiation and integration, helps with advanced topics like eigenvalues and eigenvectors
+
+<br>
+I’m skipping the basics of systems of equations and matrix row operations since they’re pretty straightforward. 
 
 ### Matrix Addition
 Addition and subtraction can only be performed between **matrices of the same size** which means, the matrices must have the **same number of rows and columns**.
