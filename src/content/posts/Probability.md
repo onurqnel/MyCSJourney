@@ -1,7 +1,7 @@
 ---
 title: Probability Theory
 author: onur
-tags: [" Probability", " Sets", "Random Variables", " Distributions"]
+tags: [" Calculus", " Sets", "Random Variables", " Distributions"]
 createdAt: "2025-01-31"
 updatedAt: "2025-01-31"
 description: "Exploring Probability Theory with Dr. Aras Erzurumluoglu" 
