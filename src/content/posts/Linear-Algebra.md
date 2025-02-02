@@ -1,7 +1,7 @@
 ---
 title: Linear Algebra
 author: onur
-tags: [" Matrices", " Determinants", "Vector Spcaes", " Linear Transformation"]
+tags: [" Matrices", " Determinants", " Vector Spcaes", " Linear Transformation"]
 createdAt: "2025-01-29"
 updatedAt: "2025-01-29"
 description: "Exploring Linear Algebra with Dr. John Talboom"

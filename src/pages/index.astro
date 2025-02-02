@@ -11,19 +11,20 @@ import { config } from '~config'
 <Layout title="Astroberry">
 	<Container>
 		<Avatar />
-		<h1 class="text-3xl md:text-5xl text-brand font-bold" style="text-shadow: 3px 3px 6px rgba(100, 100, 100, 0.7);">
+		<h1 class="text-xl sm:text-2xl md:text-5xl lg:text-5xl text-brand font-bold" style="text-shadow: 3px 3px 6px rgba(100, 100, 100, 0.7);">
 			Onur Onel
 		</h1>
 		
-			
-		<p class="text-lg md:text-xl">
+		<p class="mt-4 text-xs sm:text-sm md:2xl lg:text-2xl">
 			BSc. Software Engineering at <BrandLink /> 
 		</p>
-		<p class="text-lg md:text-xl">
+		<p class="mt-2 text-xs sm:text-lg md:3xl lg:text-2xl">
 			I explore Mathematics, Data Science, and Machine Learning. 
-			<br>Join my Computer Science journey by clicking the button below!
+			<br class="hidden md:block" />
+			Join my Computer Science journey by clicking the button below!
 		</p>
 		<SocialBar />
 		<ButtonLink href="/posts/">Read My Blogs</ButtonLink>
 	</Container>
 </Layout>
+

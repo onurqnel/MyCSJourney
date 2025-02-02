@@ -1,10 +1,10 @@
 ---
 title: Probability Theory
 author: onur
-tags: [" Calculus", " Sets", "Random Variables", " Distributions"]
+tags: [" Sets", " Random Variables", " Distributions", " Probability Calculus",]
 createdAt: "2025-01-31"
 updatedAt: "2025-01-31"
-description: "Exploring Probability Theory with Dr. Aras Erzurumluoglu" 
+description: "Exploring Probability with Dr. Aras Erzurumluoglu" 
 ---
 
 ### Introduction
@@ -80,7 +80,7 @@ Let **`A`** and **`B`** be events in sample space **`S`**; that is, **`A`** and 
 A **Venn diagram** visually represents subsets of a **universal set**.  
 
 <p align="center">
-  <img src="../../../public/AppendixPROB/1.png" alt="Venn Diagrams" />
+  <img src="/AppendixPROB/1.png" alt="Venn Diagrams" />
 </p>
 
 
@@ -174,8 +174,74 @@ A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)
 $$
 
 <p align="center">
-  <img src="../../../public/AppendixPROB/2.png" alt="Set Operations" />
+  <img src="/AppendixPROB/2.png" alt="Set Operations" />
 </p>
+
+---
+
+### The Probability of an Event  
+
+A **probability**, or **probability measure**, is a function **`P`** that maps events in the sample space **`S`** to real numbers. To assign probabilities in a meaningful way, **`P`** must satisfy the following fundamental **postulates (or axioms) of probability**.  
+
+- **P1: Non-Negativity**  
+  The probability of any event **`A`** in **`S`** is a non-negative real number:  
+  $$
+  P(A) \geq 0
+  $$  
+  Interpreting probability as a **frequency** or a **proportion of time**, it makes sense that **`P(A) ≥ 0`**. In fact, we will show that:  
+  $$
+  0 \leq P(A) \leq 1, \quad \text{for any event } A
+  $$  
+- **P2: Probability of the Sample Space**  
+  The probability that the outcome of an experiment lies in **`S`** must be assigned the value **1**:  
+  $$
+  P(S) = 1
+  $$  
+  Since the outcome is **certain** to belong to **`S`**, we interpret **`P(A) = 1`** "Event **`A`** happens **100% of the time**."  
+
+- **P3: Additivity** If **`A_1, A_2, A_3, ...`** is a finite or infinite sequence of **pairwise mutually exclusive events** in **`S`**, then:  
+  $$
+  P(A_1 ∪ A_2 ∪ A_3 ∪ \dots) = P(A_1) + P(A_2) + P(A_3) + \dots
+  $$  
+  This means that if events **`A_1`** and **`A_2`** share no common outcomes, then the probability that **either event occurs** is simply the **sum** of their individual probabilities:  
+  $$
+  P(A_1 ∪ A_2) = P(A_1) + P(A_2)
+  $$  
+
+---
+
+### Rules of Probability  
+
+Let **`S`** be a sample space with probability measure **`P`**, and let **`A`** and **`B`** be events in **`S`** Then:  
+1. **Complement Rule**  
+   $$
+   P(A) + P(A^c) = 1, \quad \text{or equivalently, } P(A^c) = 1 - P(A)
+   $$  
+2. **Probability of the Empty Set**  
+   $$
+   P(∅) = 0
+   $$  
+3. **Subset Rule**  
+   If **`A ⊂ B`**, then:  
+   $$
+   P(A) \leq P(B)
+   $$
+4. **Probability Bounds**  
+   $$
+   0 \leq P(A) \leq 1
+   $$  
+
+5. **Inclusion-Exclusion for Two Sets**  
+   $$
+   P(A ∪ B) = P(A) + P(B) - P(A ∩ B)
+   $$ 
+For **three events**, the probability of their union follows the **Inclusion-Exclusion Principle**:  
+
+$$
+P(A ∪ B ∪ C) = P(A) + P(B) + P(C) - P(A ∩ B) - P(A ∩ C) - P(B ∩ C) + P(A ∩ B ∩ C)
+$$  
+
+The **Inclusion-Exclusion Principle** can be **generalized** to more than three sets.
 
 
 ---

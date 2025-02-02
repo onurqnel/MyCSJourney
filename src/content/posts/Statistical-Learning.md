@@ -1,7 +1,7 @@
 ---
 title: Statistical Learning
 author: onur
-tags: [" ML Models", "Python", "Deep Learning"]
+tags: [" Phyton", " Regression", " Classification", " Clustering", " Deep Learning"]
 createdAt: "2025-01-07"
 updatedAt: "2025-01-07"
 description: Machine Learning, Statistics and Data Science.

@@ -6,7 +6,10 @@ const props = Astro.props
 const Year = new Date().getFullYear()
 ---
 
-<footer class:list={[props.class]} class="flex flex-col md:flex-row items-center md:justify-between space-y-1 md:space-x-0 text-sm">
-    <span>Powered by Astro</span>
-    <span>©{Year} Onur Onel ©</span>
+<footer
+  class:list={[props.class]}
+  class="fixed bottom-4 left-0 right-0 md:static flex flex-col md:flex-row items-center md:justify-between space-y-1 md:space-x-0 text-sm"
+>
+  <span>Powered by Astro</span>
+  <span>©{Year} Onur Onel ©</span>
 </footer>

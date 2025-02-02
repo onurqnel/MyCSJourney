@@ -1,7 +1,7 @@
 ---
 title: Parallel Computing
 author: onur
-tags: [" CUDA", " C/C++", " Acceleration", " Optimization"]
+tags: [" CUDA", " C/C++", " GPU Architecture"," Acceleration", " Optimization"]
 createdAt: "2025-01-07"
 updatedAt: "2025-01-07"
 description: "Accelerated Computing, GPU Architecture, and CUDA with C/C++."
