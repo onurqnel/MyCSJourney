@@ -1,5 +1,5 @@
 ---
-title: Linear Algebra I
+title: Linear Algebra
 author: onur
 tags: [" Matrices", " Determinants", "Vector Spcaes", " Linear Transformation"]
 createdAt: "2025-01-29"

@@ -4,7 +4,7 @@ author: onur
 tags: [" CUDA", " C/C++", " Acceleration", " Optimization"]
 createdAt: "2025-01-07"
 updatedAt: "2025-01-07"
-description: "Accelerated computing, GPU architecture, and CUDA with C/C++."
+description: "Accelerated Computing, GPU Architecture, and CUDA with C/C++."
 ---
 
 ### CPU and GPU Design Philosophies

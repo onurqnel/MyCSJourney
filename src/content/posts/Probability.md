@@ -85,8 +85,97 @@ A **Venn diagram** visually represents subsets of a **universal set**.
 
 
 ---
+### Mutually Exclusive Events  
 
-### Mutually Exclusive Events
+A set with no elements is called the **empty set**, denoted **`∅`**.  
+
+**Experiment:** Rolling two dice.  
+
+- **Event A:** Rolling at least one six 
+
+  $$
+  A = \{ (d_1, 6), (6, d_2) \mid d_1, d_2 ∈ \{1, 2, 3, 4, 5, 6\} \}
+  $$  
+  
+- **Event B:** Sum of the dice equals 4  
+
+  $$
+  B = \{ (d, 4-d) \mid d ∈ \{1, 2, 3\} \}
+  $$  
+
+- **Event C:** Rolling at least one six and having a sum of 4 
+
+  $$
+  C = A ∩ B = ∅
+  $$  
+
+Sets with an **empty intersection** are called **disjoint**, and the events in this case are called **mutually exclusive**.  
+
+### Algebra of Sets  
+Let **`A`**, **`B`**, and **`C`** be subsets of a universal set **`S`**.  
+
+- **Idempotent Laws:**  
+  $$
+  A ∪ A = A, \quad A ∩ A = A
+  $$  
+
+- **Associative Laws:**  
+  $$
+  (A ∪ B) ∪ C = A ∪ (B ∪ C)
+  $$  
+  $$
+  (A ∩ B) ∩ C = A ∩ (B ∩ C)
+  $$  
+
+- **Commutative Laws:**  
+  $$
+  A ∪ B = B ∪ A
+  $$  
+  $$
+  A ∩ B = B ∩ A
+  $$  
+
+- **Distributive Laws:**  
+  $$
+  A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)
+  $$  
+  $$
+  A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C)
+  $$  
+
+- **Identity Laws:**  
+  $$
+  A ∪ ∅ = A, \quad A ∪ S = S
+  $$  
+  $$
+  A ∩ S = A, \quad A ∩ ∅ = ∅
+  $$  
+
+- **Complement Laws:**  
+  $$
+  (A^c)^c = A, \quad A ∪ A^c = S, \quad A ∩ A^c = ∅
+  $$  
+  $$
+  S^c = ∅, \quad ∅^c = S
+  $$  
+
+- **De Morgan’s Laws:**  
+  $$
+  (A ∪ B)^c = A^c ∩ B^c
+  $$  
+  $$
+  (A ∩ B)^c = A^c ∪ B^c
+  $$  
+
+Let's use **Venn Diagrams** to verify:  
+
+$$
+A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)
+$$
+
+<p align="center">
+  <img src="../../../public/AppendixPROB/2.png" alt="Set Operations" />
+</p>
 
 
 ---
