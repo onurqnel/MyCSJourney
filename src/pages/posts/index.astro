@@ -10,10 +10,10 @@ const posts = await getCollection('posts')
 
 <Layout title="Posts">
     <Container>
-        <h1 class="text-xl md:text-3xl lg:text-4xl text-brand font-bold" style="text-shadow: 3px 3px 6px rgba(100, 100, 100, 0.7);">
+        <h1 class="text-lg md:text-xl lg:text-3xl text-brand font-bold" style="text-shadow: 3px 3px 6px rgba(100, 100, 100, 0.7);">
             My CS Journey
         </h1>
-        <p class="md:w-2/3 text-base md:text-lg lg:text-xl">
+        <p class="md:w-2/3 text-xs md:text-sm lg:text-base">
             My work inspired by the books
             <a 
               href="https://www.statlearning.com" 
@@ -22,7 +22,7 @@ const posts = await getCollection('posts')
             >
                 Introduction to Statistical Learning
             </a>
-            <Icon name="mdi:external-link" class="inline-block w-4 h-4 ml-1" /> 
+            <Icon name="mdi:external-link" class="inline-block w-3 h-3 md:w-4 md:h-4 ml-1" /> 
             &
             <a 
               href="https://shop.elsevier.com/books/programming-massively-parallel-processors/hwu/978-0-323-91231-0" 
@@ -31,7 +31,7 @@ const posts = await getCollection('posts')
             >
                 Programming Massively Parallel Processors
             </a>
-            <Icon name="mdi:external-link" class="inline-block w-4 h-4 ml-1" />
+            <Icon name="mdi:external-link" class="inline-block w-3 h-3 md:w-4 md:h-4 ml-1" />
         </p>
         <PostList
             class:list={['mt-8']}
