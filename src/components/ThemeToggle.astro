@@ -104,7 +104,7 @@
 
 <style>
   .theme-toggle {
-    --icon-size: 2rem;
+    --icon-size: 2.5rem;
     inline-size: var(--icon-size);
     block-size: var(--icon-size);
     aspect-ratio: 1;
@@ -113,6 +113,12 @@
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
     outline-offset: 5px;
+    transition: transform 0.3s ease; /* Added transition for smooth zoom */
+  }
+
+  /* Zoom effect on hover */
+  .theme-toggle:hover {
+    transform: scale(1.5);
   }
 
   .theme-toggle > svg {

@@ -14,6 +14,6 @@ const size = props.size || defaultSize;
   id="avatar"
   src="/OnurAvatar.jpeg"
   alt="Onur Avatar"
-  class={`${size} object-cover rounded-full cursor-pointer ${props.class || ""}`}
+  class={`${size} object-cover rounded-full cursor-pointer transition-transform duration-300 scale-80 hover:scale-110 ${props.class || ""}`}
   onclick="window.location.href='/'"
 />
