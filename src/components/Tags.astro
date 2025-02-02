@@ -1,23 +1,20 @@
 ---
 interface TagsProps {
-    tags: string[]
-    class?: string
-  }
-  
-  const props = Astro.props as TagsProps
-  ---
-  
-  {
-    props.tags?.length && (
-      <div class:list={['space-x-2', props.class]}>
-        {
-          props.tags.map(tag => (
-            <span class="text-[8px] md:text-xs before:content-['#'] before:text-[8px] md:before:text-xs">
-              {tag}
-            </span>
-          ))
-        }
-      </div>
-    )
-  }
-  
+  tags: string[];
+  class?: string;
+}
+
+const props = Astro.props as TagsProps;
+---
+
+{
+  props.tags?.length && (
+    <div class:list={["space-x-2", props.class]}>
+      {props.tags.map((tag) => (
+        <span class="text-[8px] md:text-xs before:content-['#'] before:text-[8px] md:before:text-xs">
+          {tag}
+        </span>
+      ))}
+    </div>
+  )
+}

@@ -2,24 +2,28 @@
 import { Icon } from "astro-icon/components";
 
 interface Props {
-    href: string;
-    class?: string;
+  href: string;
+  class?: string;
 }
 
 const props = Astro.props;
 ---
 
 <div class:list={[props.class]}>
-    <a 
-        class="inline-flex items-center text-content-color bg-tahiti-color border-[2px] border-brand-color rounded-md shadow-md transition hover:bg-brand-color hover:text-tahiti-color" 
-        href={props.href}
+  <a
+    class="inline-flex items-center text-content-color bg-tahiti-color border-[2px] border-brand-color rounded-md shadow-md transition hover:bg-brand-color hover:text-tahiti-color"
+    href={props.href}
+  >
+    <span class="px-2 py-1 rounded-l-md text-xs md:text-sm font-medium">
+      <slot />
+    </span>
+    <span
+      class="p-1 border-l-[1px] border-brand-color rounded-r-md bg-content-color hover:bg-tahiti-color"
     >
-        <span class="px-3 py-1 rounded-l-md text-m font-medium">
-            <slot />
-        </span>
-        <span class="p-1 border-l-[1px] border-brand-color rounded-r-md bg-content-color hover:bg-tahiti-color">
-            <Icon name="mdi:arrow-right" class="w-5 h-5 fill-icon-fill hover:fill-icon-fill-hover transition-colors" />
-        </span>
-    </a>
+      <Icon
+        name="mdi:arrow-right"
+        class="w-4 h-4 md:w-5 md:h-5 fill-icon-fill hover:fill-icon-fill-hover transition-colors"
+      />
+    </span>
+  </a>
 </div>
-

@@ -5,7 +5,6 @@ import GoogleAnalytics from "~components/GoogleAnalytics.astro";
 interface Props {
   title: string;
 }
-
 ---
 
 <!doctype html>
@@ -31,7 +30,10 @@ interface Props {
             ["$", "$"],
             ["\\(", "\\)"],
           ],
-          displayMath: [["$$", "$$"], ["\\[", "\\]"]], 
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
           processEscapes: true,
         },
       });

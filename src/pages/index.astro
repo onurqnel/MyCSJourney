@@ -1,30 +1,32 @@
 ---
-import Layout from '~layouts/Layout.astro'
-import Container from '~components/Container.astro'
-import BrandLink from '~components/BrandLink.astro'
-import SocialBar from '~components/SocialBar.astro'
-import Avatar from '~components/Avatar.astro'
-import ButtonLink from '~components/ButtonLink.astro'
-import { config } from '~config'
+import Layout from "~layouts/Layout.astro";
+import Container from "~components/Container.astro";
+import BrandLink from "~components/BrandLink.astro";
+import SocialBar from "~components/SocialBar.astro";
+import Avatar from "~components/Avatar.astro";
+import ButtonLink from "~components/ButtonLink.astro";
+import { config } from "~config";
 ---
 
 <Layout title="Astroberry">
-	<Container>
-		<Avatar />
-		<h1 class="text-xl sm:text-2xl md:text-5xl lg:text-5xl text-brand font-bold" style="text-shadow: 3px 3px 6px rgba(100, 100, 100, 0.7);">
-			Onur Onel
-		</h1>
-		
-		<p class="mt-4 text-xs sm:text-sm md:2xl lg:text-2xl">
-			BSc. Software Engineering at <BrandLink /> 
-		</p>
-		<p class="mt-2 text-xs sm:text-lg md:3xl lg:text-2xl">
-			I explore Mathematics, Data Science, and Machine Learning. 
-			<br class="hidden md:block" />
-			Join my Computer Science journey by clicking the button below!
-		</p>
-		<SocialBar />
-		<ButtonLink href="/posts/">Read My Blogs</ButtonLink>
-	</Container>
-</Layout>
+  <Container>
+    <Avatar />
+    <h1
+      class="text-xl sm:text-2xl md:text-5xl lg:text-5xl text-brand font-bold"
+      style="text-shadow: 3px 3px 6px rgba(100, 100, 100, 0.7);"
+    >
+      Onur Onel
+    </h1>
 
+    <p class="mt-4 text-xs sm:text-sm md:2xl lg:text-2xl">
+      BSc. Software Engineering at <BrandLink />
+    </p>
+    <p class="mt-2 text-xs sm:text-lg md:3xl lg:text-2xl">
+      I explore Mathematics, Data Science, and Machine Learning.
+      <br class="hidden md:block" />
+      Join my Computer Science journey by clicking the button below!
+    </p>
+    <SocialBar />
+    <ButtonLink href="/posts/">Read My Blogs</ButtonLink>
+  </Container>
+</Layout>

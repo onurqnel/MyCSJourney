@@ -5,9 +5,8 @@ interface Props {
 }
 
 const props = Astro.props;
-
-// Default responsive sizes for the avatar (include base size for <640px)
-const defaultSize = "w-16 h-16 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-32 xl:h-32";
+const defaultSize =
+  "w-16 h-16 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-32 xl:h-32";
 const size = props.size || defaultSize;
 ---
 

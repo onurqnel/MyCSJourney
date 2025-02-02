@@ -1,7 +1,7 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import icon from "astro-icon";
-import markdownItMathjax from 'markdown-it-mathjax3';
+import markdownItMathjax from "markdown-it-mathjax3";
 
 // Astro configuration
 export default defineConfig({
