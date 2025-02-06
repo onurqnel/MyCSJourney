@@ -9,13 +9,11 @@ description: "Exploring Probability with Dr. Aras Erzurumluoglu"
 
 ### Introduction
 
-Mathematics provides a structured way to analyze, interpret, and predict real-world phenomena. It allows us to create models that describe patterns, relationships, and behaviors in various fields, from physics and engineering to economics and biology. By using mathematical principles, we can make sense of complex systems, solve practical problems, and make informed decisions based on logical reasoning and quantitative analysis.
-
-A **deterministic model** (ideal situation) predicts the outcome of an experiment with certainty based on given initial conditions.  
+A **deterministic model** predicts the outcome of an experiment with certainty based on given initial conditions.  
 
 - The velocity of a falling object **`v = gt`**.  
 
-A **probabilistic** or **stochastic model** (randomness) accounts for situations where the same initial conditions can lead to a variety of outcomes. These models assign a probability to each possible outcome.  
+A **probabilistic** or **stochastic model** accounts for situations where the same initial conditions can lead to a variety of outcomes. These models assign a probability to each possible outcome.  
 
 - Rolling a die results in one of six numbers facing up, each assigned a probability of **`1/6`**.  
 
@@ -25,23 +23,18 @@ $$
 P(\text{success}) = \frac{k}{N}
 $$
 
-**Examples:**  
-
-- Tossing tails with a balanced coin: **`1/2`**  
-- Drawing an ace from a deck of cards: **`1/13`**  
-- Rolling either a 3 or a 5 with a fair six-sided die: **`2/6`**  
-
 These values describe the **frequency** of the successful outcome and the proportion of times the event occurs in the **LONG RUN**.
 
 ---
 
 ### Sample Spaces  
 
-The **sample space** is the set of all possible outcomes of an experiment. However, there is an important distinction in **how probabilities are assigned**.  
+The **sample space** is the set of all possible outcomes of an experiment. 
 
 - A **discrete sample space** has a finite or countably infinite number of elements.  
 
-- A **continuous sample space** is an interval in **`ℝ`**, or a product of intervals in **`ℝ^n`**.  
+- A **continuous sample space** is an interval in **`ℝ`**.
+
 
 Individual elements of a sample space are called **outcomes** while subsets of a sample space are called **events**.  
 
@@ -49,7 +42,7 @@ Individual elements of a sample space are called **outcomes** while subsets of a
 
 $$ \text{Sample space: } {θ \text{ degrees} \mid θ \in [0, 360)}$$
 
-**Event A:** Landing between **90 and 180 degrees**, **`[90, 180]`** <br>
+**Event A:** Landing between **90 and 180 degrees**<br>
 **Event B:** Landing either between **45 and 90 degrees** or between **270 and 315 degrees**  <br>
 **Event C:** Landing precisely on **180 degrees**.    
 
@@ -57,39 +50,41 @@ $$ \text{Sample space: } {θ \text{ degrees} \mid θ \in [0, 360)}$$
 
 ### Union, Intersection and Complement  
 
-Let **`A`** and **`B`** be events in sample space **`S`**; that is, **`A`** and **`B`** are subsets of **`S`**.  
+Let **A** and **B** be events in sample space **S**; that is, **A** and **B** are subsets of **S**.  
 
-- The **union** of **`A`** and **`B`** is the set of outcomes that are in either **`A`** or **`B`**, or both:  
+- The **Union** of **A** and **B** is the set of outcomes that are in either **A** or **B**, or both:  
 
   $$
   A ∪ B = \{ x ∈ S \mid x ∈ A \text{ or } x ∈ B \}
   $$  
 
-- The **intersection** of **`A`** and **`B`** is the set of outcomes that are in both **`A`** and **`B`**:  
+- The **intersection** of **A** and **B** is the set of outcomes that are in both **A** and **B**:  
 
   $$
   A ∩ B = \{ x ∈ S \mid x ∈ A \text{ and } x ∈ B \}
   $$  
 
-- The **complement** of **`A`** in **`S`** is the set of outcomes in **`S`** that are **not** in **`A`**:  
+- The **Complement** of **A** in **S** is the set of outcomes in **S** that are **not** in **A**:  
 
   $$
   A^c = \{ x ∈ S \mid x \notin A \} = S \setminus A
   $$  
 
-A **Venn diagram** visually represents subsets of a **universal set**.  
+A **Venn diagram** visually represents subsets of a **Universal Set `S`**  
 
 <p align="center">
   <img src="/AppendixPROB/1.png" alt="Venn Diagrams" />
 </p>
 
+A set with no elements is called the **Empty Set**, denoted **∅**.  
+
 
 ---
 ### Mutually Exclusive Events  
 
-A set with no elements is called the **empty set**, denoted **`∅`**.  
+Two events are mutually exclusive or disjoint if they cannot occur at the same time. That is, if one event happens, the other must not happen.
 
-**Experiment:** Rolling two dice.  
+**Rolling two dice**   
 
 - **Event A:** Rolling at least one six 
 
@@ -103,16 +98,10 @@ A set with no elements is called the **empty set**, denoted **`∅`**.
   B = \{ (d, 4-d) \mid d ∈ \{1, 2, 3\} \}
   $$  
 
-- **Event C:** Rolling at least one six and having a sum of 4 
-
-  $$
-  C = A ∩ B = ∅
-  $$  
-
 Sets with an **empty intersection** are called **disjoint**, and the events in this case are called **mutually exclusive**.  
 
 ### Algebra of Sets  
-Let **`A`**, **`B`**, and **`C`** be subsets of a universal set **`S`**.  
+Let **A**, **B**, and **C** be subsets of a universal set **S**.  
 
 - **Idempotent Laws:**  
   $$
@@ -181,38 +170,35 @@ $$
 
 ### The Probability of an Event  
 
-A **probability**, or **probability measure**, is a function **`P`** that maps events in the sample space **`S`** to real numbers. To assign probabilities in a meaningful way, **`P`** must satisfy the following fundamental **postulates (or axioms) of probability**.  
+A **Probability**, is a function **P** that maps events in the sample space  to real numbers. To assign probabilities in a meaningful way, **P** must satisfy the following **postulates - axioms**.  
 
-- **P1: Non-Negativity**  
-  The probability of any event **`A`** in **`S`** is a non-negative real number:  
+- **Probability Interval**  
+  The probability of any event **A** in sample space is a non-negative ℝ number:  
   $$
   P(A) \geq 0
   $$  
-  Interpreting probability as a **frequency** or a **proportion of time**, it makes sense that **`P(A) ≥ 0`**. In fact, we will show that:  
+  Since events can't happen less than 0% or more than 100% of the time, we always have: 
   $$
   0 \leq P(A) \leq 1, \quad \text{for any event } A
   $$  
-- **P2: Probability of the Sample Space**  
-  The probability that the outcome of an experiment lies in **`S`** must be assigned the value **1**:  
+- **Sample Space**  
+  Since **S** includes all possible outcomes, the probability of any outcome occurring must be **1**:  
   $$
   P(S) = 1
   $$  
-  Since the outcome is **certain** to belong to **`S`**, we interpret **`P(A) = 1`** "Event **`A`** happens **100% of the time**."  
 
-- **P3: Additivity** If **`A_1, A_2, A_3, ...`** is a finite or infinite sequence of **pairwise mutually exclusive events** in **`S`**, then:  
+- **Additivity** 
+
+  If events **A1, A2 ...** are **mutually exclusive**, their total probability is the sum of their individual probabilities: 
   $$
-  P(A_1 ∪ A_2 ∪ A_3 ∪ \dots) = P(A_1) + P(A_2) + P(A_3) + \dots
-  $$  
-  This means that if events **`A_1`** and **`A_2`** share no common outcomes, then the probability that **either event occurs** is simply the **sum** of their individual probabilities:  
-  $$
-  P(A_1 ∪ A_2) = P(A_1) + P(A_2)
+  P(A_1 ∪ A_2 \dots) = P(A_1) + P(A_2)\dots
   $$  
 
 ---
 
 ### Rules of Probability  
 
-Let **`S`** be a sample space with probability measure **`P`**, and let **`A`** and **`B`** be events in **`S`** Then:  
+Let **S** be a sample space with probability measure **P**, and let **A** and **B** be events.  
 1. **Complement Rule**  
    $$
    P(A) + P(A^c) = 1, \quad \text{or equivalently, } P(A^c) = 1 - P(A)
@@ -222,26 +208,17 @@ Let **`S`** be a sample space with probability measure **`P`**, and let **`A`** 
    P(∅) = 0
    $$  
 3. **Subset Rule**  
-   If **`A ⊂ B`**, then:  
+   If **A ⊂ B**, then:  
    $$
    P(A) \leq P(B)
    $$
-4. **Probability Bounds**  
-   $$
-   0 \leq P(A) \leq 1
-   $$  
 
-5. **Inclusion-Exclusion for Two Sets**  
+4. **Inclusion-Exclusion for Two Sets**  
    $$
    P(A ∪ B) = P(A) + P(B) - P(A ∩ B)
    $$ 
-For **three events**, the probability of their union follows the **Inclusion-Exclusion Principle**:  
 
-$$
-P(A ∪ B ∪ C) = P(A) + P(B) + P(C) - P(A ∩ B) - P(A ∩ C) - P(B ∩ C) + P(A ∩ B ∩ C)
-$$  
-
-The **Inclusion-Exclusion Principle** can be **generalized** to more than three sets.
+The **Inclusion-Exclusion Principle** can be **generalized** to more than two sets.
 
 
 ---
