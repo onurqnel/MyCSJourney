@@ -33,7 +33,7 @@ The **sample space** is the set of all possible outcomes of an experiment.
 
 - A **discrete sample space** has a finite or countably infinite number of elements.  
 
-- A **continuous sample space** is an interval in **`ℝ`**.
+- A **continuous sample space** is an interval in **ℝ**.
 
 
 Individual elements of a sample space are called **outcomes** while subsets of a sample space are called **events**.  
@@ -201,7 +201,7 @@ A **Probability**, is a function **P** that maps events in the sample space  to 
 Let **S** be a sample space with probability measure **P**, and let **A** and **B** be events.  
 1. **Complement Rule**  
    $$
-   P(A) + P(A^c) = 1, \quad \text{or equivalently, } P(A^c) = 1 - P(A)
+   P(A) + P(A^c) = 1, \quad \text{or} P(A^c) = 1 - P(A)
    $$  
 2. **Probability of the Empty Set**  
    $$
@@ -225,110 +225,80 @@ The **Inclusion-Exclusion Principle** can be **generalized** to more than two se
 
 ### Random Variables
 
-Let **`S`** be a sample space with a probability measure. A **random variable** is a function **`X: S → ℝ`**, which maps the outcomes in the sample space to real numbers. The output of a random variable is something we can measure.
+**Random Variable** is a function that assigns a real number to each outcome of a probability experiment. Random variables are defined when we want to focus on a particular outcomes of an experiment. More than one random variable can be defined for a given sample space. Usually, capital letters like **X** are used to denote random variables, while their lowercase counterparts, like **x**, represent particular values that **X** can take.
 
-Random variables are defined when we want to focus on a particular property of the outcomes of an experiment. More than one random variable can be defined for a given sample space.
+A **Discrete Random Variable** has a countable set of possible values, while a **Continuous Random Variable** has an uncountable range, covering an interval of real numbers **ℝ**.
 
-Usually, capital letters like **`X`** are used to denote random variables, while their lowercase counterparts, like **`x`**, represent particular values that **`X`** can take.
-
-Consider the experiment of spinning a probability spinner, with the sample space:
-
-$$
-S = \{ \theta \text{ degrees} \mid \theta \in [0, 360) \}
-$$
-
-However, the actual sample space could include additional information, such as:
-
-- Multiple rotations
-- Angular velocity at time **`t`**
-- Elapsed time
-- The color it landed on
-
-A random variable focuses on one measurable property of the outcome.
-
-Examples of random variables:
-
-- **`X_1`**: **Resting position (degrees)**, outputs values in **`[0, 360)`**.
-- **`X_2`**: **Resting position (radians)**, outputs values in **`[0, 2π)`**.
-- **`X_3`**: **Number of full rotations**, takes values **`0, 1, 2, 3, ...`**.
-
----
-**Example**
-
-Three balls are randomly chosen (without replacement) from a bag of 20 balls numbered **1-20**. We bet that at least one of the numbers drawn is equal to or greater than **17**. What is the probability of winning the bet? 
-
-Outcomes in the sample space are subsets of three numbered balls, and they are all equally likely to occur.Let the random variable **`X`** denote the largest number of the three selected. Thus, **`X`** takes values **`3, 4, ..., 20`**, and we want **`P(X ≥ 17)`**. 
-
-Since total probability equals **1**, we use the complement: $$ P(X \geq 17) = 1 - P(X \leq 16) $$where **`P(X ≤ 16)`** is the probability that the largest selected number is **16 or less**. 
-
-The number of ways to choose 3 balls where all are ≤ 16: $$ \text{Total favorable outcomes} = {16 \choose 3} = \frac{16 \times 15 \times 14}{3 \times 2 \times 1} = 560 $$The total number of ways to choose any 3 balls from 20: $$ \text{Total possible outcomes} = {20 \choose 3} = \frac{20 \times 19 \times 18}{3 \times 2 \times 1} = 1140 $$ Therefore, $$ P(X \leq 16) = \frac{560}{1140} = \frac{28}{57} $$ Now, using the complement: $$ P(X \geq 17) = 1 - \frac{28}{57} = \frac{29}{57} $$ Thus, the probability of winning the bet is **`29/57`**.
-
-### Probability Distributions
-
-**Experiment:** Rolling two dice. Let random variable **`X`** denote the sum of a roll. The range of **`X`** is **`{2, 3, ..., 12}`**.  
-
-Knowing that each outcome in the sample space has probability **`1/36`**, we can easily find the probability that **`X`** takes on any value in its range:  
-
-- **`P(X = 7) = 6/36 {1,6 2,5 3,4 4,3 5,2 6,1} `** 
-- **`P(X = 11) = 2/36 {6,5 5,6}`**  
-
-We would like a rule **`f(x)`** that gives **`P(X = x)`** for each value **`x`** in the range of **`X`**. In this case, the probabilities are given by the function:  
-
-$$
-f(x) = \frac{6 - |x - 7|}{36}, \quad x = 2, ..., 12
-$$  
-
-Such a function is called the **probability distribution** of **`X`**.  
-
-If **`X`** is a **discrete random variable**, the function **`f`** given by:  
-
-$$
-f(x) = P(X = x) \quad \text{for each } x \text{ in the range of } X
-$$  
-
-is called the **probability distribution** of **`X`** (also called the **probability mass function** of **`X`**).  
+**Range** is the set of all values a random variable can produce. It’s the list of results when random variable applied to the different outcomes.
 
 ---
 
-**Example**  
 
-Let **`X`** be the random variable that counts the number of heads obtained in tossing a balanced coin **4 times**.  
 
-- **Range of `X`**: **`{0, 1, 2, 3, 4}`**  
+### Probability Mass Function (PMF)
+A Probability Mass Function gives the probability of each possible value of a **discrete random variable**. It tells us how likely each outcome is.
 
-- **Probability values**:  
+Defined as:
+$$
+P(X = x) = f(x), \quad \text{where } 0 \leq P(X = x) \leq 1
+$$
 
-  - **`P(X = 0) = 1/16`**  
-  - **`P(X = 1) = 4/16`**  
-  - **`P(X = 2) = 6/16`**  
-  - **`P(X = 3) = 4/16`**  
-  - **`P(X = 4) = 1/16`**  
+The total probability of all possible values must sum to 1:
 
-- **Formula for the probability distribution**:  
+$$
+\sum P(X = x) = 1
+$$
 
-  $$  
-  P(X = x) = \frac{4 \choose x}{2^4}
-  $$  
+**Rolling a fair 6-sided die:**
+
+Let **X** be the random variable of a fair 6-sided die. The outcomes **x** are:
+
+$$
+X \in \{1, 2, 3, 4, 5, 6\}
+$$
+
+Since each outcome is equally likely, the PMF is:
+
+$$
+P(X = x) = \frac{1}{6}, \quad x \in \{1,2,3,4,5,6\}
+$$
+
+A Probability Mass Function  is only used for discrete random variables. For continuous random variables, we use the Probability Density Function instead.
 
 ---
 
-**Example**  
+### Probability Density Function (PDF)
 
-Let **`Y`** be the maximum number that either die shows in a single roll.  
+A **Probability Density Function** describes the probability distribution of a **continuous random variable**. Unlike a PMF, which gives the probability of specific discrete values, the PDF represents probability **density** over an interval.
 
-- **Range of `Y`**: **`{1, 2, 3, 4, 5, 6}`**  
+For a continuous random variable **X**, the **PDF** satisfies:
 
-- **Finding `P(Y = y)`**:  
+1. **Non-negativity**:
+   $$
+   f(x) \geq 0, \quad \forall x \in \mathbb{R}
+   $$
 
-  - **`P(Y = 1)`** → { (1,1) }  
-  - **`P(Y = 2)`** → { (2,1), (1,2), (2,2) }  
-  - **`P(Y = 3)`** → { (3,1), (3,2), (3,3), (2,3), (1,3) }  
-  - **`P(Y = 4)`** → { (4,1), (4,2), (4,3), (4,4), (3,4), (2,4), (1,4) }  
-  - **`P(Y = 5)`** → { (5,1), (5,2), (5,3), (5,4), (5,5), (4,5), (3,5), (2,5), (1,5) }  
-  - **`P(Y = 6) = 11/36`** → { (6,1), (6,2), (6,3), (6,4), (6,5), (6,6), (5,6), (4,6), (3,6), (2,6), (1,6) }  
+2. **Total Probability is 1**:
+   $$
+   \int_{-\infty}^{\infty} f(x) \,dx = 1
+   $$
+   The total area under the curve must be **1**.
 
-- **Formula for the probability distribution**:  
+3. **Probability Over an Interval**:
+   Since a continuous random variable can take infinitely many values, the probability of a single point (PMF of continous RV) is always **zero**:
+   $$
+   P(X = x) = 0
+   $$  
+   Instead, we find probabilities over intervals:
+   $$
+   P(a \leq X \leq b) = \int_{a}^{b} f(x) \,dx
+   $$  
 
-  $$  
-  P(Y = y) = \frac{2y - 1}{36}  
-  $$  
+
+| PMF (Discrete) | PDF (Continuous) |
+|---------------|-----------------|
+| $$ P(X = x) > 0 $$ | $$ P(X = x) = 0 $$|
+| $$ P(a \leq X \leq b) = \sum P(X = x) $$ | $$ P(a \leq X \leq b) = \int_a^b f(x) dx $$ |
+| Rolling a die, number of heads in coin flips | Height, weight, time, temperature |
+
+---
