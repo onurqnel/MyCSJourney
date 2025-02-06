@@ -265,7 +265,6 @@ $$
 
 A Probability Mass Function  is only used for discrete random variables. For continuous random variables, we use the Probability Density Function instead.
 
----
 
 ### Probability Density Function (PDF)
 
@@ -294,11 +293,42 @@ For a continuous random variable **X**, the **PDF** satisfies:
    P(a \leq X \leq b) = \int_{a}^{b} f(x) \,dx
    $$  
 
+ <br>
 
-| PMF (Discrete) | PDF (Continuous) |
-|---------------|-----------------|
-| $$ P(X = x) > 0 $$ | $$ P(X = x) = 0 $$|
-| $$ P(a \leq X \leq b) = \sum P(X = x) $$ | $$ P(a \leq X \leq b) = \int_a^b f(x) dx $$ |
-| Rolling a die, number of heads in coin flips | Height, weight, time, temperature |
+
+<div align="center">
+<table style="font-size: 0.9em; width: 90%; text-align: center; border-collapse: collapse;">
+  <tr>
+    <th style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">PMF </th>
+    <th style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">PDF </th>
+  </tr>
+  <tr>
+    <td style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">Used for discrete random variables</td>
+    <td style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">Used for continuous random variables</td>
+  </tr>
+  <tr>
+    <td style="padding: 8px; border: 0.5px solid lightgray;">$$ P(X = x) > 0 $$ </td>
+    <td style="padding: 8px; border: 0.5px solid lightgray;">$$ P(X = x) = 0 $$ </td>
+  </tr>
+  <tr>
+    <td style="padding: 8px; border: 0.5px solid lightgray;">$$ P(a \leq X \leq b) = \sum P(X = x) $$</td>
+    <td style="padding: 8px; border: 0.5px solid lightgray;">$$ P(a \leq X \leq b) = \int_a^b f(x) dx $$</td>
+  </tr>
+  <tr>
+    <td style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">Takes countable values</td>
+    <td style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">Takes uncountable values</td>
+  </tr>
+  <tr>
+    <td style="padding: 8px; border: 0.5px solid lightgray;">Sum of probabilities: <br> $$ \sum P(X = x) = 1 $$</td>
+    <td style="padding: 8px; border: 0.5px solid lightgray;">Area under the curve: <br> $$ \int_{-\infty}^{\infty} f(x) dx = 1 $$</td>
+  </tr>
+  <tr>
+    <td style="padding: 8px; border: 0.5px solid lightgray; text-align: center;"> Rolling a die, heads in coin flips</td>
+    <td style="padding: 8px; border: 0.5px solid lightgray; text-align: center;"> Height, weight, time, temperature</td>
+  </tr>
+</table>
+</div>
+
+
 
 ---
