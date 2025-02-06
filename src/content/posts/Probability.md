@@ -296,39 +296,48 @@ For a continuous random variable **X**, the **PDF** satisfies:
  <br>
 
 
-<div align="center">
-<table style="font-size: 0.9em; width: 90%; text-align: center; border-collapse: collapse;">
-  <tr>
-    <th style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">PMF </th>
-    <th style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">PDF </th>
-  </tr>
-  <tr>
-    <td style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">Used for discrete random variables</td>
-    <td style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">Used for continuous random variables</td>
-  </tr>
-  <tr>
-    <td style="padding: 8px; border: 0.5px solid lightgray;">$$ P(X = x) > 0 $$ </td>
-    <td style="padding: 8px; border: 0.5px solid lightgray;">$$ P(X = x) = 0 $$ </td>
-  </tr>
-  <tr>
-    <td style="padding: 8px; border: 0.5px solid lightgray;">$$ P(a \leq X \leq b) = \sum P(X = x) $$</td>
-    <td style="padding: 8px; border: 0.5px solid lightgray;">$$ P(a \leq X \leq b) = \int_a^b f(x) dx $$</td>
-  </tr>
-  <tr>
-    <td style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">Takes countable values</td>
-    <td style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">Takes uncountable values</td>
-  </tr>
-  <tr>
-    <td style="padding: 8px; border: 0.5px solid lightgray;">Sum of probabilities: <br> $$ \sum P(X = x) = 1 $$</td>
-    <td style="padding: 8px; border: 0.5px solid lightgray;">Area under the curve: <br> $$ \int_{-\infty}^{\infty} f(x) dx = 1 $$</td>
-  </tr>
-  <tr>
-    <td style="padding: 8px; border: 0.5px solid lightgray; text-align: center;"> Rolling a die, heads in coin flips</td>
-    <td style="padding: 8px; border: 0.5px solid lightgray; text-align: center;"> Height, weight, time, temperature</td>
-  </tr>
-</table>
+<div style="overflow-x: auto; text-align: center;">
+  <table style="font-size: 0.9em; width:100%; max-width: 600px; text-align: center; border-collapse: collapse; margin: auto;">
+    <tr>
+      <th style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">PMF </th>
+      <th style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">PDF </th>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">Used for discrete random variables</td>
+      <td style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">Used for continuous random variables</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 0.5px solid lightgray;">$$ P(X = x) > 0 $$ </td>
+      <td style="padding: 8px; border: 0.5px solid lightgray;">$$ P(X = x) = 0 $$ </td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 0.5px solid lightgray;">$$ P(a \leq X \leq b) = \sum P(X = x) $$</td>
+      <td style="padding: 8px; border: 0.5px solid lightgray;">$$ P(a \leq X \leq b) = \int_a^b f(x) dx $$</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">Takes countable values</td>
+      <td style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">Takes uncountable values</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 0.5px solid lightgray;">Sum of probabilities: <br> $$ \sum P(X = x) = 1 $$</td>
+      <td style="padding: 8px; border: 0.5px solid lightgray;">Area under the curve: <br> $$ \int_{-\infty}^{\infty} f(x) dx = 1 $$</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">Rolling a die, heads in coin flips</td>
+      <td style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">Height, weight, time, temperature</td>
+    </tr>
+  </table>
 </div>
 
-
+<style>
+  @media screen and (max-width: 600px) {
+    table {
+      font-size: 0.8em; 
+    }
+    th, td {
+      padding: 6px; 
+    }
+  }
+</style>
 
 ---
