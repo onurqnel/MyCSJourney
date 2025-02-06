@@ -3,7 +3,7 @@ title: Probability Theory
 author: onur
 tags: [" Sets", " Random Variables", " Distributions", " Probability Calculus",]
 createdAt: "2025-01-31"
-updatedAt: "2025-01-31"
+updatedAt: "2025-02-05"
 description: "Exploring Probability with Dr. Aras Erzurumluoglu" 
 ---
 
