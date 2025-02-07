@@ -3,7 +3,7 @@ title: Probability Theory
 author: onur
 tags: [" Sets", " Random Variables", " Distributions", " Probability Calculus",]
 createdAt: "2025-01-31"
-updatedAt: "2025-02-05"
+updatedAt: "2025-02-06"
 description: "Exploring Probability with Dr. Aras Erzurumluoglu" 
 ---
 
@@ -201,7 +201,7 @@ A **Probability**, is a function **P** that maps events in the sample space  to 
 Let **S** be a sample space with probability measure **P**, and let **A** and **B** be events.  
 1. **Complement Rule**  
    $$
-   P(A) + P(A^c) = 1, \quad \text{or} P(A^c) = 1 - P(A)
+   P(A) + P(A^c) = 1, \quad P(A^c) = 1 - P(A)
    $$  
 2. **Probability of the Empty Set**  
    $$
@@ -235,7 +235,7 @@ A **Discrete Random Variable** has a countable set of possible values, while a *
 
 
 
-### Probability Mass Function (PMF)
+### Probability Mass Function
 A Probability Mass Function gives the probability of each possible value of a **discrete random variable**. It tells us how likely each outcome is.
 
 Defined as:
@@ -266,7 +266,7 @@ $$
 A Probability Mass Function  is only used for discrete random variables. For continuous random variables, we use the Probability Density Function instead.
 
 
-### Probability Density Function (PDF)
+### Probability Density Function
 
 A **Probability Density Function** describes the probability distribution of a **continuous random variable**. Unlike a PMF, which gives the probability of specific discrete values, the PDF represents probability **density** over an interval.
 
@@ -284,14 +284,18 @@ For a continuous random variable **X**, the **PDF** satisfies:
    The total area under the curve must be **1**.
 
 3. **Probability Over an Interval**:
-   Since a continuous random variable can take infinitely many values, the probability of a single point (PMF of continous RV) is always **zero**:
+   The probability of a single point is always **zero**:
    $$
    P(X = x) = 0
    $$  
-   Instead, we find probabilities over intervals:
+
+  For a piecewise function **f(x)** that is zero outside a given interval, we find probabilities over intervals by integrating within those intervals. Specifically, the probability that **X** lies between **a** and **b** is:
+
    $$
    P(a \leq X \leq b) = \int_{a}^{b} f(x) \,dx
    $$  
+
+Whether we use ≤ or < in the bounds does not affect the result, because the probability of a single point is zero.
 
  <br>
 
@@ -340,4 +344,185 @@ For a continuous random variable **X**, the **PDF** satisfies:
   }
 </style>
 
+### Cumulative Distribution Function
+
+A **Cumulative Distribution Function** gives the probability that a random variable **X** takes on a value **less than or equal to** a specific value **x**. It applies to both **discrete** and **continuous** random variables.
+
+Defined as:
+
+$$
+F(x) = P(X \leq x)
+$$
+
+Satisfies:
+
+$$\lim_{x \to -\infty} F(x) = 0$$
+$$\lim_{x \to \infty} F(x) = 1$$
+
 ---
+
+### CDF for Discrete RV
+
+For a **discrete random variable**, the CDF is the sum of the probabilities of all outcomes **less than or equal to** **x**:
+
+$$
+F(x) = P(X \leq x) = \sum_{t \leq x} P(X = t)
+$$
+
+**Example: Number of heads in two fair coin tosses**
+
+Let **X** be the number of heads that appear when tossing a fair coin **twice**.The possible values of **X** are **{0, 1, 2}**, with the following PMF:
+
+- Both tosses are tails
+$$P(X = 0) = \tfrac{1}{4}$$  
+
+- Exactly one toss is heads
+$$P(X = 1) = \tfrac{2}{4}$$  
+
+- Both tosses are heads
+$$P(X = 2) = \tfrac{1}{4}$$  
+
+From this PMF, we can determine the CDF:
+
+<div style="overflow-x: auto; text-align: center;">
+  <table style="font-size: 0.9em; width:100%; max-width: 600px; text-align: center; border-collapse: collapse; margin: auto;">
+    <tr>
+      <th style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">\( x \)</th>
+      <th style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">\( F(x) \)</th>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">$$0$$</td>
+      <td style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">$$F(0) = P(X \le 0) = P(X = 0) = \frac{1}{4}$$</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">$$1$$</td>
+      <td style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">$$F(1) = P(X \le 1) = P(X = 0) + P(X = 1) = \frac{1}{4} + \frac{2}{4} = \frac{3}{4}$$</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">$$2$$</td>
+      <td style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">$$F(2) = P(X \le 2) = 1$$</td>
+    </tr>
+  </table>
+</div>
+
+<style>
+  @media screen and (max-width: 600px) {
+    table {
+      font-size: 0.8em; 
+    }
+    th, td {
+      padding: 6px; 
+    }
+  }
+</style>
+
+
+
+
+---
+
+### CDF for Continuous RV
+
+For a **continuous random variable**, the CDF is the **integral** of the probability density function from **-∞** to **x**:
+
+$$
+F(x) = P(X \leq x) = \int_{-\infty}^{x} f(t) \, dt
+$$
+
+The derivative of the CDF gives the PDF:
+  $$
+  f(x) = \frac{d}{dx}F(x)
+  $$
+**Range:** $$0 \leq F(x) \leq 1$$ 
+**Probability of an Interval:**
+  $$
+  P(a \leq X \leq b) = F(b) - F(a)
+  $$
+
+### Question
+
+Find the **cumulative distribution function F(x)** for the given probability density function and **Evaluate** P(0.5 ≤ **X** ≤ 1).
+
+1. **Identify the PDF**  
+
+   $$
+   f(x) = 
+   \begin{cases}
+   3e^{-3x}& x > 0, \\
+   0&\text{otherwise}.
+   \end{cases}
+   $$
+
+  For **x ≤ 0**:
+
+  $$
+  F(x) = 0
+  $$
+
+2. **Find the CDF**  
+
+   $$
+   F(x) = P(X \leq x) = \int_{-\infty}^{x} f(t)\,dt.
+   $$
+
+$$
+\text{ the integral only starts at } t=0 \text{ for } x > 0.
+$$
+
+   
+
+  For **x > 0**:
+
+$$
+  F(x) = \int_{0}^{x} 3e^{-3t} \, dt
+  = \left[ -e^{-3t} \right]_{0}^{x}
+$$
+$$
+  = - e^{-3x} + 1
+  = 1 - e^{-3x}.
+$$
+
+  Therefore,
+
+$$
+   F(x) =
+   \begin{cases}
+   0, & x \le 0, \\
+   1 - e^{-3x}, & x > 0.
+   \end{cases}
+$$
+
+
+
+  
+  $$
+  F(1) = 1 - e^{-3 \cdot 1} = 1 - e^{-3}.
+  $$
+
+  
+  $$
+  F(0.5) = 1 - e^{-3 \cdot 0.5} = 1 - e^{-1.5}.
+  $$
+
+Putting together:
+$$
+P(0.5 \le X \le 1) = F(1) - F(0.5).
+$$
+
+$$
+P(0.5 \le X \le 1) = \bigl(1 - e^{-3}\bigr) - \bigl(1 - e^{-1.5}\bigr) 
+$$
+$$
+= e^{-1.5} - e^{-3}.
+$$
+
+Finally:
+$$
+\begin{aligned}
+e^{-1.5} - e^{-3} &\approx = 0.173343.
+\end{aligned}
+$$
+
+
+---
+
