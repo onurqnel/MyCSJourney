@@ -223,6 +223,225 @@ The **Inclusion-Exclusion Principle** can be **generalized** to more than two se
 
 
 ---
+### Conditional Probability
+
+The value **P(A | B)** is called the **conditional probability of A given B**.
+
+If A and B are events in a sample space, and P(B) ≠ 0, then the conditional probability of A given B is defined as:
+
+$$
+P(A|B) = \frac{P(A \cap B)}{P(B)}
+$$
+
+If B occurs, then for A to occur, the outcome must lie in both A and B. Therfore, **A ∩ B** becomes the event of interest, and B is considered the new sample space.
+
+**Example:**  
+Consider a standard deck of 52 playing cards. Let event A be drawing a **King**, and event B be drawing a **Spade**.
+
+- **P(A) = 4/52 = 1/13** (there are 4 Kings)
+- **P(B) = 13/52 = 1/4** (there are 13 Spades)
+- **P(A ∩ B) = 1/52** (there's only 1 King of Spades)
+
+Now, the conditional probability of drawing a King given that the card is a Spade is:
+
+$$
+P(A|B) = \frac{P(A \cap B)}{P(B)} = \frac{1/52}{1/4} = \frac{1}{13}
+$$
+
+This matches **P(A)** because each suit has exactly one King, demonstrating how conditional probability works in this context.
+
+We can also find **P(A ∩ B)** using the **Multiplication Rule** for probability. This rule states that the probability of both events A and B occurring can be calculated as:
+
+$$
+P(A \cap B) = P(A) \cdot P(B|A)
+$$
+
+By multiplying these two probabilities, we're essentially calculating the likelihood of both A happening **and then** B happening under the condition that A has occurred.
+
+Imagine selecting two cards from a deck without replacement:
+
+- Let A be the event **"the first card is an Ace"**.
+- Let B be the event **"the second card is an Ace"**.
+
+The probability that both A and B occur is:
+
+1. First, find **P(A)**
+   - There are 4 Aces out of 52 cards, so **P(A) = 4/52 = 1/13**.
+
+2. Now, find **P(B|A)**:
+   - If the first card was an Ace, there are now 3 Aces left out of 51 cards, so **P(B|A) = 3/51 = 1/17**.
+
+3. Multiply them together:
+   $$
+   P(A \cap B) = P(A) \cdot P(B|A) = \frac{1}{13} \cdot \frac{1}{17} = \frac{1}{221}
+   $$
+
+We correctly account for the dependency between A and B when calculating the joint probability.
+
+---
+### Dependent and Independent Events
+
+When analyzing probabilities, it's crucial to understand the relationship between events. Events can either be **dependent** or **independent**, which affects how we calculate probabilities involving them.
+
+#### **Independent Events**
+
+Two events **A** and **B** are said to be **independent** if the occurrence of one event **does not affect** the probability of the other event occurring. In other words:
+
+$$
+P(A|B) = P(A) \quad \text{or} \quad P(B|A) = P(B)
+$$
+
+This leads to the **Multiplication Rule for Independent Events**:
+
+$$
+P(A \cap B) = P(A) \cdot P(B)
+$$
+
+**Example:**  
+Consider flipping a fair coin and rolling a fair six-sided die.
+
+- Let event **A** be **"getting Heads"** on the coin flip.
+- Let event **B** be **"rolling a 4"** on the die.
+
+Since flipping the coin has no impact on the die roll (and vice versa), A and B are independent.
+
+- **P(A) = 1/2** (since there are 2 equally likely outcomes: Heads or Tails)
+- **P(B) = 1/6** (since the die has 6 equally likely outcomes)
+
+The probability of both A and B occurring is:
+
+$$
+P(A \cap B) = P(A) \cdot P(B) = \frac{1}{2} \cdot \frac{1}{6} = \frac{1}{12}
+$$
+
+This shows how we can simply multiply the probabilities when events are independent.
+
+---
+
+#### Dependent Events
+
+Two events **A** and **B** are **dependent** if the occurrence of one event **affects** the probability of the other event occurring. In such cases, we must account for this dependency when calculating probabilities.
+
+The **Multiplication Rule for Dependent Events** is:
+
+$$
+P(A \cap B) = P(A) \cdot P(B|A)
+$$
+
+Where **P(B|A)** represents the conditional probability of B occurring **given that A has already occurred**.
+
+**Example:**  
+Consider drawing two cards **without replacement** from a standard deck of 52 cards.
+
+- Let event **A** be **"the first card is a Queen"**.
+- Let event **B** be **"the second card is a Queen"**.
+
+Since the first card is not replaced, the events are dependent because the outcome of the first draw affects the probability of the second draw.
+
+1. **P(A)**: There are 4 Queens in the deck, so:
+
+   $$
+   P(A) = \frac{4}{52} = \frac{1}{13}
+   $$
+
+2. **P(B|A)**: If the first card was a Queen, there are now 3 Queens left in a deck of 51 cards:
+
+   $$
+   P(B|A) = \frac{3}{51} = \frac{1}{17}
+   $$
+
+3. **Joint Probability**:
+
+   $$
+   P(A \cap B) = P(A) \cdot P(B|A) = \frac{1}{13} \cdot \frac{1}{17} = \frac{1}{221}
+   $$
+
+This calculation reflects the dependency between events A and B.
+
+#### **Key Differences Between Independent and Dependent Events**
+
+- **Independent Events:** The outcome of one event **does not influence** the outcome of the other.
+- **Dependent Events:** The outcome of one event **does influence** the outcome of the other.
+
+A quick way to test for independence is to check if:
+
+$$
+P(A \cap B) = P(A) \cdot P(B)
+$$
+
+If this equality holds, the events are independent. If not, the events are dependent.
+
+---
+### Bayes' Theorem
+
+Bayes' Theorem provides a formal method for updating the probability of an event in light of new evidence, relating conditional and marginal probabilities to refine prior beliefs.
+
+#### **Bayes' Theorem Formula**
+
+$$
+P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}
+$$
+
+Where:
+- **P(A|B)** is the **posterior probability**: the probability of event A occurring given that event B has occurred.
+- **P(B|A)** is the **likelihood**: the probability of event B occurring given that event A has occurred.
+- **P(A)** is the **prior probability**: the initial probability of event A before considering event B.
+- **P(B)** is the **marginal probability**: the total probability of event B occurring.
+
+#### **Derivation of Bayes' Theorem**
+
+Bayes' Theorem is derived from the definition of conditional probability:
+
+$$
+P(A|B) = \frac{P(A \cap B)}{P(B)} \quad
+$$
+
+Rearranging the second equation:
+
+$$
+P(A \cap B) = P(B|A) \cdot P(A)
+$$
+
+Substitute this into the first equation:
+
+$$
+P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}
+$$
+
+This is Bayes' Theorem.
+
+#### **Example:**
+
+Consider a medical test for a disease:
+
+- **P(Disease)** = 0.01 
+- **P(Positive | Disease)** = 0.99
+- **P(Positive | No Disease)** = 0.05
+
+You receive a **positive test result**. What is the probability you actually have the disease when the result positive?
+
+1. **Calculate P(Positive):**
+
+$$
+= (0.99 \cdot 0.01) + (0.05 \cdot 0.99)
+$$
+
+$$
+= 0.0099 + 0.0495 = 0.0594
+$$
+
+2. **Apply Bayes' Theorem:**
+
+$$
+\frac{P(Positive|Disease) \cdot P(Disease)}{P(Positive)}
+$$
+
+$$
+= \frac{0.99 \cdot 0.01}{0.0594}\approx \frac{0.0099}{0.0594} \approx 0.1667
+$$
+
+So, even with a positive test result, the probability of actually having the disease is approximately **16.67%**.
+
 
 ### Random Variables
 
