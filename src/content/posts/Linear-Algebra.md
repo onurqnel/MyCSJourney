@@ -161,8 +161,8 @@ Properties:
 A **diagonal matrix** is a **square matrix** in which only the **main diagonal** elements are **nonzero**, while all other elements are **zero**.
 
 1. **Closed under addition and multiplication**
-   $$ D_1 + D_2 = D_3 \quad \text{(equals another diagonal matrix)} $$
-   $$ D_1 \times D_2 = D_4 \quad \text{(equals another diagonal matrix)} $$
+   $$ D_1 + D_2 = D_3 \quad \text{(another diagonal matrix)} $$
+   $$ D_1 \times D_2 = D_4 \quad \text{(another diagonal matrix)} $$
 2. **The determinant is the product of the diagonal elements**
    $$ \det(D) = d_1 \times d_2 \times \dots \times d_n $$
 3. **If invertible, its inverse is also a diagonal matrix**
