@@ -11,13 +11,13 @@ description: "Exploring Probability with Dr. Aras Erzurumluoglu"
 
 A **deterministic model** predicts the outcome of an experiment with certainty based on given initial conditions.  
 
-- The velocity of a falling object **`v = gt`**.  
+- The velocity of a falling object **v = gt**.  
 
 A **probabilistic** or **stochastic model** accounts for situations where the same initial conditions can lead to a variety of outcomes. These models assign a probability to each possible outcome.  
 
-- Rolling a die results in one of six numbers facing up, each assigned a probability of **`1/6`**.  
+- Rolling a die results in one of six numbers facing up, each assigned a probability of **1/6**.  
 
-When there are **`N`** possible (equally likely) outcomes, and **`k`** of them are considered successful, then the probability of success is given by:
+When there are **N** possible (equally likely) outcomes, and **k** of them are considered successful, then the probability of success is given by:
 
 $$
 P(\text{success}) = \frac{k}{N}
@@ -42,9 +42,10 @@ Individual elements of a sample space are called **outcomes** while subsets of a
 
 $$ \text{Sample space: } {θ \text{ degrees} \mid θ \in [0, 360)}$$
 
-**Event A:** Landing between **90 and 180 degrees**<br>
-**Event B:** Landing either between **45 and 90 degrees** or between **270 and 315 degrees**  <br>
-**Event C:** Landing precisely on **180 degrees**.    
+**Events**
+- **A:** Landing between **90 and 180 degrees**<br>
+- **B:** Landing either between **45 and 90 degrees** or between **270 and 315 degrees**  <br>
+- **C:** Landing precisely on **180 degrees**.    
 
 ---
 
