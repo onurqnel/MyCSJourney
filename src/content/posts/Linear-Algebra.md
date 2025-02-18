@@ -215,20 +215,19 @@ Properties:
 ---
 
 ### Inverse Matrix
-Matrix has an inverse only if it is square matrix and its determinant is nonzero.
-Some square matrices may not have  inverse. The inverse of a matrix is unique. This means that if you have two matrices, **B₁** and **B₂**, that both act as the inverse of **A**, then **B₁** and **B₂** are actually the same matrix. 
+Matrix has an inverse only if it is square matrix and its determinant is nonzero. The inverse of a matrix is unique. 
 
-Suppose we have the matrix equation
+Suppose 
 $$
 Ax = b,
 $$
-we can multiply both sides by **A⁻¹** (if it exists):
+we can multiply by **A⁻¹** if it exists:
 
 $$
 A^{-1}Ax = A^{-1}b.
 $$
 
-Since **A⁻¹ x A = I** we get:
+Since **A⁻¹  x  A = I** we get:
 
 $$
 x = A^{-1}b.
@@ -241,34 +240,29 @@ $$
    $$
    (A^{-1})^{-1} = A
    $$
-   Applying the inverse twice returns the original matrix.
 
 2. **Inverse of a Scalar Multiple:**  
    $$
    (kA)^{-1} = \frac{1}{k} A^{-1}
    $$
-   The inverse distributes over scalar multiplication.
 
 3. **Inverse of a Product:**  
    $$
    (AB)^{-1} = B^{-1} A^{-1} \quad
    $$
-   The inverse of a product is the product of inverses in reverse order.
 
 4. **Inverse of a Transpose:**  
    $$
    (A^T)^{-1} = (A^{-1})^T
    $$
-   The inverse of a transpose equals the transpose of the inverse.
 
 5. **Inverse of a Power:**  
    $$
    (A^r)^{-1} = (A^{-1})^r \quad \text{where } A^{-r} = (A^{-1})^r
    $$
-   The inverse of a power equals the power of the inverse.
 ---
 
-#### Gauss Jordan Method
+### Inverse using Gauss Jordan Elimination 
 
 1. Append the identity **matrix I** to **matrix A**:
    $$
@@ -289,7 +283,7 @@ $$
 \begin{bmatrix} 2 & 1 & | & 1 & 0 \\\ 5 & 3 & | & 0 & 1 \end{bmatrix}
 $$
 
-Performing row operations to convert `A` into the identity matrix:
+Performing row operations to convert **A** into the identity matrix:
 $$
 \begin{bmatrix} 1 & 0 & | & 3 & -1 \\\ 0 & 1 & | & -5 & 2 \end{bmatrix}
 $$
@@ -354,7 +348,7 @@ This simple trick **applying the inverse of the original row operation to the id
 
 ### Upper and Lower Triangular Matrices
 
-An **upper triangular matrix** is a square matrix where **all the elements below the main diagonal are zero**. Similarly, a **lower triangular matrix** is a square matrix where **all the elements above the main diagonal are zero**.
+An **upper triangular matrix** is a square matrix where **all the elements below the main diagonal are zero**. 
 
 - **Determinant** of a triangular matrix is the **product of the diagonal elements**.
 - They are **easy to solve** in linear systems due to their structure.
@@ -385,16 +379,16 @@ $$
 ### Diagonal Matrix
 A **diagonal matrix** is a **square matrix** in which only the **main diagonal** elements are **nonzero**, while all other elements are **zero**.
 
-1. **The determinant is the product of the diagonal elements**
+- **The determinant is the product of the diagonal elements**
    $$ \det(D) = d_1 \times d_2 \times \dots \times d_n $$
 
-2. **Closed under addition and multiplication**
+- **Closed under addition and multiplication**
    $$ D_1 + D_2 = D_3 \quad \text{(another diagonal matrix)} $$
    $$ D_1 \times D_2 = D_4 \quad \text{(another diagonal matrix)} $$
 
-3. **If invertible, its inverse is also a diagonal matrix**
+- **If invertible, its inverse is also a diagonal matrix**
 
-4. **Its transpose is itself**
+- **Its transpose is itself**
    $$ D^T = D $$
 
 ---
@@ -415,98 +409,71 @@ $$
 \det(A) = ad - bc
 $$
 
-For a **3×3** matrix:
-$$
-A = \begin{bmatrix} a & b & c \\\ d & e & f \\\ g & h & i \end{bmatrix}
-$$
+### Properties
 
-The determinant is computed using cofactor expansion:
+- If a matrix has a row or column consisting entirely of **zeros**, then its determinant is **zero**.
 
-$$
-\det(A) = a \begin{vmatrix} e & f \\\ h & i \end{vmatrix}  -b \begin{vmatrix} d & f \\\ g & i \end{vmatrix} +  c \begin{vmatrix} d & e \\\ g & h \end{vmatrix}
-$$
+- If a matrix has **two identical rows or columns**, then its determinant is **zero**.
 
-Determinant equals:
-$$
-\det(A) = a(ei - fh) - b(di - fg) + c(de - gh)
-$$
+- **Swapping** two rows or two columns of a matrix **changes the sign** of its determinant.
 
-### Properties 
+- **Adding** a multiple of one row to another row does **not** change the determinant.
 
-If a determinant has a row or column consisting entirely of zeros, then the determinant is **zero**.
-
-If a matrix has two identical rows or columns, then the determinant is **zero**.
-
-Swapping two rows or columns of a matrix **changes the sign** of the determinant.
-
-If a row of a matrix is multiplied by a scalar \( k \), then the determinant is also multiplied by \( k \):
-
+- If one row of a matrix is **multiplied by a scalar k**, then the determinant is also multiplied by **k**. For example, if **A'** is the matrix obtained by multiplying one row of **A** by **k**, then:
   $$
-  det(kA) = k det(A)
+  \det(A') = k \cdot \det(A)
   $$
 
-Adding a multiple of one row to another does **not** change the determinant.
-
-- **Determinant of a Product**: The determinant of the product of two matrices is the product of their determinants:
-
+- The determinant of the **product** of two matrices is the product of their determinants:
   $$
-  det(AB) = det(A) det(B)
+  \det(AB) = \det(A) \cdot \det(B)
   $$
 
-- **Determinant of an Inverse Matrix**: The determinant of the inverse of a matrix is the reciprocal of the determinant of the original matrix:
-
+- The determinant of the **inverse** of a matrix is the reciprocal of the determinant of the original matrix:
   $$
-  det(A^{-1}) = \frac{1}{det(A)}
+  \det(A^{-1}) = \frac{1}{\det(A)}
+  $$
+
+- The determinant remains **unchanged** when taking the **transpose**:
+  $$
+  \det(A^T) = \det(A)
+  $$
+
+- **Raising a matrix to a power** raises its determinant to the same power:
+  $$
+  \det(A^n) = (\det A)^n
   $$
 
 
-- **Determinant of a Transposed Matrix**: The determinant remains the same when taking the transpose:
+- If an **n x n** matrix **A** is multiplied by a scalar **k**, then:
+  $$
+  \det(kA) = k^n \cdot \det(A)
+  $$
+  where **n** is the number of rows (or columns) of **A**.
+
+- **Example:**
 
   $$
-  det(A^T) = det(A)
-  $$
-
-- **Determinant of a Power of a Matrix**: Raising a matrix to a power raises its determinant to the same power:
-
-  $$
-  det(A^n) = (det A)^n
-  $$
-
-- **Determinant of a Scalar Multiple**: If a matrix A of size \( n \times n \) is multiplied by a scalar \( k \), then:
-
-  $$
-  det(kA) = k^n det(A)
-  $$
-
-  where \( n \) is the number of rows of A.
-
-
-  Let 
-
-  $$ 
   A = \begin{bmatrix} 2 & 1 \\\ 3 & 4 \end{bmatrix}
   $$
-
-  Then,
-
+  
+  First, compute **det(A)**:
   $$
-  det(A) = (2)(4) - (1)(3) = 8 - 3 = 5
+  \det(A) = (2)(4) - (1)(3) = 5
+  $$
+  
+  Now, if we multiply **A** by a scalar **k = 3**, then:
+  $$
+  \det(3A) = 3^2 \cdot \det(A) = 9 \cdot 5 = 45
   $$
 
-  If we multiply A by a scalar \( k = 3 \), then:
-
-  $$
-  det(3A) = 3^2 \cdot det(A) = 9 \cdot 5 = 45
-  $$
 
 ---
 
-### Finding Inverse with Determinant
-
-To find the inverse of a 2 x 2 matrix:
+### 2 x 2 Inverse with Determinants
 
 $$
-A = \begin{bmatrix} a & b \\\ c & d \end{bmatrix},
+A = \begin{bmatrix} a & b \\\ c & d \end{bmatrix}
 $$
 
 1. **Compute the Determinant:**  
@@ -521,12 +488,12 @@ $$
 
 **Example:**
 $$
-A = \begin{bmatrix} 2 & 1 \\\ 5 & 3 \end{bmatrix},
+A = \begin{bmatrix} 2 & 1 \\\ 5 & 3 \end{bmatrix}
 $$
 
 - Compute the determinant:
   $$
-  \det(A) = 2 \times 3 - 1 \times 5 = 6 - 5 = 1.
+  \det(A) = 2 \times 3 - 1 \times 5  = 1.
   $$
 
 - Since the determinant is non-zero, compute the inverse:
@@ -588,3 +555,154 @@ $$ B \times B^{-1} = I $$
 Since the result is the **identity matrix**, the inverse calculation is correct.
 
 ---
+
+### Minor of an Element
+The **minor** **M₍ ᵢ ⱼ ₎** of an element **a₍ ᵢ ⱼ ₎** is defined as the determinant of the submatrix obtained by deleting the **i-th** row and **j-th** column from **A**.
+
+### Cofactor of an Element
+The **cofactor** **C₍ ᵢ ⱼ ₎** of an element **a₍ ᵢ ⱼ ₎** is the minor **M₍ ᵢ ⱼ ₎** multiplied by a sign factor:
+
+  $$
+  C_{ij} = (-1)^{i+j} M_{ij}
+  $$
+
+- **Sign Pattern:**  
+For example, in a **3 x 3** matrix, the pattern of signs is:
+  
+$$
+\begin{bmatrix} + & - & + \\\ - & + & - \\\ + & - & + \end{bmatrix}
+$$
+
+
+#### Example
+
+Consider the matrix:
+$$
+A = \begin{bmatrix} 1 & 2 & 3 \\\ 4 & 5 & 6 \\\ 7 & 8 & 9 \end{bmatrix}
+$$
+
+1. **Finding a Minor:**
+For the element **a₁₁ = 1**, the minor **M₁₁** is computed by removing the first row and first column:
+
+$$
+M_{11} = \det\begin{bmatrix} 5 & 6 \\\ 8 & 9 \end{bmatrix} 
+$$
+
+$$
+= \text{(} 5 \times 9\text{)} - \text{(} 6 \times 8 \text{)} = -3.
+$$
+
+2. **Finding a Cofactor:**
+The cofactor **C₁₁** is then:
+
+$$
+C_{11} = (-1)^{1+1} M_{11} = 1 \times (-3) = -3.
+$$
+
+3. **Another Element**
+For the element **a₁₂ = 2**, the minor **M₁₂** is found by removing the first row and second column:
+
+$$ 
+M_{12} = \det\begin{bmatrix} 4 & 6 \\\ 7 & 9 \end{bmatrix} 
+$$
+
+$$
+= \text{(}4 \times 9 \text{)} - \text{(} 6 \times 7 \text{)} = -6.
+$$
+
+The cofactor **C₁₂** is:
+$$
+C_{12} = (-1)^{1+2} M_{12} = (-1) \times (-6) = 6.
+$$
+
+---
+
+### Laplace Expansion
+
+Laplace (Cofactor) expansion is a method for computing the determinant of an **n x n** matrix. It allows you to expand the determinant along any row or column.
+
+1. **Select a Row or Column:**  
+   Choose any row or column to expand along. Often, it's convenient to choose one with the most zeros to simplify calculations.
+
+2. **Compute Cofactors:**  
+   For each element **A₍ ᵢ ⱼ ₎** in the chosen row or column, calculate its cofactor **C₍ ᵢ ⱼ ₎**:
+
+   $$
+   C(i,j) = (-1)^(i+j) * det(A(i,j))
+   $$
+
+   where **A₍ ᵢ ⱼ ₎** is the submatrix obtained after removing the **i-th** row and **j-th** column.
+
+3. **Sum the Products:**  
+   Multiply each element by its corresponding cofactor and sum these products to obtain the determinant of **A**.
+
+This method is recursive and can be applied to matrices of any size.
+
+
+#### Example with a 3x3 Matrix 
+
+Consider:
+
+$$
+A = \begin{bmatrix} a & b & c \\\ d & e & f \\\ g & h & i \end{bmatrix}
+$$
+
+The determinant is computed using laplace expansion:
+
+$$
+\det(A) = a \begin{vmatrix} e & f \\\ h & i \end{vmatrix}  -b \begin{vmatrix} d & f \\\ g & i \end{vmatrix} +  c \begin{vmatrix} d & e \\\ g & h \end{vmatrix}
+$$
+
+Determinant equals:
+$$
+\det(A) = a(ei - fh) - b(di - fg) + c(de - gh)
+$$
+
+While the example shows a 3x3 matrix, the same process applies to larger matrices.
+
+---
+
+### Adjugate of a Matrix
+
+The **adjugate** or **adjoint** of a square matrix **A** is defined as the transpose of the cofactor matrix of **A**. It is denoted as **adj(A)**.  For an **n x n** matrix **A**, each cofactor **C₍ ᵢ ⱼ ₎** is computed as:
+
+$$
+C(i,j) = (-1)^{i+j} \det(A(i,j))
+$$
+
+where **A₍ ᵢ ⱼ ₎** is the **n-1 x n-1** submatrix formed by deleting the **i-th** row and **j-th** column. The **adjugate** of **A** is the transpose of the cofactor matrix:
+
+$$
+adj(A) = (C(j,i))
+$$
+That is, the **(i, j)** entry of **adj(A)** is the cofactor **C₍ ᵢ ⱼ ₎** of **A**.
+
+1. **Multiplying A by Its Adjugate:**
+
+   When you multiply a square matrix **A** by its adjugate (the transpose of its cofactor matrix), you get:
+   $$
+   A \cdot adj(A) = adj(A) \cdot A = \det(A) \cdot I
+   $$
+
+
+2. **Determinant of the Adjugate:**
+
+   For an **n x n** matrix, the determinant of its adjugate is:
+   $$
+   \det(adj(A)) = (\det(A))^{n-1}
+   $$
+
+3. **Adjugate of the Adjugate:**
+
+   If you take the adjugate of **adj(A)**, you get:
+   $$
+   adj(adj(A)) = (\det(A))^{n-2}\, A
+   $$
+
+
+4. **Adjugate of a Product:**
+
+   For any two **n x n** matrices **A** and **B**, the adjugate of their product is:
+   $$
+   adj(AB) = adj(B) \cdot adj(A)
+   $$
