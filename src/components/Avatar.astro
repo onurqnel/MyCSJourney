@@ -5,8 +5,6 @@ interface Props {
 }
 
 const props = Astro.props;
-// Base size is smaller (w-12 h-12) for small screens like iPhone.
-// Sizes increase for medium and larger screens.
 const defaultSize = "w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-32 xl:h-32";
 const size = props.size || defaultSize;
 ---
