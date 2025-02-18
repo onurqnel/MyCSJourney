@@ -317,25 +317,6 @@ $$
 
 ---
 
-### Diagonal Matrix
-A **diagonal matrix** is a **square matrix** in which only the **main diagonal** elements are **nonzero**, while all other elements are **zero**.
-
-1. **The determinant is the product of the diagonal elements**
-   $$ \det(D) = d_1 \times d_2 \times \dots \times d_n $$
-
-2. **Closed under addition and multiplication**
-   $$ D_1 + D_2 = D_3 \quad \text{(another diagonal matrix)} $$
-   $$ D_1 \times D_2 = D_4 \quad \text{(another diagonal matrix)} $$
-
-3. **If invertible, its inverse is also a diagonal matrix**
-
-4. **Its transpose is itself**
-   $$ D^T = D $$
-
----
-
-
-
 ### Elementary Matrix
 
 An **elementary matrix** is a matrix obtained by applying a **single row operation** to the **identity matrix**.
@@ -392,7 +373,7 @@ $$
 L = \begin{bmatrix} 3 & 0 & 0 \\\ 1 & 5 & 0 \\\ -2 & 4 & 7 \end{bmatrix}
 $$
 
-- All elements **above the main diagonal** are zero.
+- All elements **above the main tdiagonal** are zero.
 
 #### Properties 
 - If a triangular matrix is invertible, its **inverse is also triangular** of the same type.
@@ -401,8 +382,25 @@ $$
 
 ---
 
+### Diagonal Matrix
+A **diagonal matrix** is a **square matrix** in which only the **main diagonal** elements are **nonzero**, while all other elements are **zero**.
+
+1. **The determinant is the product of the diagonal elements**
+   $$ \det(D) = d_1 \times d_2 \times \dots \times d_n $$
+
+2. **Closed under addition and multiplication**
+   $$ D_1 + D_2 = D_3 \quad \text{(another diagonal matrix)} $$
+   $$ D_1 \times D_2 = D_4 \quad \text{(another diagonal matrix)} $$
+
+3. **If invertible, its inverse is also a diagonal matrix**
+
+4. **Its transpose is itself**
+   $$ D^T = D $$
+
+---
+
 ### Determinants
-The determinant of a square matrix determines whether it has an inverse.
+The determinant of a square matrix determines whether it has an inverse and its scaling factor on space.
 For an **N x N** matrix **A**, the determinant is represented as:
 $$
 \det(A) \quad \text{or} \quad |A|
@@ -433,9 +431,77 @@ $$
 \det(A) = a(ei - fh) - b(di - fg) + c(de - gh)
 $$
 
+### Properties 
+
+If a determinant has a row or column consisting entirely of zeros, then the determinant is **zero**.
+
+If a matrix has two identical rows or columns, then the determinant is **zero**.
+
+Swapping two rows or columns of a matrix **changes the sign** of the determinant.
+
+If a row of a matrix is multiplied by a scalar \( k \), then the determinant is also multiplied by \( k \):
+
+  $$
+  det(kA) = k det(A)
+  $$
+
+Adding a multiple of one row to another does **not** change the determinant.
+
+- **Determinant of a Product**: The determinant of the product of two matrices is the product of their determinants:
+
+  $$
+  det(AB) = det(A) det(B)
+  $$
+
+- **Determinant of an Inverse Matrix**: The determinant of the inverse of a matrix is the reciprocal of the determinant of the original matrix:
+
+  $$
+  det(A^{-1}) = \frac{1}{det(A)}
+  $$
+
+
+- **Determinant of a Transposed Matrix**: The determinant remains the same when taking the transpose:
+
+  $$
+  det(A^T) = det(A)
+  $$
+
+- **Determinant of a Power of a Matrix**: Raising a matrix to a power raises its determinant to the same power:
+
+  $$
+  det(A^n) = (det A)^n
+  $$
+
+- **Determinant of a Scalar Multiple**: If a matrix A of size \( n \times n \) is multiplied by a scalar \( k \), then:
+
+  $$
+  det(kA) = k^n det(A)
+  $$
+
+  where \( n \) is the number of rows of A.
+
+
+  Let 
+
+  $$ 
+  A = \begin{bmatrix} 2 & 1 \\\ 3 & 4 \end{bmatrix}
+  $$
+
+  Then,
+
+  $$
+  det(A) = (2)(4) - (1)(3) = 8 - 3 = 5
+  $$
+
+  If we multiply A by a scalar \( k = 3 \), then:
+
+  $$
+  det(3A) = 3^2 \cdot det(A) = 9 \cdot 5 = 45
+  $$
+
 ---
 
-### Inverse of 2 x 2 Matrix
+### Finding Inverse with Determinant
 
 To find the inverse of a 2 x 2 matrix:
 
@@ -505,9 +571,6 @@ Since the determinant is **0**, the matrix is **singular**.
 A matrix is **non-singular** if its determinant is **non-zero**.
 - **It has an inverse.**
 - **A system of linear equations has a unique solution.**
-
-Its inverse can be easily calculated by the formula:
-$$ A^{-1} = \frac{1}{\det(A)} \times \begin{bmatrix} d & -b \\\ -c & a \end{bmatrix} $$
 
 Given matrix:
 $$ B = \begin{bmatrix} 1 & 2 \\\ 3 & 4 \end{bmatrix} $$
