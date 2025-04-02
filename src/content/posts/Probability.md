@@ -9,15 +9,15 @@ description: "Exploring Probability with Dr. Aras Erzurumluoglu"
 
 ### Introduction
 
-A **deterministic model** predicts the outcome of an experiment with certainty based on given initial conditions.  
+A **deterministic model** predicts the outcome of an experiment with certainty. 
 
-- The velocity of a falling object **v = gt**.  
+- Velocity of a falling object **v = gt**.  
 
-A **probabilistic** or **stochastic model** accounts for situations where the same initial conditions can lead to a variety of outcomes. These models assign a probability to each possible outcome.  
+A **probabilistic** or **stochastic model**  assigns a probability to each possible outcome.  
 
-- Rolling a die results in one of six numbers facing up, each assigned a probability of **1/6**.  
+- Rolling a die results in probability of **1/6**.  
 
-When there are **N** possible (equally likely) outcomes, and **k** of them are considered successful, then the probability of success is given by:
+When there are **N** possible equally likely outcomes, and **k** succeses, then the probability is:
 
 $$
 P(\text{success}) = \frac{k}{N}
@@ -31,14 +31,14 @@ These values describe the **frequency** of the successful outcome and the propor
 
 The **sample space** is the set of all possible outcomes of an experiment. 
 
-- A **discrete sample space** has a finite or countably infinite number of elements.  
+- A **discrete** sample space has a finite or countably infinite number of elements.  
 
-- A **continuous sample space** is an interval in **ℝ**.
+- A **continuous** sample space is an interval in **ℝ**.
 
 
 Individual elements of a sample space are called **outcomes** while subsets of a sample space are called **events**.  
 
-**Spinning a Probability Spinner**  
+**Spinning Spinner**  
 
 $$ \text{Sample space: } {θ \text{ degrees} \mid θ \in [0, 360)}$$
 
@@ -51,7 +51,7 @@ $$ \text{Sample space: } {θ \text{ degrees} \mid θ \in [0, 360)}$$
 
 ### Union, Intersection and Complement  
 
-Let **A** and **B** be events in sample space **S**; that is, **A** and **B** are subsets of **S**.  
+Let **A** and **B** be events in sample space **S**
 
 - The **Union** of **A** and **B** is the set of outcomes that are in either **A** or **B**, or both:  
 
@@ -71,7 +71,7 @@ Let **A** and **B** be events in sample space **S**; that is, **A** and **B** ar
   A^c = \{ x ∈ S \mid x \notin A \} = S \setminus A
   $$  
 
-A **Venn diagram** visually represents subsets of a **Universal Set `S`**  
+A **Venn diagram** visually represents subsets of a **Universal Set S**  
 
 <p align="center">
   <img src="/AppendixPROB/1.png" alt="Venn Diagrams" />
@@ -83,7 +83,7 @@ A set with no elements is called the **Empty Set**, denoted **∅**.
 ---
 ### Mutually Exclusive Events  
 
-Two events are mutually exclusive or disjoint if they cannot occur at the same time. That is, if one event happens, the other must not happen.
+Two events are mutually exclusive or disjoint if they cannot occur at the same time.
 
 **Rolling two dice**   
 
@@ -101,7 +101,7 @@ Two events are mutually exclusive or disjoint if they cannot occur at the same t
 
 Sets with an **empty intersection** are called **disjoint**, and the events in this case are called **mutually exclusive**.  
 
-### Algebra of Sets  
+### Algebra of the Sets  
 Let **A**, **B**, and **C** be subsets of a universal set **S**.  
 
 - **Idempotent Laws:**  
@@ -157,7 +157,7 @@ Let **A**, **B**, and **C** be subsets of a universal set **S**.
   (A ∩ B)^c = A^c ∪ B^c
   $$  
 
-Let's use **Venn Diagrams** to verify:  
+We can easily visualize with **Venn Diagrams** for example:
 
 $$
 A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)
@@ -169,28 +169,23 @@ $$
 
 ---
 
-### The Probability of an Event  
+### The Probability 
+A **Probability**, is a function **P** that maps events in the sample space  to real numbers. **P** must satisfy the following **postulates - axioms**.  
 
-A **Probability**, is a function **P** that maps events in the sample space  to real numbers. To assign probabilities in a meaningful way, **P** must satisfy the following **postulates - axioms**.  
-
-- **Probability Interval**  
-  The probability of any event **A** in sample space is a non-negative ℝ number:  
+- **Probability Interval:** The probability of any event **A** in sample space is a non-negative ℝ number:  
   $$
   P(A) \geq 0
   $$  
-  Since events can't happen less than 0% or more than 100% of the time, we always have: 
+  Since events can't happen less than 0% or more than 100% 
   $$
   0 \leq P(A) \leq 1, \quad \text{for any event } A
   $$  
-- **Sample Space**  
-  Since **S** includes all possible outcomes, the probability of any outcome occurring must be **1**:  
+- **Sample Space:** Since **universal set S** includes all possible outcomes, the probability of any outcome occurring must:  
   $$
   P(S) = 1
   $$  
 
-- **Additivity** 
-
-  If events **A1, A2 ...** are **mutually exclusive**, their total probability is the sum of their individual probabilities: 
+- **Additivity:** If events **A1, A2, ...** are **mutually exclusive**, their total probability is the sum of their individual probabilities: 
   $$
   P(A_1 ∪ A_2 \dots) = P(A_1) + P(A_2)\dots
   $$  
@@ -208,8 +203,7 @@ Let **S** be a sample space with probability measure **P**, and let **A** and **
    $$
    P(∅) = 0
    $$  
-3. **Subset Rule**  
-   If **A ⊂ B**, then:  
+3. **Subset Rule** If **A ⊂ B**, then:  
    $$
    P(A) \leq P(B)
    $$
@@ -219,13 +213,13 @@ Let **S** be a sample space with probability measure **P**, and let **A** and **
    P(A ∪ B) = P(A) + P(B) - P(A ∩ B)
    $$ 
 
-The **Inclusion-Exclusion Principle** can be **generalized** to more than two sets.
+The Inclusion-Exclusion Principle can be generalized to more than two sets.
 
 
 ---
 ### Conditional Probability
 
-The value **P(A | B)** is called the **conditional probability of A given B**.
+The **P( A | B )** is called the **conditional probability of A given B**.
 
 If A and B are events in a sample space, and P(B) ≠ 0, then the conditional probability of A given B is defined as:
 
@@ -233,42 +227,40 @@ $$
 P(A|B) = \frac{P(A \cap B)}{P(B)}
 $$
 
-If B occurs, then for A to occur, the outcome must lie in both A and B. Therfore, **A ∩ B** becomes the event of interest, and B is considered the new sample space.
+The outcome must lie in both A and B. Therfore, A ∩ B becomes the event of interest, and B is considered the new sample space.
 
 **Example:**  
-Consider a standard deck of 52 playing cards. Let event A be drawing a **King**, and event B be drawing a **Spade**.
+Consider deck of 52 playing cards. Let A be drawing a **King**, and  B be drawing a **Spade**.
 
-- **P(A) = 4/52 = 1/13** (there are 4 Kings)
-- **P(B) = 13/52 = 1/4** (there are 13 Spades)
-- **P(A ∩ B) = 1/52** (there's only 1 King of Spades)
+- **P(A) = 4/52 = 1/13** 
+- **P(B) = 13/52 = 1/4** 
+- **P(A ∩ B) = 1/52**
 
-Now, the conditional probability of drawing a King given that the card is a Spade is:
+The conditional probability of drawing a King given that the card is a Spade is:
 
 $$
 P(A|B) = \frac{P(A \cap B)}{P(B)} = \frac{1/52}{1/4} = \frac{1}{13}
 $$
 
-This matches **P(A)** because each suit has exactly one King, demonstrating how conditional probability works in this context.
+---
 
-We can also find **P(A ∩ B)** using the **Multiplication Rule** for probability. This rule states that the probability of both events A and B occurring can be calculated as:
+### Finding Intersections
+
+We can find **P(A ∩ B)** using the **Multiplication Rule** of the probability.
 
 $$
 P(A \cap B) = P(A) \cdot P(B|A)
 $$
-
-By multiplying these two probabilities, we're essentially calculating the likelihood of both A happening **and then** B happening under the condition that A has occurred.
 
 Imagine selecting two cards from a deck without replacement:
 
 - Let A be the event **"the first card is an Ace"**.
 - Let B be the event **"the second card is an Ace"**.
 
-The probability that both A and B occur is:
-
-1. First, find **P(A)**
+1. **P(A)**
    - There are 4 Aces out of 52 cards, so **P(A) = 4/52 = 1/13**.
 
-2. Now, find **P(B|A)**:
+2. **P(B|A)**:
    - If the first card was an Ace, there are now 3 Aces left out of 51 cards, so **P(B|A) = 3/51 = 1/17**.
 
 3. Multiply them together:
@@ -276,22 +268,20 @@ The probability that both A and B occur is:
    P(A \cap B) = P(A) \cdot P(B|A) = \frac{1}{13} \cdot \frac{1}{17} = \frac{1}{221}
    $$
 
-We correctly account for the dependency between A and B when calculating the joint probability.
-
 ---
 ### Dependent and Independent Events
 
-When analyzing probabilities, it's crucial to understand the relationship between events. Events can either be **dependent** or **independent**, which affects how we calculate probabilities involving them.
+Events can either be **dependent** or **independent**, which affects how we calculate probabilities involving them.
 
 #### **Independent Events**
 
-Two events **A** and **B** are said to be **independent** if the occurrence of one event **does not affect** the probability of the other event occurring. In other words:
+Two events **A** and **B** are said to be **independent** if the occurrence of one event **does not affect** the probability of the other event occurring.
 
 $$
 P(A|B) = P(A) \quad \text{or} \quad P(B|A) = P(B)
 $$
 
-This leads to the **Multiplication Rule for Independent Events**:
+This leads to the **Multiplication Rule** for Independent Events:
 
 $$
 P(A \cap B) = P(A) \cdot P(B)
@@ -300,13 +290,13 @@ $$
 **Example:**  
 Consider flipping a fair coin and rolling a fair six-sided die.
 
-- Let event **A** be **"getting Heads"** on the coin flip.
-- Let event **B** be **"rolling a 4"** on the die.
+- Let event **A** be **getting Heads** on the coin flip.
+- Let event **B** be **rolling a 4** on the die.
 
-Since flipping the coin has no impact on the die roll (and vice versa), A and B are independent.
+Since flipping the coin has no impact on the die roll and vice versa, A and B are independent.
 
-- **P(A) = 1/2** (since there are 2 equally likely outcomes: Heads or Tails)
-- **P(B) = 1/6** (since the die has 6 equally likely outcomes)
+- **P(A) = 1/2** 
+- **P(B) = 1/6** 
 
 The probability of both A and B occurring is:
 
@@ -314,37 +304,36 @@ $$
 P(A \cap B) = P(A) \cdot P(B) = \frac{1}{2} \cdot \frac{1}{6} = \frac{1}{12}
 $$
 
-This shows how we can simply multiply the probabilities when events are independent.
+We can simply multiply the probabilities when events are independent.
 
 ---
 
 #### Dependent Events
 
-Two events **A** and **B** are **dependent** if the occurrence of one event **affects** the probability of the other event occurring. In such cases, we must account for this dependency when calculating probabilities.
+Two events **A** and **B** are **dependent** if the occurrence of one event **affects** the probability of the other event occurring. 
 
-The **Multiplication Rule for Dependent Events** is:
+The **Multiplication Rule** for Dependent Events is:
 
 $$
 P(A \cap B) = P(A) \cdot P(B|A)
 $$
 
-Where **P(B|A)** represents the conditional probability of B occurring **given that A has already occurred**.
 
 **Example:**  
 Consider drawing two cards **without replacement** from a standard deck of 52 cards.
 
-- Let event **A** be **"the first card is a Queen"**.
-- Let event **B** be **"the second card is a Queen"**.
+- Let event **A** be **the first card is a Queen**.
+- Let event **B** be **the second card is a Queen**.
 
 Since the first card is not replaced, the events are dependent because the outcome of the first draw affects the probability of the second draw.
 
-1. **P(A)**: There are 4 Queens in the deck, so:
+1. **P(A)**: There are 4 Queens in the deck
 
    $$
    P(A) = \frac{4}{52} = \frac{1}{13}
    $$
 
-2. **P(B|A)**: If the first card was a Queen, there are now 3 Queens left in a deck of 51 cards:
+2. **P(B|A)**: If the first card was a Queen, there are now 3 Queens left in a deck of 51 cards
 
    $$
    P(B|A) = \frac{3}{51} = \frac{1}{17}
@@ -358,7 +347,9 @@ Since the first card is not replaced, the events are dependent because the outco
 
 This calculation reflects the dependency between events A and B.
 
-#### **Key Differences Between Independent and Dependent Events**
+---
+
+#### Differences Between Independent and Dependent Events
 
 - **Independent Events:** The outcome of one event **does not influence** the outcome of the other.
 - **Dependent Events:** The outcome of one event **does influence** the outcome of the other.
@@ -372,25 +363,22 @@ $$
 If this equality holds, the events are independent. If not, the events are dependent.
 
 ---
+
 ### Bayes' Theorem
-
-Bayes' Theorem provides a formal method for updating the probability of an event in light of new evidence, relating conditional and marginal probabilities to refine prior beliefs.
-
-#### **Bayes' Theorem Formula**
 
 $$
 P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}
 $$
 
 Where:
-- **P(A|B)** is the **posterior probability**: the probability of event A occurring given that event B has occurred.
-- **P(B|A)** is the **likelihood**: the probability of event B occurring given that event A has occurred.
-- **P(A)** is the **prior probability**: the initial probability of event A before considering event B.
-- **P(B)** is the **marginal probability**: the total probability of event B occurring.
+- **P(A|B)** is the **posterior probability**
+- **P(B|A)** is the **likelihood**
+- **P(A)** is the **prior probability**
+- **P(B)** is the **marginal probability**
 
 #### **Derivation of Bayes' Theorem**
 
-Bayes' Theorem is derived from the definition of conditional probability:
+Derived from the definition of conditional probability:
 
 $$
 P(A|B) = \frac{P(A \cap B)}{P(B)} \quad
