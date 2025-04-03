@@ -7,8 +7,6 @@ updatedAt: "2025-02-06"
 description: "Exploring Probability with Dr. Aras Erzurumluoglu" 
 ---
 
-### Introduction
-
 A **deterministic model** predicts the outcome of an experiment with certainty. 
 
 - Velocity of a falling object **v = gt**.  
@@ -430,25 +428,22 @@ $$
 
 So, even with a positive test result, the probability of actually having the disease is approximately **16.67%**.
 
+---
 
 ### Random Variables
 
-**Random Variable** is a function that assigns a real number to each outcome of a probability experiment. Random variables are defined when we want to focus on a particular outcomes of an experiment. More than one random variable can be defined for a given sample space. Usually, capital letters like **X** are used to denote random variables, while their lowercase counterparts, like **x**, represent particular values that **X** can take.
+**Random Variable** is a function that assigns a real number to each outcome of a probability experiment. Usually, capital **X** used to denote random variables, while their lowercase counterparts **x**, represent value that **X** can take. **Range** is the set of all values a random variable can produce. 
+
 
 A **Discrete Random Variable** has a countable set of possible values, while a **Continuous Random Variable** has an uncountable range, covering an interval of real numbers **ℝ**.
 
-**Range** is the set of all values a random variable can produce. It’s the list of results when random variable applied to the different outcomes.
-
----
-
-
 
 ### Probability Mass Function
+
 A Probability Mass Function gives the probability of each possible value of a **discrete random variable**. It tells us how likely each outcome is.
 
-Defined as:
 $$
-P(X = x) = f(x), \quad \text{where } 0 \leq P(X = x) \leq 1
+f(x) = P(X = x), \quad \text{where } 0 \leq P(X = x) \leq 1
 $$
 
 The total probability of all possible values must sum to 1:
@@ -456,22 +451,6 @@ The total probability of all possible values must sum to 1:
 $$
 \sum P(X = x) = 1
 $$
-
-**Rolling a fair 6-sided die:**
-
-Let **X** be the random variable of a fair 6-sided die. The outcomes **x** are:
-
-$$
-X \in \{1, 2, 3, 4, 5, 6\}
-$$
-
-Since each outcome is equally likely, the PMF is:
-
-$$
-P(X = x) = \frac{1}{6}, \quad x \in \{1,2,3,4,5,6\}
-$$
-
-A Probability Mass Function  is only used for discrete random variables. For continuous random variables, we use the Probability Density Function instead.
 
 
 ### Probability Density Function
@@ -485,19 +464,17 @@ For a continuous random variable **X**, the **PDF** satisfies:
    f(x) \geq 0, \quad \forall x \in \mathbb{R}
    $$
 
-2. **Total Probability is 1**:
+2. **Total Probability**:
    $$
    \int_{-\infty}^{\infty} f(x) \,dx = 1
    $$
-   The total area under the curve must be **1**.
 
-3. **Probability Over an Interval**:
-   The probability of a single point is always **zero**:
+3. **Probability of a single point always zero:**
    $$
    P(X = x) = 0
    $$  
 
-  For a piecewise function **f(x)** that is zero outside a given interval, we find probabilities over intervals by integrating within those intervals. Specifically, the probability that **X** lies between **a** and **b** is:
+  For a piecewise function **f(x)** that is zero outside a given interval, we find probabilities over intervals by integrating within those intervals. 
 
    $$
    P(a \leq X \leq b) = \int_{a}^{b} f(x) \,dx
@@ -519,10 +496,6 @@ Whether we use ≤ or < in the bounds does not affect the result, because the pr
       <td style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">Used for continuous random variables</td>
     </tr>
     <tr>
-      <td style="padding: 8px; border: 0.5px solid lightgray;">$$ P(X = x) > 0 $$ </td>
-      <td style="padding: 8px; border: 0.5px solid lightgray;">$$ P(X = x) = 0 $$ </td>
-    </tr>
-    <tr>
       <td style="padding: 8px; border: 0.5px solid lightgray;">$$ P(a \leq X \leq b) = \sum P(X = x) $$</td>
       <td style="padding: 8px; border: 0.5px solid lightgray;">$$ P(a \leq X \leq b) = \int_a^b f(x) dx $$</td>
     </tr>
@@ -531,8 +504,8 @@ Whether we use ≤ or < in the bounds does not affect the result, because the pr
       <td style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">Takes uncountable values</td>
     </tr>
     <tr>
-      <td style="padding: 8px; border: 0.5px solid lightgray;">Sum of probabilities: <br> $$ \sum P(X = x) = 1 $$</td>
-      <td style="padding: 8px; border: 0.5px solid lightgray;">Area under the curve: <br> $$ \int_{-\infty}^{\infty} f(x) dx = 1 $$</td>
+      <td style="padding: 8px; border: 0.5px solid lightgray;">$$ \sum P(X = x) = 1 $$</td>
+      <td style="padding: 8px; border: 0.5px solid lightgray;">$$ \int_{-\infty}^{\infty} f(x) dx = 1 $$</td>
     </tr>
     <tr>
       <td style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">Rolling a die, heads in coin flips</td>
@@ -552,24 +525,15 @@ Whether we use ≤ or < in the bounds does not affect the result, because the pr
   }
 </style>
 
+---
+
 ### Cumulative Distribution Function
 
-A **Cumulative Distribution Function** gives the probability that a random variable **X** takes on a value **less than or equal to** a specific value **x**. It applies to both **discrete** and **continuous** random variables.
-
-Defined as:
+A **Cumulative Distribution Function** gives the probability that a random variable **X** takes on a value **less than or equal to** a specific value **x**.
 
 $$
 F(x) = P(X \leq x)
 $$
-
-Satisfies:
-
-$$\lim_{x \to -\infty} F(x) = 0$$
-$$\lim_{x \to \infty} F(x) = 1$$
-
----
-
-### CDF for Discrete RV
 
 For a **discrete random variable**, the CDF is the sum of the probabilities of all outcomes **less than or equal to** **x**:
 
@@ -577,59 +541,17 @@ $$
 F(x) = P(X \leq x) = \sum_{t \leq x} P(X = t)
 $$
 
-**Example: Number of heads in two fair coin tosses**
+- **Probability at a constant**
 
-Let **X** be the number of heads that appear when tossing a fair coin **twice**.The possible values of **X** are **{0, 1, 2}**, with the following PMF:
+$$
+P(X = x) = F(x) - F(x - 1)
+$$
 
-- Both tosses are tails
-$$P(X = 0) = \tfrac{1}{4}$$  
+- **Probability over an interval** 
 
-- Exactly one toss is heads
-$$P(X = 1) = \tfrac{2}{4}$$  
-
-- Both tosses are heads
-$$P(X = 2) = \tfrac{1}{4}$$  
-
-From this PMF, we can determine the CDF:
-
-<div style="overflow-x: auto; text-align: center;">
-  <table style="font-size: 0.9em; width:100%; max-width: 600px; text-align: center; border-collapse: collapse; margin: auto;">
-    <tr>
-      <th style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">\( x \)</th>
-      <th style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">\( F(x) \)</th>
-    </tr>
-    <tr>
-      <td style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">$$0$$</td>
-      <td style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">$$F(0) = P(X \le 0) = P(X = 0) = \frac{1}{4}$$</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">$$1$$</td>
-      <td style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">$$F(1) = P(X \le 1) = P(X = 0) + P(X = 1) = \frac{1}{4} + \frac{2}{4} = \frac{3}{4}$$</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">$$2$$</td>
-      <td style="padding: 8px; border: 0.5px solid lightgray; text-align: center;">$$F(2) = P(X \le 2) = 1$$</td>
-    </tr>
-  </table>
-</div>
-
-<style>
-  @media screen and (max-width: 600px) {
-    table {
-      font-size: 0.8em; 
-    }
-    th, td {
-      padding: 6px; 
-    }
-  }
-</style>
-
-
-
-
----
-
-### CDF for Continuous RV
+$$
+P(a \leq X \leq b) = F(b) - F(a-1)
+$$
 
 For a **continuous random variable**, the CDF is the **integral** of the probability density function from **-∞** to **x**:
 
@@ -641,96 +563,185 @@ The derivative of the CDF gives the PDF:
   $$
   f(x) = \frac{d}{dx}F(x)
   $$
-**Range:** $$0 \leq F(x) \leq 1$$ 
-**Probability of an Interval:**
+
+- **Probability at a constant value**  
+  $$
+  P(X = x) = 0
+  $$
+
+- **Probability of an Interval**
   $$
   P(a \leq X \leq b) = F(b) - F(a)
   $$
 
-### Question
+--- 
 
-Find the **cumulative distribution function F(x)** for the given probability density function and **Evaluate** P(0.5 ≤ **X** ≤ 1).
+### PMF to CDF Conversion
 
-1. **Identify the PDF**  
+Consider a discrete random variable **X** with the following **PMF** defined over four points:
 
-   $$
-   f(x) = 
-   \begin{cases}
-   3e^{-3x}& x > 0, \\
-   0&\text{otherwise}.
-   \end{cases}
-   $$
+$$
+p(x) = \begin{cases} 
+\frac{1}{8}, & x = 0, \\\\[6pt]
+\frac{3}{8}, & x = 1, \\\\[6pt]
+\frac{3}{8}, & x = 2, \\\\[6pt]
+\frac{1}{8}, & x = 3, \\\\[6pt]
+0, & \text{otherwise}.
+\end{cases}
+$$
 
-  For **x ≤ 0**:
-
+- For **0 ≤ x < 1**:  
   $$
-  F(x) = 0
-  $$
-
-2. **Find the CDF**  
-
-   $$
-   F(x) = P(X \leq x) = \int_{-\infty}^{x} f(t)\,dt.
-   $$
-
-$$
-\text{ the integral only starts at } t=0 \text{ for } x > 0.
-$$
-
-   
-
-  For **x > 0**:
-
-$$
-  F(x) = \int_{0}^{x} 3e^{-3t} \, dt
-  = \left[ -e^{-3t} \right]_{0}^{x}
-$$
-$$
-  = - e^{-3x} + 1
-  = 1 - e^{-3x}.
-$$
-
-  Therefore,
-
-$$
-   F(x) =
-   \begin{cases}
-   0, & x \le 0, \\
-   1 - e^{-3x}, & x > 0.
-   \end{cases}
-$$
-
-
-
-  
-  $$
-  F(1) = 1 - e^{-3 \cdot 1} = 1 - e^{-3}.
+  F(x) = p(0) = \frac{1}{8}
   $$
 
-  
+- For **1 ≤ x < 2**:  
   $$
-  F(0.5) = 1 - e^{-3 \cdot 0.5} = 1 - e^{-1.5}.
+  F(x) = p(0) + p(1) = \frac{1}{8} + \frac{3}{8} = \frac{4}{8} = \frac{1}{2}
   $$
 
-Putting together:
-$$
-P(0.5 \le X \le 1) = F(1) - F(0.5).
-$$
+- For **2 ≤ x < 3**:  
+  $$
+  F(x) = p(0) + p(1) + p(2) = \frac{1}{8} + \frac{3}{8} + \frac{3}{8} = \frac{7}{8}
+  $$
+
+- For **x ≥ 3**:  
+  $$
+  F(x) = p(0) + p(1) + p(2) + p(3) = \frac{1}{8} + \frac{3}{8} + \frac{3}{8} + \frac{1}{8} = 1.
+  $$
+
+**Therefore the CDF is:**
 
 $$
-P(0.5 \le X \le 1) = \bigl(1 - e^{-3}\bigr) - \bigl(1 - e^{-1.5}\bigr) 
-$$
-$$
-= e^{-1.5} - e^{-3}.
+F(x) = \begin{cases} 
+0, & x < 0, \\\\[6pt]
+\frac{1}{8}, & 0 \le x < 1, \\\\[6pt]
+\frac{1}{2}, & 1 \le x < 2, \\\\[6pt]
+\frac{7}{8}, & 2 \le x < 3, \\\\[6pt]
+1, & x \ge 3.
+\end{cases}
 $$
 
-Finally:
+---
+
+### CDF to PMF Conversion
+
+Using the discrete **CDF** from the previous example:
+
 $$
-\begin{aligned}
-e^{-1.5} - e^{-3} &\approx = 0.173343.
-\end{aligned}
+F(x) = \begin{cases} 
+0, & x < 0, \\\\[6pt]
+\frac{1}{8}, & 0 \le x < 1, \\\\[6pt]
+\frac{1}{2}, & 1 \le x < 2, \\\\[6pt]
+\frac{7}{8}, & 2 \le x < 3, \\\\[6pt]
+1, & x \ge 3.
+\end{cases}
+$$
+
+- For **x = 0**:  
+  $$
+  p(0) = F(0) - \lim_{x \to 0^-} F(x) = \frac{1}{8} - 0 = \frac{1}{8}.
+  $$
+
+- For **x = 1**:  
+  $$
+  p(1) = F(1) - F(0) = \frac{1}{2} - \frac{1}{8} = \frac{3}{8}.
+  $$
+
+- For **x = 2**:  
+  $$
+  p(2) = F(2) - F(1) = \frac{7}{8} - \frac{1}{2} = \frac{3}{8}.
+  $$
+
+- For **x = 3**:  
+  $$
+  p(3) = F(3) - F(2) = 1 - \frac{7}{8} = \frac{1}{8}.
+  $$
+
+**Therefore the PMF is:**
+
+$$
+f(x) = \begin{cases} 
+\frac{1}{8}, & x = 0, \\\\[6pt]
+\frac{3}{8}, & x = 1, \\\\[6pt]
+\frac{3}{8}, & x = 2, \\\\[6pt]
+\frac{1}{8}, & x = 3, \\\\[6pt]
+0, & \text{otherwise}.
+\end{cases}
 $$
 
 
 ---
+
+### PDF to CDF Conversion
+
+Consider a continuous random variable **X** with the following piecewise **PDF** defined over two intervals:
+
+$$
+f(x) = \begin{cases} x, & 0 \leq x < 1, \\\ 2 - x, & 1 \leq x \leq 2, \\\ 0, & \text{otherwise}.
+\end{cases}
+$$
+
+- For **x < 0**:  
+$$
+F(x) = 0
+$$
+
+- For **0 ≤  x < 1**:  
+$$
+F(x) = \int_{0}^{x} t \ dt = \frac{x^2}{2}
+$$
+
+- For **1 ≤  x ≤  2**:  
+
+$$
+\int_{0}^{1} t \ dt + \int_{1}^{x} (2-t) \ dt 
+$$
+
+$$
+ \frac{1}{2} + \left[2x - \frac{x^2}{2} - \left(2 - \frac{1}{2}\right)\right]
+$$
+
+$$
+F(x) = 2x - \frac{x^2}{2} - 1.
+$$
+
+- For **x > 2**:  
+$$
+F(x) = 1.
+$$
+
+**Therefore the CDF is:**
+
+$$
+F(x) = \begin{cases} 0, & x < 0, \\\ \frac{x^2}{2}, & 0 \le x < 1, \\\ 2x - \frac{x^2}{2} - 1, & 1 \le x \le 2, \\\ 1, & x > 2. \end{cases}
+$$
+
+---
+
+### CDF to PDF Conversion
+
+
+Using the continuous **CDF** from the previous example:
+
+$$
+F(x) = \begin{cases} 0, & x < 0, \\\ \frac{x^2}{2}, & 0 \le x < 1, \\\ 2x - \frac{x^2}{2} - 1, & 1 \le x \le 2, \\\ 1, & x > 2. \end{cases}
+$$
+
+- For **0 ≤ x < 1**:  
+$$
+f(x) = \frac{d}{dx}\left(\frac{x^2}{2}\right) = x.
+$$
+
+- For **1 ≤ x ≤ 2**:  
+$$
+f(x) = \frac{d}{dx}\left(2x - \frac{x^2}{2} - 1\right) = 2 - x.
+$$
+
+**Therfore the PDF is:**
+
+$$
+f(x) = \begin{cases} x, & 0 \leq x < 1, \\\ 2 - x, & 1 \leq x \leq 2, \\\ 0, & \text{otherwise}.
+\end{cases}
+$$
 
