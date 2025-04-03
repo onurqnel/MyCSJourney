@@ -434,8 +434,7 @@ So, even with a positive test result, the probability of actually having the dis
 
 **Random Variable** is a function that assigns a real number to each outcome of a probability experiment. Usually, capital **X** used to denote random variables, while their lowercase counterparts **x**, represent value that **X** can take. **Range** is the set of all values a random variable can produce. 
 
-
-A **Discrete Random Variable** has a countable set of possible values, while a **Continuous Random Variable** has an uncountable range, covering an interval of real numbers **ℝ**.
+> **Note:**  A **Discrete Random Variable** has a countable set of possible values, while a **Continuous Random Variable** has an uncountable range, covering an interval of real numbers **ℝ**.
 
 
 ### Probability Mass Function
@@ -480,7 +479,7 @@ For a continuous random variable **X**, the **PDF** satisfies:
    P(a \leq X \leq b) = \int_{a}^{b} f(x) \,dx
    $$  
 
-Whether we use ≤ or < in the bounds does not affect the result, because the probability of a single point is zero.
+> **Note:** Whether we use ≤ or < in the bounds does not affect the result, because the probability of a single point is zero.
 
  <br>
 
@@ -744,4 +743,90 @@ $$
 f(x) = \begin{cases} x, & 0 \leq x < 1, \\\ 2 - x, & 1 \leq x \leq 2, \\\ 0, & \text{otherwise}.
 \end{cases}
 $$
+
+---
+
+### Multivariete Disturbutions
+
+For two **discrete random variables** **X** and **Y**, the **Joint Probability Mass Function** gives the probability of each possible pair of outcomes.
+
+$$
+f_{X,Y}(x,y) = P(X = x,\, Y = y), \quad \text{where } 0 \leq f_{X,Y}(x,y) \leq 1
+$$
+
+The total probability across all pairs of outcomes must sum to 1:
+
+$$
+\sum_{x} \sum_{y} f_{X,Y}(x,y) = 1
+$$
+
+For two **continuous random variables** **X** and **Y**, the **Joint Probability Density Function** describes the density of probability over a two-dimensional region. 
+
+1. **Non-negativity**:
+   $$
+   f_{X,Y}(x,y) \geq 0, \quad \forall x, y \in \mathbb{R}
+   $$
+
+2. **Total Probability**:
+   $$
+   \int_{-\infty}^{\infty}\int_{-\infty}^{\infty} f_{X,Y}(x,y) \,dx\,dy = 1
+   $$
+
+3. **Probability Over Interval**:  
+
+   $$
+   P(a \leq X \leq b , c \leq Y \leq d) = \int_{d}^{c} \int_{b}^{a} f_{X,Y}(x, y) \ dxdy
+   $$
+
+---
+
+### Marginal Distributions
+
+Given a **joint probability mass function** f(x,y) the **marginal probability mass functions** of x and y are obtained by summing over the other variable:
+
+- Marginal PMF of **x**:
+  $$
+  f_X(x) = \sum_{y} f_{X,Y}(x, y)
+  $$
+
+- Marginal PMF of **y**:
+  $$
+  f_Y(y) = \sum_{x} f_{X,Y}(x, y)
+  $$
+
+Given a **joint probability density function** f(x,y) the **marginal probability density functions** of x and y are obtained by integrating over the other variable:
+
+- Marginal PDF of **x**:
+  $$
+  f_X(x) = \int_{-\infty}^{\infty} f_{X,Y}(x, y) \, dy
+  $$
+
+- Marginal PDF of **y**:
+  $$
+  f_Y(y) = \int_{-\infty}^{\infty} f_{X,Y}(x, y) \, dx
+  $$
+
+
+### Independence of Random Variables
+
+Two random variables **X** and **Y** are **independent** if the joint distribution factors into the product of their marginals.
+
+#### Discrete Case
+
+For discrete random variables, **X** and **Y** are independent if and only if:
+
+$$
+f_{X,Y}(x, y) = f_X(x) \cdot f_Y(y) \quad \text{for all } x, y
+$$
+
+
+#### Continuous Case
+
+For continuous random variables, **X** and **Y** are independent if and only if:
+
+$$
+f_{X,Y}(x, y) = f_X(x) \cdot f_Y(y) \quad \text{for all } x, y
+$$
+
+> **Note:** Verifying independence requires checking that this factorization holds for **all** values in the domain of the joint distribution.
 
