@@ -862,7 +862,7 @@ Given a **joint probability density function** the **marginal probability densit
 
 ---
 
-### Independence of Random Variables
+### Independence 
 
 Two random variables **X** and **Y** are **independent** if the joint distribution factors into the product of their marginals.
 
@@ -887,7 +887,7 @@ $$
 
 ---
 
-### Conditional Probability Using Marginal Distributions
+### Conditional Probability 
 
 #### Discrete Case
 The **conditional probability mass** of **X** given **Y = y** is:
@@ -938,48 +938,45 @@ $$
 
 > **Note:** The expected value is only defined when the **PMF or PDF** satisfies the required properties such as non-negativity and total equals 1, and when the **sum or integral converges to a finite value**.
 
----
 
-### Expected Value of a Function of a Random Variable
-
-If **X** is a random variable and **g(x)** is a real-valued function of **X**, the **expected value** of **g(X)** is denoted as:
+If **X** is a random variable and **g( x )** is a real-valued function of **X**, the **expected value** of **g( x )** is denoted as:
 
 $$
 \mathbb{E}[g(X)]
 $$
 
 
-If **X** is a DRV with the PMF 
+If **X** is a DRV
 $$
 \mathbb{E}[g(X)] = \sum g(x) \cdot f(x)
 $$
 
 
-If **X** is a CRV with the PDF
+If **X** is a CRV 
 $$
 \mathbb{E}[g(X)] = \int_{-\infty}^{\infty} g(x) \cdot f(x) \, dx
 $$
 
+---
 
-#### Examples 
+### Moments About Origin
+- **The 0th Moment**, ensures probabilities sum to 1 in the distribution:
+  $$\mathbb{E}[X^0] = 1$$
 
-- The first moment, the mean or central value: 
+
+- **The 1th Moment**, the mean, average or central value of the distribution:
   $$\mathbb{E}[X] = \sum x \cdot f(x) \quad \text{or} \quad \int x \cdot f(x) \, dx$$
 
-- The second moment, used in variance and spread of the distribution:
+- **The 2nd moment**, used in variance and spread of the distribution:
   $$\mathbb{E}[X^2] = \sum x^2 \cdot f(x) \quad \text{or} \quad \int x^2 \cdot f(x) \, dx$$
 
-- The third moment, which measures skewness:
+- **The 3th moment**, which measures skewness of the distribution:
     $$\mathbb{E}[X^3] = \sum x^3 \cdot f(x) \quad \text{or} \quad \int x^3 \cdot f(x) \, dx$$
-
----
 
 #### Linearity of Expected Value
 The **expected value** is **linear**, meaning it distributes over addition and allows constants to factor out.
 
   $$\mathbb{E}[aX + b] = a \cdot \mathbb{E}[X] + b$$
-
-This rule allows us to simplify the expectation of any linear transformation of a random variable.
 
 - **Scaling** a random variable by **a** scales the expectation by **a**
 - **Shifting** a random variable by **b** shifts the expectation by **b**
@@ -1002,11 +999,9 @@ $$
 \mathbb{E}[g(X, Y)] = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} g(x, y) \cdot f_{X,Y}(x, y) \, dx\, dy
 $$
 
----
+#### Examples
 
-#### Examples of Common Functions g(x, y)
-
-- **Sum of two variables:**  
+**Sum of two variables:**  
   $$g(x, y) = x + y$$  
   Then the expected value becomes:  
   $$
@@ -1016,7 +1011,7 @@ $$
 
   
 
-- **Product of two variables:**  
+**Product of two variables:**  
   $$g(x, y) = x \cdot y$$  
   Then the expected value is:  
   $$
