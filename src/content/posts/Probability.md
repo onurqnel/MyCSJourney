@@ -806,6 +806,7 @@ Given a **joint probability density function** f(x,y) the **marginal probability
   f_Y(y) = \int_{-\infty}^{\infty} f_{X,Y}(x, y) \, dx
   $$
 
+---
 
 ### Independence of Random Variables
 
@@ -830,3 +831,64 @@ $$
 
 > **Note:** Verifying independence requires checking that this factorization holds for **all** values in the domain of the joint distribution.
 
+---
+
+### Conditional Probability Using Marginal Distributions
+
+#### Discrete Case
+
+Let **X** and **Y** be discrete random variables with joint probability mass function **f(x, y)**.
+
+The **conditional probability** of **X** given **Y = y** is:
+
+$$
+P(X = x \mid Y = y) = \frac{f_{X,Y}(x, y)}{f_Y(y)} \quad \text{provided } f_Y(y) > 0
+$$
+
+The **marginal distribution** of **Y** is:
+
+$$
+f_Y(y) = \sum_{x} f_{X,Y}(x, y)
+$$
+
+Similarly, the conditional probability of **Y** given **X = x** is:
+
+$$
+P(Y = y \mid X = x) = \frac{f_{X,Y}(x, y)}{f_X(x)} \quad \text{provided } f_X(x) > 0
+$$
+
+The **marginal distribution** of **X** is:
+
+$$
+f_X(x) = \sum_{y} f_{X,Y}(x, y)
+$$
+
+#### Continuous Case
+
+Let **X** and **Y** be continuous random variables with joint probability density function **f_{X,Y}(x, y)**.
+
+The **conditional probability density** of **X** given **Y = y** is:
+
+$$
+f_{X \mid Y}(x \mid y) = \frac{f_{X,Y}(x, y)}{f_Y(y)} \quad \text{provided } f_Y(y) > 0
+$$
+
+The **marginal density** of **Y** is:
+
+$$
+f_Y(y) = \int_{-\infty}^{\infty} f_{X,Y}(x, y) \, dx
+$$
+
+Likewise, the conditional density of **Y** given **X = x** is:
+
+$$
+f_{Y \mid X}(y \mid x) = \frac{f_{X,Y}(x, y)}{f_X(x)} \quad \text{provided } f_X(x) > 0
+$$
+
+The **marginal density** of **X** is:
+
+$$
+f_X(x) = \int_{-\infty}^{\infty} f_{X,Y}(x, y) \, dy
+$$
+
+> Note: The conditional density must integrate to 1 over its variable. For example, the total area under f(x | y) with respect to x must be 1.
