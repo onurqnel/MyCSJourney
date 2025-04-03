@@ -432,7 +432,7 @@ So, even with a positive test result, the probability of actually having the dis
 
 ### Random Variables
 
-**Random Variable** is a function that assigns a real number to each outcome of a probability experiment. Usually, capital **X** used to denote random variables, while their lowercase counterparts **x**, represent value that **X** can take. **Range** is the set of all values a random variable can produce. 
+**RV** is a function that assigns a real number to each outcome of a probability experiment. Usually, capital **X** used to denote random variables, while their lowercase counterparts **x**, represent value that **X** can take. **Range** is the set of all values a random variable can produce. 
 
 > **Note:**  A **Discrete Random Variable** has a countable set of possible values, while a **Continuous Random Variable** has an uncountable range, covering an interval of real numbers **ℝ**.
 
@@ -450,6 +450,52 @@ The total probability of all possible values must sum to 1:
 $$
 \sum P(X = x) = 1
 $$
+
+#### Finding Probabilities Using the PMF
+
+- To find the probability that a discrete random variable equals a specific constant:
+
+  $$
+  P(X = c) = f(c)
+  $$
+
+- The probability that the variable falls between two values
+
+  $$
+  P(a \leq X \leq b) = \sum_{x = a}^{b} f(x)
+  $$
+
+  $$
+  P(a < X < b) = \sum_{x = a+1}^{b-1} f(x)
+  $$
+
+Let **X** be a discrete random variable with PMF:
+
+$$
+f(x) = \begin{cases}
+\frac{1}{8}, & x = 0, \\\\[6pt]
+\frac{3}{8}, & x = 1, \\\\[6pt]
+\frac{3}{8}, & x = 2, \\\\[6pt]
+\frac{1}{8}, & x = 3, \\\\[6pt]
+0, & \text{otherwise}.
+\end{cases}
+$$
+
+Therefore the example porbabilities:
+
+$$
+P(X = 2) = f(2) = \frac{3}{8}
+$$  
+
+$$
+P(1 \leq X \leq 3) = f(1) + f(2) + f(3) = \frac{3}{8} + \frac{3}{8} + \frac{1}{8} = \frac{7}{8}
+$$  
+
+$$
+P(0 < X < 3) = f(1) + f(2) = \frac{3}{8} + \frac{3}{8} = \frac{6}{8} = \frac{3}{4}
+$$
+
+
 
 
 ### Probability Density Function
@@ -674,7 +720,7 @@ $$
 
 ### PDF to CDF Conversion
 
-Consider a continuous random variable **X** with the following piecewise **PDF** defined over two intervals:
+Consider a continuous random variable **X** with the following piecewise **PDF** defined:
 
 $$
 f(x) = \begin{cases} x, & 0 \leq x < 1, \\\ 2 - x, & 1 \leq x \leq 2, \\\ 0, & \text{otherwise}.
@@ -705,7 +751,15 @@ $$
 F(x) = 2x - \frac{x^2}{2} - 1.
 $$
 
+> Note: In each interval, add the CDF value by plugging in the previous interval’s upper bound.
+
 - For **x > 2**:  
+
+$$
+F(2) + \int_{2}^{x} 0 dt = F(2) = 1
+$$
+
+
 $$
 F(x) = 1.
 $$
@@ -782,7 +836,7 @@ For two **continuous random variables** **X** and **Y**, the **Joint Probability
 
 ### Marginal Distributions
 
-Given a **joint probability mass function** f(x,y) the **marginal probability mass functions** of x and y are obtained by summing over the other variable:
+Given a **joint probability mass function** the **marginal probability mass functions** of x and y are obtained by summing over the other variable:
 
 - Marginal PMF of **x**:
   $$
@@ -794,7 +848,7 @@ Given a **joint probability mass function** f(x,y) the **marginal probability ma
   f_Y(y) = \sum_{x} f_{X,Y}(x, y)
   $$
 
-Given a **joint probability density function** f(x,y) the **marginal probability density functions** of x and y are obtained by integrating over the other variable:
+Given a **joint probability density function** the **marginal probability density functions** of x and y are obtained by integrating over the other variable:
 
 - Marginal PDF of **x**:
   $$
@@ -836,59 +890,143 @@ $$
 ### Conditional Probability Using Marginal Distributions
 
 #### Discrete Case
-
-Let **X** and **Y** be discrete random variables with joint probability mass function **f(x, y)**.
-
-The **conditional probability** of **X** given **Y = y** is:
+The **conditional probability mass** of **X** given **Y = y** is:
 
 $$
-P(X = x \mid Y = y) = \frac{f_{X,Y}(x, y)}{f_Y(y)} \quad \text{provided } f_Y(y) > 0
-$$
-
-The **marginal distribution** of **Y** is:
-
-$$
-f_Y(y) = \sum_{x} f_{X,Y}(x, y)
+P(X = x \mid Y = y) = \frac{f_{X,Y}(x, y)}{f_Y(y)} \quad \text{for } f_Y(y) > 0
 $$
 
 Similarly, the conditional probability of **Y** given **X = x** is:
 
 $$
-P(Y = y \mid X = x) = \frac{f_{X,Y}(x, y)}{f_X(x)} \quad \text{provided } f_X(x) > 0
-$$
-
-The **marginal distribution** of **X** is:
-
-$$
-f_X(x) = \sum_{y} f_{X,Y}(x, y)
+P(Y = y \mid X = x) = \frac{f_{X,Y}(x, y)}{f_X(x)} \quad \text{for } f_X(x) > 0
 $$
 
 #### Continuous Case
-
-Let **X** and **Y** be continuous random variables with joint probability density function **f_{X,Y}(x, y)**.
-
 The **conditional probability density** of **X** given **Y = y** is:
 
 $$
-f_{X \mid Y}(x \mid y) = \frac{f_{X,Y}(x, y)}{f_Y(y)} \quad \text{provided } f_Y(y) > 0
-$$
-
-The **marginal density** of **Y** is:
-
-$$
-f_Y(y) = \int_{-\infty}^{\infty} f_{X,Y}(x, y) \, dx
+f_{X \mid Y}(x \mid y) = \frac{f_{X,Y}(x, y)}{f_Y(y)} \quad \text{for } f_Y(y) > 0
 $$
 
 Likewise, the conditional density of **Y** given **X = x** is:
 
 $$
-f_{Y \mid X}(y \mid x) = \frac{f_{X,Y}(x, y)}{f_X(x)} \quad \text{provided } f_X(x) > 0
+f_{Y \mid X}(y \mid x) = \frac{f_{X,Y}(x, y)}{f_X(x)} \quad \text{for } f_X(x) > 0
 $$
 
-The **marginal density** of **X** is:
+> Note: The conditional density must integrate to 1 over its variable.
+
+---
+
+### Expected Value
+
+The **Expected Value** of a random variable **X**, denoted by **μ** or **E(X)**, represents the **long-run average** of outcomes weighted by their probabilities.
+
+
+If **X** is a **discrete random variable** with probability mass function **f(x)**, the expected value is:
 
 $$
-f_X(x) = \int_{-\infty}^{\infty} f_{X,Y}(x, y) \, dy
+\mu = \mathbb{E}(X) = \sum x \cdot f(x)
 $$
 
-> Note: The conditional density must integrate to 1 over its variable. For example, the total area under f(x | y) with respect to x must be 1.
+If **X** is a **continuous random variable** with probability density function **f(x)**, the expected value is:
+
+$$
+\mu = \mathbb{E}(X) = \int_{-\infty}^{\infty} x \cdot f(x) \, dx
+$$
+
+> **Note:** The expected value is only defined when the **PMF or PDF** satisfies the required properties such as non-negativity and total equals 1, and when the **sum or integral converges to a finite value**.
+
+---
+
+### Expected Value of a Function of a Random Variable
+
+If **X** is a random variable and **g(x)** is a real-valued function of **X**, the **expected value** of **g(X)** is denoted as:
+
+$$
+\mathbb{E}[g(X)]
+$$
+
+
+If **X** is a DRV with the PMF 
+$$
+\mathbb{E}[g(X)] = \sum g(x) \cdot f(x)
+$$
+
+
+If **X** is a CRV with the PDF
+$$
+\mathbb{E}[g(X)] = \int_{-\infty}^{\infty} g(x) \cdot f(x) \, dx
+$$
+
+
+#### Examples 
+
+- The first moment, the mean or central value: 
+  $$\mathbb{E}[X] = \sum x \cdot f(x) \quad \text{or} \quad \int x \cdot f(x) \, dx$$
+
+- The second moment, used in variance and spread of the distribution:
+  $$\mathbb{E}[X^2] = \sum x^2 \cdot f(x) \quad \text{or} \quad \int x^2 \cdot f(x) \, dx$$
+
+- The third moment, which measures skewness:
+    $$\mathbb{E}[X^3] = \sum x^3 \cdot f(x) \quad \text{or} \quad \int x^3 \cdot f(x) \, dx$$
+
+---
+
+#### Linearity of Expected Value
+The **expected value** is **linear**, meaning it distributes over addition and allows constants to factor out.
+
+  $$\mathbb{E}[aX + b] = a \cdot \mathbb{E}[X] + b$$
+
+This rule allows us to simplify the expectation of any linear transformation of a random variable.
+
+- **Scaling** a random variable by **a** scales the expectation by **a**
+- **Shifting** a random variable by **b** shifts the expectation by **b**
+
+---
+
+### Multivariate Expected Value
+
+For two random variables **X** and **Y**, the **expected value of a function** $$g(X, Y)$$ represents the average value of that function over their joint distribution.
+
+If **X** and **Y** are discrete random variables with **joint PMF** 
+$$
+\mathbb{E}[g(X, Y)] = \sum_x \sum_y g(x, y) \cdot f_{X,Y}(x, y)
+$$
+
+
+If **X** and **Y** are continuous random variables with **joint PDF** 
+
+$$
+\mathbb{E}[g(X, Y)] = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} g(x, y) \cdot f_{X,Y}(x, y) \, dx\, dy
+$$
+
+---
+
+#### Examples of Common Functions g(x, y)
+
+- **Sum of two variables:**  
+  $$g(x, y) = x + y$$  
+  Then the expected value becomes:  
+  $$
+  \mathbb{E}[X + Y] = \mathbb{E}[X] + \mathbb{E}[Y]
+  $$  
+  This is a special case of the **linearity of expectation**, and holds even if **X** and **Y** are not independent.
+
+  
+
+- **Product of two variables:**  
+  $$g(x, y) = x \cdot y$$  
+  Then the expected value is:  
+  $$
+  \mathbb{E}[XY] = 
+  \begin{cases}
+  \sum_x \sum_y x y \cdot f_{X,Y}(x, y), & \text{discrete case} \\\\[6pt]
+  \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} x y \cdot f_{X,Y}(x, y) \, dx\,dy, & \text{continuous case}
+  \end{cases}
+  $$
+
+  If **X** and **Y** are independent, then: 
+  $$\mathbb{E}[XY] = \mathbb{E}[X] \cdot \mathbb{E}[Y]$$
+
