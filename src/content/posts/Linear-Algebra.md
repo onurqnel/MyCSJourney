@@ -4,7 +4,7 @@ author: onur
 tags: [" Matrices", " Determinants", " Vector Spcaes", " Linear Transformation"]
 createdAt: "2025-01-29"
 updatedAt: "2025-01-29"
-description: "Exploring Linear Algebra for the Efficient Representation, Manipulation, and Optimization in High Dimensions"
+description: "Efficient Representation, Manipulation, and Optimization in High Dimensions"
 ---
 
 ### Matrix Addition
