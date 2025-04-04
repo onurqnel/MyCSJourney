@@ -9,25 +9,25 @@ description: "Exploring Probability with Dr. Aras Erzurumluoglu"
 
 A **deterministic model** predicts the outcome of an experiment with certainty. 
 
-- Velocity of a falling object **v = gt**.  
+- Velocity of a falling object $v = gt$.  
 
 A **probabilistic** or **stochastic model**  assigns a probability to each possible outcome.  
 
-- Rolling a die results in probability of **1/6**.  
+- Rolling a die results in probability of $1/6$.  
 
-When there are **N** possible equally likely outcomes, and **k** succeses, then the probability is:
+When there are $N$ possible equally likely outcomes, and $k$ succeses, then the probability is:
 
 $$
 P(\text{success}) = \frac{k}{N}
 $$
 
-These values describe the **frequency** of the successful outcome and the proportion of times the event occurs in the **LONG RUN**.
+These values describe the frequency of the successful outcome and the proportion of times the event occurs in the **LONG RUN**.
 
 ---
 
 ### Sample Spaces  
 
-The **sample space** is the set of all possible outcomes of an experiment. 
+The sample space is the set of all possible outcomes of an experiment. 
 
 - A **discrete** sample space has a finite or countably infinite number of elements.  
 
@@ -36,40 +36,40 @@ The **sample space** is the set of all possible outcomes of an experiment.
 
 Individual elements of a sample space are called **outcomes** while subsets of a sample space are called **events**.  
 
-**Spinning Spinner**  
+For example the Probability Spinner has $ \text{Sample space: } {θ \text{ degrees} \mid θ \in [0, 360)}$
 
-$$ \text{Sample space: } {θ \text{ degrees} \mid θ \in [0, 360)}$$
 
-**Events**
-- **A:** Landing between **90 and 180 degrees**<br>
-- **B:** Landing either between **45 and 90 degrees** or between **270 and 315 degrees**  <br>
-- **C:** Landing precisely on **180 degrees**.    
+
+**Therefore events could be**
+- Landing between 90 and 180 degrees<br>
+- Landing either between 45 and 90 degrees or between 270 and 315 degrees  <br>
+- Landing precisely on 180 degrees.    
 
 ---
 
 ### Union, Intersection and Complement  
 
-Let **A** and **B** be events in sample space **S**
+Let $A$ and $B$ be events in sample space $S$
 
-- The **Union** of **A** and **B** is the set of outcomes that are in either **A** or **B**, or both:  
+- The **Union** of $A$ and $B$ is the set of outcomes that are in either $A$ or $B$, or both:  
 
   $$
   A ∪ B = \{ x ∈ S \mid x ∈ A \text{ or } x ∈ B \}
   $$  
 
-- The **intersection** of **A** and **B** is the set of outcomes that are in both **A** and **B**:  
+- The **intersection** of $A$ and $B$ is the set of outcomes that are in both $A$ and $B$:  
 
   $$
   A ∩ B = \{ x ∈ S \mid x ∈ A \text{ and } x ∈ B \}
   $$  
 
-- The **Complement** of **A** in **S** is the set of outcomes in **S** that are **not** in **A**:  
+- The **Complement** of $A$ in $S$ is the set of outcomes in $S$ that are **not** in $A$:  
 
   $$
   A^c = \{ x ∈ S \mid x \notin A \} = S \setminus A
   $$  
 
-A **Venn diagram** visually represents subsets of a **Universal Set S**  
+A **Venn diagram** visually represents subsets of a **Universal Set $S$**  
 
 <p align="center">
   <img src="/AppendixPROB/1.png" alt="Venn Diagrams" />
@@ -81,33 +81,31 @@ A set with no elements is called the **Empty Set**, denoted **∅**.
 ---
 ### Mutually Exclusive Events  
 
-Two events are mutually exclusive or disjoint if they cannot occur at the same time.
+Two events are mutually exclusive or disjoint if they cannot occur at the same time for example:
 
-**Rolling two dice**   
-
-- **Event A:** Rolling at least one six 
+- **Event A:** Rolling at least one six and **Event B:** Sum of the dice equals 4  
 
   $$
   A = \{ (d_1, 6), (6, d_2) \mid d_1, d_2 ∈ \{1, 2, 3, 4, 5, 6\} \}
   $$  
-  
-- **Event B:** Sum of the dice equals 4  
 
   $$
   B = \{ (d, 4-d) \mid d ∈ \{1, 2, 3\} \}
   $$  
 
-Sets with an **empty intersection** are called **disjoint**, and the events in this case are called **mutually exclusive**.  
+The events $A$ and $B$ in this case are called **mutually exclusive or disjoint**.  
+
+---
 
 ### Algebra of the Sets  
-Let **A**, **B**, and **C** be subsets of a universal set **S**.  
+Let $A$, $B$, and $C$ be subsets of a universal set $S$.  
 
-- **Idempotent Laws:**  
+**Idempotent Laws:**  
   $$
   A ∪ A = A, \quad A ∩ A = A
   $$  
 
-- **Associative Laws:**  
+**Associative Laws:**  
   $$
   (A ∪ B) ∪ C = A ∪ (B ∪ C)
   $$  
@@ -115,7 +113,7 @@ Let **A**, **B**, and **C** be subsets of a universal set **S**.
   (A ∩ B) ∩ C = A ∩ (B ∩ C)
   $$  
 
-- **Commutative Laws:**  
+**Commutative Laws:**  
   $$
   A ∪ B = B ∪ A
   $$  
@@ -123,7 +121,7 @@ Let **A**, **B**, and **C** be subsets of a universal set **S**.
   A ∩ B = B ∩ A
   $$  
 
-- **Distributive Laws:**  
+**Distributive Laws:**  
   $$
   A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)
   $$  
@@ -131,7 +129,7 @@ Let **A**, **B**, and **C** be subsets of a universal set **S**.
   A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C)
   $$  
 
-- **Identity Laws:**  
+**Identity Laws:**  
   $$
   A ∪ ∅ = A, \quad A ∪ S = S
   $$  
@@ -139,7 +137,7 @@ Let **A**, **B**, and **C** be subsets of a universal set **S**.
   A ∩ S = A, \quad A ∩ ∅ = ∅
   $$  
 
-- **Complement Laws:**  
+**Complement Laws:**  
   $$
   (A^c)^c = A, \quad A ∪ A^c = S, \quad A ∩ A^c = ∅
   $$  
@@ -147,7 +145,7 @@ Let **A**, **B**, and **C** be subsets of a universal set **S**.
   S^c = ∅, \quad ∅^c = S
   $$  
 
-- **De Morgan’s Laws:**  
+**De Morgan’s Laws:**  
   $$
   (A ∪ B)^c = A^c ∩ B^c
   $$  
@@ -155,7 +153,7 @@ Let **A**, **B**, and **C** be subsets of a universal set **S**.
   (A ∩ B)^c = A^c ∪ B^c
   $$  
 
-We can easily visualize with **Venn Diagrams** for example:
+We can easily visualize them with **Venn Diagrams** for example:
 
 $$
 A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)
@@ -167,32 +165,30 @@ $$
 
 ---
 
-### The Probability 
-A **Probability**, is a function **P** that maps events in the sample space  to real numbers. **P** must satisfy the following **postulates - axioms**.  
+### Probability Axioms
 
-- **Probability Interval:** The probability of any event **A** in sample space is a non-negative ℝ number:  
-  $$
-  P(A) \geq 0
-  $$  
-  Since events can't happen less than 0% or more than 100% 
+**Probability** must satisfy the following **postulates - axioms**.  
+
+1. **Probability Interval:** The probability of any event **A** in sample space is a non-negative ℝ number. Since events can't happen less than 0% or more than 100%:  
+
   $$
   0 \leq P(A) \leq 1, \quad \text{for any event } A
   $$  
-- **Sample Space:** Since **universal set S** includes all possible outcomes, the probability of any outcome occurring must:  
+
+2. **Sample Space:** Since **universal set S** includes all possible outcomes, the probability of any outcome occurring must:  
   $$
   P(S) = 1
   $$  
 
-- **Additivity:** If events **A1, A2, ...** are **mutually exclusive**, their total probability is the sum of their individual probabilities: 
+3. **Additivity:** If events $A_1, A_2, ...$ are **mutually exclusive**, their total probability is the sum of their individual probabilities: 
   $$
   P(A_1 ∪ A_2 \dots) = P(A_1) + P(A_2)\dots
   $$  
 
----
 
-### Rules of Probability  
+### Rules
 
-Let **S** be a sample space with probability measure **P**, and let **A** and **B** be events.  
+Let $S$ be a sample space with probability measure $P$, and let $A$ and $B$ be events.  
 1. **Complement Rule**  
    $$
    P(A) + P(A^c) = 1, \quad P(A^c) = 1 - P(A)
@@ -217,9 +213,9 @@ The Inclusion-Exclusion Principle can be generalized to more than two sets.
 ---
 ### Conditional Probability
 
-The **P( A | B )** is called the **conditional probability of A given B**.
+The $P(A|B)$ is called the **conditional probability of A given B**.
 
-If A and B are events in a sample space, and P(B) ≠ 0, then the conditional probability of A given B is defined as:
+If $A$ and $B$ are events in a sample space, and $P(B) ≠ 0$, then the conditional probability of A given B is defined as:
 
 $$
 P(A|B) = \frac{P(A \cap B)}{P(B)}
@@ -230,9 +226,9 @@ The outcome must lie in both A and B. Therfore, A ∩ B becomes the event of int
 **Example:**  
 Consider deck of 52 playing cards. Let A be drawing a **King**, and  B be drawing a **Spade**.
 
-- **P(A) = 4/52 = 1/13** 
-- **P(B) = 13/52 = 1/4** 
-- **P(A ∩ B) = 1/52**
+- $P(A) = 4/52 = 1/13$ 
+- $P(B) = 13/52 = 1/4$ 
+- $P(A ∩ B) = 1/52$
 
 The conditional probability of drawing a King given that the card is a Spade is:
 
@@ -244,7 +240,7 @@ $$
 
 ### Finding Intersections
 
-We can find **P(A ∩ B)** using the **Multiplication Rule** of the probability.
+We can find $P(A ∩ B)$ using the **Multiplication Rule** of the probability.
 
 $$
 P(A \cap B) = P(A) \cdot P(B|A)
@@ -255,11 +251,11 @@ Imagine selecting two cards from a deck without replacement:
 - Let A be the event **"the first card is an Ace"**.
 - Let B be the event **"the second card is an Ace"**.
 
-1. **P(A)**
+1. $P(A)$
    - There are 4 Aces out of 52 cards, so **P(A) = 4/52 = 1/13**.
 
-2. **P(B|A)**:
-   - If the first card was an Ace, there are now 3 Aces left out of 51 cards, so **P(B|A) = 3/51 = 1/17**.
+2. $P(B|A)$:
+   - If the first card was an Ace, there are now 3 Aces left out of 51 cards, so $P(B|A) = 3/51 = 1/17$.
 
 3. Multiply them together:
    $$
@@ -269,17 +265,15 @@ Imagine selecting two cards from a deck without replacement:
 ---
 ### Dependent and Independent Events
 
-Events can either be **dependent** or **independent**, which affects how we calculate probabilities involving them.
-
 #### **Independent Events**
 
-Two events **A** and **B** are said to be **independent** if the occurrence of one event **does not affect** the probability of the other event occurring.
+Two events $A$ and $B$ are said to be **independent** if the occurrence of one event **does not affect** the probability of the other event occurring.
 
 $$
 P(A|B) = P(A) \quad \text{or} \quad P(B|A) = P(B)
 $$
 
-This leads to the **Multiplication Rule** for Independent Events:
+The **Multiplication Rule** for Independent Events is:
 
 $$
 P(A \cap B) = P(A) \cdot P(B)
@@ -293,8 +287,8 @@ Consider flipping a fair coin and rolling a fair six-sided die.
 
 Since flipping the coin has no impact on the die roll and vice versa, A and B are independent.
 
-- **P(A) = 1/2** 
-- **P(B) = 1/6** 
+- $P(A) = 1/2$ 
+- $P(B) = 1/6$ 
 
 The probability of both A and B occurring is:
 
@@ -304,11 +298,10 @@ $$
 
 We can simply multiply the probabilities when events are independent.
 
----
 
 #### Dependent Events
 
-Two events **A** and **B** are **dependent** if the occurrence of one event **affects** the probability of the other event occurring. 
+Two events $A$ and $B$ are **dependent** if the occurrence of one event **affects** the probability of the other event occurring. 
 
 The **Multiplication Rule** for Dependent Events is:
 
@@ -325,13 +318,13 @@ Consider drawing two cards **without replacement** from a standard deck of 52 ca
 
 Since the first card is not replaced, the events are dependent because the outcome of the first draw affects the probability of the second draw.
 
-1. **P(A)**: There are 4 Queens in the deck
+1. **$P(A)$**: There are 4 Queens in the deck
 
    $$
    P(A) = \frac{4}{52} = \frac{1}{13}
    $$
 
-2. **P(B|A)**: If the first card was a Queen, there are now 3 Queens left in a deck of 51 cards
+2. **$P(B|A)$**: If the first card was a Queen, there are now 3 Queens left in a deck of 51 cards
 
    $$
    P(B|A) = \frac{3}{51} = \frac{1}{17}
@@ -342,10 +335,6 @@ Since the first card is not replaced, the events are dependent because the outco
    $$
    P(A \cap B) = P(A) \cdot P(B|A) = \frac{1}{13} \cdot \frac{1}{17} = \frac{1}{221}
    $$
-
-This calculation reflects the dependency between events A and B.
-
----
 
 #### Differences Between Independent and Dependent Events
 
@@ -369,10 +358,10 @@ P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}
 $$
 
 Where:
-- **P(A|B)** is the **posterior probability**
-- **P(B|A)** is the **likelihood**
-- **P(A)** is the **prior probability**
-- **P(B)** is the **marginal probability**
+- $P(A|B)$ is the **posterior probability**
+- $P(B|A)$ is the **likelihood**
+- $P(A)$ is the **prior probability**
+- $P(B)$ is the **marginal probability**
 
 #### **Derivation of Bayes' Theorem**
 
@@ -400,13 +389,13 @@ This is Bayes' Theorem.
 
 Consider a medical test for a disease:
 
-- **P(Disease)** = 0.01 
-- **P(Positive | Disease)** = 0.99
-- **P(Positive | No Disease)** = 0.05
+- $P(Disease)$ = 0.01 
+- $P(Positive | Disease)$ = 0.99
+- $P(Positive | No Disease)$ = 0.05
 
-You receive a **positive test result**. What is the probability you actually have the disease when the result positive?
+You receive a positive test result. What is the probability you actually have the disease when the result positive?
 
-1. **Calculate P(Positive):**
+1. **Calculate $P(Positive)$:**
 
 $$
 = (0.99 \cdot 0.01) + (0.05 \cdot 0.99)
@@ -432,7 +421,7 @@ So, even with a positive test result, the probability of actually having the dis
 
 ### Random Variables
 
-**RV** is a function that assigns a real number to each outcome of a probability experiment. Usually, capital **X** used to denote random variables, while their lowercase counterparts **x**, represent value that **X** can take. **Range** is the set of all values a random variable can produce. 
+**Random Variable** is a function that assigns a real number to each outcome of a probability experiment. Usually, capital **X** used to denote random variables, while their lowercase counterparts **x**, represent value that **X** can take. **Range** is the set of all values a random variable can produce. 
 
 > **Note:**  A **Discrete Random Variable** has a countable set of possible values, while a **Continuous Random Variable** has an uncountable range, covering an interval of real numbers **ℝ**.
 
@@ -453,13 +442,13 @@ $$
 
 #### Finding Probabilities Using the PMF
 
-- To find the probability that a discrete random variable equals a specific constant:
+To find the probability that a discrete random variable equals a specific constant:
 
   $$
   P(X = c) = f(c)
   $$
 
-- The probability that the variable falls between two values
+The probability that the variable falls between two values
 
   $$
   P(a \leq X \leq b) = \sum_{x = a}^{b} f(x)
@@ -496,13 +485,13 @@ P(0 < X < 3) = f(1) + f(2) = \frac{3}{8} + \frac{3}{8} = \frac{6}{8} = \frac{3}{
 $$
 
 
-
+---
 
 ### Probability Density Function
 
 A **Probability Density Function** describes the probability distribution of a **continuous random variable**. Unlike a PMF, which gives the probability of specific discrete values, the PDF represents probability **density** over an interval.
 
-For a continuous random variable **X**, the **PDF** satisfies:
+For a continuous random variable $X$, the PDF satisfies:
 
 1. **Non-negativity**:
    $$
@@ -514,12 +503,12 @@ For a continuous random variable **X**, the **PDF** satisfies:
    \int_{-\infty}^{\infty} f(x) \,dx = 1
    $$
 
-3. **Probability of a single point always zero:**
+3. **Probability of a single point**
    $$
    P(X = x) = 0
    $$  
 
-  For a piecewise function **f(x)** that is zero outside a given interval, we find probabilities over intervals by integrating within those intervals. 
+We find probabilities over intervals by integrating within those intervals. 
 
    $$
    P(a \leq X \leq b) = \int_{a}^{b} f(x) \,dx
@@ -574,13 +563,13 @@ For a continuous random variable **X**, the **PDF** satisfies:
 
 ### Cumulative Distribution Function
 
-A **Cumulative Distribution Function** gives the probability that a random variable **X** takes on a value **less than or equal to** a specific value **x**.
+A Cumulative Distribution Function gives the probability that a random variable $X$ takes on a value **less than or equal to** a specific value $x$.
 
 $$
 F(x) = P(X \leq x)
 $$
 
-For a **discrete random variable**, the CDF is the sum of the probabilities of all outcomes **less than or equal to** **x**:
+For a **discrete random variable**, the CDF is the sum of the probabilities of all outcomes less than or equal to $x$:
 
 $$
 F(x) = P(X \leq x) = \sum_{t \leq x} P(X = t)
@@ -598,7 +587,7 @@ $$
 P(a \leq X \leq b) = F(b) - F(a-1)
 $$
 
-For a **continuous random variable**, the CDF is the **integral** of the probability density function from **-∞** to **x**:
+For a **continuous random variable**, the CDF is the integral of the probability density function from **$-∞$** to **$x$**:
 
 $$
 F(x) = P(X \leq x) = \int_{-\infty}^{x} f(t) \, dt
@@ -802,7 +791,7 @@ $$
 
 ### Multivariete Disturbutions
 
-For two **discrete random variables** **X** and **Y**, the **Joint Probability Mass Function** gives the probability of each possible pair of outcomes.
+For two **discrete random variables** $X$ and $Y$, the **Joint Probability Mass Function** gives the probability of each possible pair of outcomes.
 
 $$
 f_{X,Y}(x,y) = P(X = x,\, Y = y), \quad \text{where } 0 \leq f_{X,Y}(x,y) \leq 1
@@ -814,7 +803,7 @@ $$
 \sum_{x} \sum_{y} f_{X,Y}(x,y) = 1
 $$
 
-For two **continuous random variables** **X** and **Y**, the **Joint Probability Density Function** describes the density of probability over a two-dimensional region. 
+For two **continuous random variables** $X$ and $Y$, the **Joint Probability Density Function** describes the density of probability over a two-dimensional region. 
 
 1. **Non-negativity**:
    $$
@@ -935,7 +924,7 @@ $$
 \mu = \mathbb{E}(X) = \int_{-\infty}^{\infty} x \cdot f(x) \, dx
 $$
 
-> **Note:** The expected value is only defined when the **PMF or PDF** satisfies the required properties such as non-negativity and total equals 1, and when the **sum or integral converges to a finite value**.
+> **Note:** The expected value is only defined when the **PMF or PDF** satisfies the required properties such as non-negativity and total equals 1.
 
 #### Expected Value of Function of the Random Variable
 
@@ -963,7 +952,7 @@ $$
 If **X** and **Y** are continuous random variables with **joint PDF** 
 
 $$
-\mathbb{E}[g(X, Y)] = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} g(x, y) \cdot f_{X,Y}(x, y) \, dx\, dy
+\mathbb{E}[g(X, Y)] = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} g(x, y) \cdot f_{X,Y}(x, y) dx dy
 $$
 
 
@@ -973,8 +962,6 @@ $$
   $$
   \mathbb{E}[X + Y] = \mathbb{E}[X] + \mathbb{E}[Y]
   $$  
-  This is a special case of the **linearity of expectation**, and holds even if **X** and **Y** are not independent.
-
   
 
 **Product of two variables:**  
@@ -1001,9 +988,141 @@ The **expected value** is **linear**, meaning it distributes over addition and a
 - **Shifting** a random variable by **b** shifts the expectation by **b**
 
 ---
+### Conditional Expectation
+
+The **conditional expectation** of a random variable **X** given an event or another random variable **Y** is the **expected value of X**, assuming **Y** has occurred.
+
+#### Discrete Case
+
+If **X** is a discrete random variable with conditional probability mass function $P(X = x | Y = y)$, then the conditional expectation of $X$ given $Y = y$ is:
+
+$$
+\mathbb{E}[X \mid Y = y] = \sum_{x} x \cdot P(X = x \mid Y = y)
+$$
+
+#### Example 
+
+Suppose $X \in \{0, 1\}$ and $Y \in \{a, b\}$, and we are given the joint distribution:
+
+<div style="overflow-x:auto; text-align:center;">
+  <table style="border-collapse: collapse; margin: auto; font-size: 0.95em;">
+    <thead>
+      <tr>
+        <th style="border: 1px solid #ccc; padding: 6px;">X \ Y</th>
+        <th style="border: 1px solid #ccc; padding: 6px;">a</th>
+        <th style="border: 1px solid #ccc; padding: 6px;">b</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border: 1px solid #ccc; padding: 6px;">0</td>
+        <td style="border: 1px solid #ccc; padding: 6px;">0.1</td>
+        <td style="border: 1px solid #ccc; padding: 6px;">0.2</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ccc; padding: 6px;">1</td>
+        <td style="border: 1px solid #ccc; padding: 6px;">0.3</td>
+        <td style="border: 1px solid #ccc; padding: 6px;">0.4</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+**Step 1: Find the Marginal of $Y$**
+
+$$P(Y = a) = 0.1 + 0.3 = 0.4$$
+$$P(Y = b) = 0.2 + 0.4 = 0.6$$
+
+
+**Step 2: Compute Conditional PMF For $Y = a$:**
+
+
+$$P(X = 0 \mid Y = a) = \frac{0.1}{0.4} = 0.25$$
+$$P(X = 1 \mid Y = a) = \frac{0.3}{0.4} = 0.75$$
+
+**Step 3: Compute Conditional Expectation**
+
+$$
+\mathbb{E}[X \mid Y = a] = 0 \cdot 0.25 + 1 \cdot 0.75 = 0.75
+$$
+
+#### Continuous Case
+
+If **X** is a continuous random variable with conditional probability density function $f_{X|Y}(x \mid y)$, then the conditional expectation is:
+
+$$
+\mathbb{E}[X \mid Y = y] = \int_{-\infty}^{\infty} x \cdot f_{X|Y}(x \mid y) \, dx
+$$
+
+#### Example 
+
+Suppose the **joint density** of $X$ and $Y$ is:
+
+$$
+f_{X,Y}(x, y) =
+\begin{cases}
+x + y, & 0 \leq x \leq 1,\ 0 \leq y \leq 1 \\\\[6pt]
+0, & \text{otherwise}
+\end{cases}
+$$
+
+
+**Step 1: Find the Marginal of $Y$**
+
+Integrate out $x$ to get the marginal density of $Y$:
+
+$$
+f_Y(y) = \int_0^1 (x + y)\, dx
+= \left[\frac{x^2}{2} + yx\right]_0^1 = \frac{1}{2} + y
+$$
+
+
+**Step 2: Compute the Conditional Density**
+
+Now divide the joint by the marginal:
+
+$$
+f_{X|Y}(x \mid y) = \frac{f_{X,Y}(x, y)}{f_Y(y)} = \frac{x + y}{\frac{1}{2} + y}
+$$
+
+
+**Step 3: Compute Conditional Expectation**
+
+$$
+\mathbb{E}[X \mid Y = y] = \int_0^1 x \cdot f_{X|Y}(x \mid y) \, dx
+= \int_0^1 x \cdot \frac{x + y}{\frac{1}{2} + y} \, dx
+$$
+
+Factor out the constant denominator:
+
+$$
+= \frac{1}{\frac{1}{2} + y} \int_0^1 x(x + y) \, dx
+$$
+
+$$
+= \frac{1}{\frac{1}{2} + y} \left[ \int_0^1 x^2 \, dx + y \int_0^1 x \, dx \right]
+$$
+
+Evaluate:
+
+$$\int_0^1 x^2 \, dx = \frac{1}{3}$$
+$$\int_0^1 x \, dx = \frac{1}{2}$$
+
+Therefore:
+
+$$
+\mathbb{E}[X \mid Y = y] = \frac{1}{\frac{1}{2} + y} \left( \frac{1}{3} + \frac{y}{2} \right)
+$$
+
+This is the **conditional expectation** of $X$ given $Y = y$, derived using the joint density.
+
+---
+
+
 
 ### Moments About the Origin
-Moments about the origin measure the raw power of the data values by raising them to a specific power. Raw moments are often simpler to compute and useful in certain cases such as moment-generating functions.
+ Raw moments are often simpler to compute and useful in certain cases such as moment-generating functions.
 
 - **The 0th Moment**
   $$\mathbb{E}[X^0] = 1$$
@@ -1199,3 +1318,142 @@ M_X(t) = \frac{1}{8}(1 + e^t)^3
 $$
 
 ---
+
+### Finding the Moments from the MGF
+
+We now compute the **first and second moments** using derivatives of the MGF.
+
+#### First Moment - the Mean
+
+We take the **first derivative** of:
+
+$$
+M_X(t) = \frac{1}{8}(1 + e^t)^3
+$$
+
+Use the **chain rule**:
+
+$$
+M_X'(t) = \frac{1}{8} \cdot 3(1 + e^t)^2 \cdot \frac{d}{dt}(1 + e^t)
+= \frac{3}{8}(1 + e^t)^2 \cdot e^t
+$$
+
+Now evaluate at **t = 0**:
+
+$$
+M_X'(0) = \frac{3}{8}(1 + 1)^2 \cdot 1 = \frac{3}{8} \cdot 4 = \frac{12}{8} = 1.5
+$$
+
+**First moment**:  
+$$
+\mathbb{E}[X] = M_X'(0) = \frac{3}{2}
+$$
+
+
+#### Second Moment
+
+Use the **product rule** on:
+
+$$
+M_X'(t) = \frac{3}{8}(1 + e^t)^2 \cdot e^t
+$$
+
+Let $f(t) = (1 + e^t)^2$  and $g(t) = e^t$ therefore:
+
+
+
+$$
+M_X''(t) = \frac{3}{8} \left[ f'(t) \cdot g(t) + f(t) \cdot g'(t) \right]
+$$
+
+$$
+M_X''(t) = \frac{3}{8} \left[ 2(1 + e^t)e^t \cdot e^t + (1 + e^t)^2 \cdot e^t \right]
+$$
+
+Simplify:
+
+$$
+M_X''(t) = \frac{3}{8} \left[ 2(1 + e^t)e^{2t} + (1 + e^t)^2 e^t \right]
+$$
+
+Evaluate at **t = 0**:
+
+$$
+M_X''(0) = \frac{3}{8} \left[ 4 \cdot 1 + 4 \cdot 1 \right] = \frac{3}{8}(8) = 3
+$$
+
+**Second moment**:  
+$$
+\mathbb{E}[X^2] = M_X''(0) = 3
+$$
+
+#### Variance
+
+$$
+\text{Var}(X) = \mathbb{E}[X^2] - \left(\mathbb{E}[X]\right)^2 = 3 - \left(\frac{3}{2}\right)^2 = 3 - \frac{9}{4} = \frac{3}{4}
+$$
+
+#### Standard Deviation
+
+$$
+\sigma_X = \sqrt{\text{Var}(X)} = \sqrt{\frac{3}{4}} = \frac{\sqrt{3}}{2}
+$$
+
+---
+
+### Product Moments and Covariance
+
+
+#### Product Moments About the Origin
+
+For two random variables $X$ and $Y$, the **product moment about the origin** is defined as:
+
+$$
+\mu'_{r,s} = \mathbb{E}[X^r Y^s]
+$$
+
+If $r = s = 1$, then:
+  
+$$
+\mu'_{1,1} = \mathbb{E}[XY]
+$$
+
+
+#### Product Moments About the Mean
+
+The **product moment about the mean** or **central product moment** is defined as:
+
+$$
+\mu_{r,s} = \mathbb{E}[(X - \mu_X)^r (Y - \mu_Y)^s]
+$$
+
+Where:
+
+- $\mu_X = \mathbb{E}[X]$  
+- $\mu_Y = \mathbb{E}[Y]$
+
+These moments measure how $X$ and $Y$ vary jointly around their means.
+
+
+### Covariance
+
+The **covariance** between two random variables $X$ and $Y$ is the **second-order central product moment**:
+
+$$
+\operatorname{Cov}(X, Y) = \mu_{1,1} = \mathbb{E}[(X - \mu_X)(Y - \mu_Y)]
+$$
+
+It can also be computed using:
+
+$$
+\operatorname{Cov}(X, Y) = \mathbb{E}[XY] - \mathbb{E}[X] \cdot \mathbb{E}[Y]
+$$
+
+- If $\operatorname{Cov}(X, Y) > 0$, $X$ and $Y$ tend to increase together.
+- If $\operatorname{Cov}(X, Y) < 0$, $X$ and $Y$ tend to move in opposite directions.
+- If $\operatorname{Cov}(X, Y) \ne 0$, $X$ and $Y$ are linearly dependent
+- If $\operatorname{Cov}(X, Y) = 0$, $X$ and $Y$ are uncorrelated, but not necessarily independent.
+
+
+---
+
