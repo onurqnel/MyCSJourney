@@ -1061,4 +1061,63 @@ $$
 
 > A zero third central moment indicates perfect symmetry
 
+---
+
+### Variance
+
+The **variance** of a random variable measures how much the values **spread out** from the **mean**. It is the **second central moment**:
+
+$$
+\text{Var}(X) = \mathbb{E}[(X - \mu)^2]
+$$
+
+#### Shortcut Formula for Variance
+
+$$
+\text{Var}(X) = \mathbb{E}[X^2] - (\mathbb{E}[X])^2
+$$
+
+
+#### Standard Deviation
+
+The **standard deviation** is the **square root of the variance** Denoted by $\sigma$:
+
+$$
+\sigma = \sqrt{\text{Var}(X)}
+$$
+
+> **Note:** A smaller variance or standard deviation means the data is **more concentrated** around the mean. Larger values indicate a **wider spread**.
+
+---
+
+### Chebyshev's Theorem
+
+Provides a lower bound on the proportion of values that lie within a certain number of standard deviations from the mean, regardless of the distribution shape. For any random variable with  $\mu$ and standard deviation $\sigma$, the proportion of data within $k$ standard deviations of the mean is at least:
+
+$$
+P(|X - \mu| < k\sigma) \geq 1 - \frac{1}{k^2}, \quad \text{for } k > 1
+$$
+
+#### Example
+
+The **mean score** on an exam is $\mu = 70$, and the **standard deviation** is $\sigma = 5$.  We want to know: At least what percentage of students scored between 40 and 100?
+
+
+**Step 1: Calculate k**
+
+$$
+|70 - 40| = 30 \quad \Rightarrow \quad k = \frac{30}{5} = 6
+$$
+
+**Step 2: Apply Chebyshev’s Inequality**
+
+$$
+P(|X - \mu| < k\sigma) \geq 1 - \frac{1}{k^2}
+$$
+
+$$
+P(|X - 70| < 6 \cdot 5) \geq 1 - \frac{1}{6^2} = 1 - \frac{1}{36} = \frac{35}{36} \approx 0.9722
+$$
+
+> **At least 97.22%** of the students scored **between 40 and 100**.
 
