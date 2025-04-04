@@ -477,7 +477,7 @@ P(X = 2) = f(2) = \frac{3}{8}
 $$  
 
 $$
-P(1 \leq X \leq 3) = f(1) + f(2) + f(3) = \frac{3}{8} + \frac{3}{8} + \frac{1}{8} = \frac{7}{8}
+P(1 \leq X \leq 3) = f(1) + f(2) + f(3) = \frac{7}{8}
 $$  
 
 $$
@@ -641,7 +641,11 @@ $$
 
 - For **x ≥ 3**:  
   $$
-  F(x) = p(0) + p(1) + p(2) + p(3) = \frac{1}{8} + \frac{3}{8} + \frac{3}{8} + \frac{1}{8} = 1.
+  F(x) = p(0) + p(1) + p(2) + p(3) 
+  $$
+
+  $$
+  = \frac{1}{8} + \frac{3}{8} + \frac{3}{8} + \frac{1}{8} = 1.
   $$
 
 **Therefore the CDF is:**
@@ -794,7 +798,7 @@ $$
 For two **discrete random variables** $X$ and $Y$, the **Joint Probability Mass Function** gives the probability of each possible pair of outcomes.
 
 $$
-f_{X,Y}(x,y) = P(X = x,\, Y = y), \quad \text{where } 0 \leq f_{X,Y}(x,y) \leq 1
+f_{X,Y}(x,y) = P(X = x,\, Y = y)
 $$
 
 The total probability across all pairs of outcomes must sum to 1:
@@ -818,7 +822,10 @@ For two **continuous random variables** $X$ and $Y$, the **Joint Probability Den
 3. **Probability Over Interval**:  
 
    $$
-   P(a \leq X \leq b , c \leq Y \leq d) = \int_{d}^{c} \int_{b}^{a} f_{X,Y}(x, y) \ dxdy
+   P(a \leq X \leq b , c \leq Y \leq d)
+   $$
+   $$
+    = \int_{d}^{c} \int_{b}^{a} f_{X,Y}(x, y) \ dxdy
    $$
 
 ---
@@ -970,8 +977,8 @@ $$
   $$
   \mathbb{E}[XY] = 
   \begin{cases}
-  \sum_x \sum_y x y \cdot f_{X,Y}(x, y), & \text{discrete case} \\\\[6pt]
-  \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} x y \cdot f_{X,Y}(x, y) \, dx\,dy, & \text{continuous case}
+  \sum_x \sum_y x y \cdot f_{X,Y}(x, y) &  \\\\[6pt]
+  \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} x y \cdot f_{X,Y}(x, y)dx dy
   \end{cases}
   $$
 
@@ -1090,8 +1097,8 @@ $$
 **Step 3: Compute Conditional Expectation**
 
 $$
-\mathbb{E}[X \mid Y = y] = \int_0^1 x \cdot f_{X|Y}(x \mid y) \, dx
-= \int_0^1 x \cdot \frac{x + y}{\frac{1}{2} + y} \, dx
+\int_0^1 x \cdot f_{X|Y}(x \mid y)  dx
+= \int_0^1 x \cdot \frac{x + y}{\frac{1}{2} + y} dx
 $$
 
 Factor out the constant denominator:
@@ -1235,7 +1242,11 @@ P(|X - \mu| < k\sigma) \geq 1 - \frac{1}{k^2}
 $$
 
 $$
-P(|X - 70| < 6 \cdot 5) \geq 1 - \frac{1}{6^2} = 1 - \frac{1}{36} = \frac{35}{36} \approx 0.9722
+P(|X - 70| < 6 \cdot 5) \geq 1 - \frac{1}{6^2} = 1 - \frac{1}{36}
+$$
+
+$$
+= \frac{35}{36} \approx 0.9722
 $$
 
 > **At least 97.22%** of the students scored **between 40 and 100**.
@@ -1334,7 +1345,7 @@ $$
 Use the **chain rule**:
 
 $$
-M_X'(t) = \frac{1}{8} \cdot 3(1 + e^t)^2 \cdot \frac{d}{dt}(1 + e^t)
+\frac{1}{8} \cdot 3(1 + e^t)^2 \cdot \frac{d}{dt}(1 + e^t)
 = \frac{3}{8}(1 + e^t)^2 \cdot e^t
 $$
 
@@ -1390,7 +1401,11 @@ $$
 #### Variance
 
 $$
-\text{Var}(X) = \mathbb{E}[X^2] - \left(\mathbb{E}[X]\right)^2 = 3 - \left(\frac{3}{2}\right)^2 = 3 - \frac{9}{4} = \frac{3}{4}
+\text{Var}(X) = \mathbb{E}[X^2] - \left(\mathbb{E}[X]\right)^2
+$$
+
+$$
+= 3 - \left(\frac{3}{2}\right)^2 = 3 - \frac{9}{4} = \frac{3}{4}
 $$
 
 #### Standard Deviation
