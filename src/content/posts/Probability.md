@@ -1121,3 +1121,81 @@ $$
 
 > **At least 97.22%** of the students scored **between 40 and 100**.
 
+---
+
+### Moment Generating Functions
+
+The **Moment Generating Function** of a random variable **X** is a function that helps us find all the **moments** of **X**, if it exists.
+
+$$
+M_X(t) = \mathbb{E}[e^{tX}]
+$$
+
+
+#### MGF of Discrete Random Variables
+
+Let **X** be a discrete random variable with PMF $p(x)$. Then:
+
+$$
+M_X(t) = \sum_{x} e^{tx} \cdot p(x)
+$$
+
+Let **X** range equals to ${0, 1, 2, 3}$ and with the function $p(x)$:
+
+$$
+p(x) = \frac{1}{8} \cdot \binom{3}{x}
+$$
+
+Then the moment generating function is:
+
+$$
+M_X(t) = \sum_{x = 0}^{3} e^{tx} \cdot \left( \frac{1}{8} \cdot \binom{3}{x} \right)
+$$
+
+Now compute each term of the sum individually:
+
+- For **x = 0**:  
+  $$
+  \binom{3}{0} = 1, \quad e^{t \cdot 0} = 1
+  $$
+  $$
+  \Rightarrow 1 \cdot 1 = 1
+  $$
+
+- For **x = 1**:  
+  $$
+  \binom{3}{1} = 3, \quad e^{t \cdot 1} = e^t
+  $$
+  $$
+  \Rightarrow 3 \cdot e^t
+  $$
+
+- For **x = 2**:  
+  $$
+  \binom{3}{2} = 3, \quad e^{t \cdot 2} = e^{2t}
+  $$
+  $$
+  \Rightarrow 3 \cdot e^{2t}
+  $$
+
+- For **x = 3**:  
+  $$
+  \binom{3}{3} = 1, \quad e^{t \cdot 3} = e^{3t}
+  $$
+  $$
+  \Rightarrow 1 \cdot e^{3t}
+  $$
+
+Putting all terms together:
+
+$$
+M_X(t) = \frac{1}{8} \left(1 + 3e^t + 3e^{2t} + e^{3t} \right)
+$$
+
+Which is the expanded form of:
+
+$$
+M_X(t) = \frac{1}{8}(1 + e^t)^3
+$$
+
+---
