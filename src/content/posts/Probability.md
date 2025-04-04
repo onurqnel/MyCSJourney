@@ -4,7 +4,7 @@ author: onur
 tags: [" Sets", " Random Variables", " Distributions", " Probability Calculus",]
 createdAt: "2025-01-31"
 updatedAt: "2025-02-06"
-description: "Exploring Probability with Dr. Aras Erzurumluoglu" 
+description: "Exploring Probability for Modeling Uncertainty, Variation, and the Probabilistic Nature of the Real World Data." 
 ---
 
 A **deterministic model** predicts the outcome of an experiment with certainty. 
