@@ -921,16 +921,15 @@ $$
 
 ### Expected Value
 
-The **Expected Value** of a random variable **X**, denoted by **μ** or **E(X)**, represents the **long-run average** of outcomes weighted by their probabilities.
+The Expected Value of a random variable X, denoted by μ, represents the long-run average of outcomes weighted by their probabilities. 
 
-
-If **X** is a **discrete random variable** with probability mass function **f(x)**, the expected value is:
+If **X** is a **discrete random variable** with probability mass function, the expected value is:
 
 $$
 \mu = \mathbb{E}(X) = \sum x \cdot f(x)
 $$
 
-If **X** is a **continuous random variable** with probability density function **f(x)**, the expected value is:
+If **X** is a **continuous random variable** with probability density function , the expected value is:
 
 $$
 \mu = \mathbb{E}(X) = \int_{-\infty}^{\infty} x \cdot f(x) \, dx
@@ -938,54 +937,22 @@ $$
 
 > **Note:** The expected value is only defined when the **PMF or PDF** satisfies the required properties such as non-negativity and total equals 1, and when the **sum or integral converges to a finite value**.
 
-
-If **X** is a random variable and **g( x )** is a real-valued function of **X**, the **expected value** of **g( x )** is denoted as:
+#### Expected Value of Function of the Random Variable
 
 $$
-\mathbb{E}[g(X)]
+\mathbb{E}[g(X)] =
+\begin{cases}
+\sum g(x) \cdot f(x) & \text{discrete case} \\\\[6pt]
+\int_{-\infty}^{\infty} g(x) \cdot f(x)  dx & \text{continuous case}
+\end{cases}
 $$
 
-
-If **X** is a DRV
-$$
-\mathbb{E}[g(X)] = \sum g(x) \cdot f(x)
-$$
-
-
-If **X** is a CRV 
-$$
-\mathbb{E}[g(X)] = \int_{-\infty}^{\infty} g(x) \cdot f(x) \, dx
-$$
-
----
-
-### Moments About Origin
-- **The 0th Moment**, ensures probabilities sum to 1 in the distribution:
-  $$\mathbb{E}[X^0] = 1$$
-
-
-- **The 1th Moment**, the mean, average or central value of the distribution:
-  $$\mathbb{E}[X] = \sum x \cdot f(x) \quad \text{or} \quad \int x \cdot f(x) \, dx$$
-
-- **The 2nd moment**, used in variance and spread of the distribution:
-  $$\mathbb{E}[X^2] = \sum x^2 \cdot f(x) \quad \text{or} \quad \int x^2 \cdot f(x) \, dx$$
-
-- **The 3th moment**, which measures skewness of the distribution:
-    $$\mathbb{E}[X^3] = \sum x^3 \cdot f(x) \quad \text{or} \quad \int x^3 \cdot f(x) \, dx$$
-
-#### Linearity of Expected Value
-The **expected value** is **linear**, meaning it distributes over addition and allows constants to factor out.
-
-  $$\mathbb{E}[aX + b] = a \cdot \mathbb{E}[X] + b$$
-
-- **Scaling** a random variable by **a** scales the expectation by **a**
-- **Shifting** a random variable by **b** shifts the expectation by **b**
 
 ---
 
 ### Multivariate Expected Value
 
-For two random variables **X** and **Y**, the **expected value of a function** $$g(X, Y)$$ represents the average value of that function over their joint distribution.
+Represents the average value of that function over their joint distribution. For two random variables **X** and **Y**, the **expected value of a function** $$g(X, Y)$$ 
 
 If **X** and **Y** are discrete random variables with **joint PMF** 
 $$
@@ -999,7 +966,6 @@ $$
 \mathbb{E}[g(X, Y)] = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} g(x, y) \cdot f_{X,Y}(x, y) \, dx\, dy
 $$
 
-#### Examples
 
 **Sum of two variables:**  
   $$g(x, y) = x + y$$  
@@ -1024,4 +990,75 @@ $$
 
   If **X** and **Y** are independent, then: 
   $$\mathbb{E}[XY] = \mathbb{E}[X] \cdot \mathbb{E}[Y]$$
+
+
+#### Linearity of Expected Value
+The **expected value** is **linear**, meaning it distributes over addition and allows constants to factor out.
+
+  $$\mathbb{E}[aX + b] = a \cdot \mathbb{E}[X] + b$$
+
+- **Scaling** a random variable by **a** scales the expectation by **a**
+- **Shifting** a random variable by **b** shifts the expectation by **b**
+
+---
+
+### Moments About the Origin
+Moments about the origin measure the raw power of the data values by raising them to a specific power. Raw moments are often simpler to compute and useful in certain cases such as moment-generating functions.
+
+- **The 0th Moment**
+  $$\mathbb{E}[X^0] = 1$$
+
+
+- **The 1th Moment**
+  $$\mathbb{E}[X] = \sum x \cdot f(x) \quad \text{or} \quad \int x \cdot f(x) \, dx$$
+
+- **The 2nd moment**
+  $$\mathbb{E}[X^2] = \sum x^2 \cdot f(x) \quad \text{or} \quad \int x^2 \cdot f(x) \, dx$$
+
+- **The 3th moment**
+    $$\mathbb{E}[X^3] = \sum x^3 \cdot f(x) \quad \text{or} \quad \int x^3 \cdot f(x) \, dx$$
+
+
+---
+
+
+
+### Moments About the Mean
+
+Moments about the mean, also known as centered moments, are calculated by taking the difference between each data value and the average (mean) before raising it to a power. A moment is a quantitative measure that describes the shape of a distribution. The **moments about the mean** provide insight into a distribution’s:
+
+- **Balance Point** (Mean)
+- **Spread** (Variance)
+- **Asymmetry** (Skewness)
+
+
+The **$r$-th moment about the mean** also called the **central moment** for a random variable **X** is defined as:
+
+$$
+\mu_r = \mathbb{E}[(X - \mu)^r]
+$$
+
+#### 1. **First Moment About the Mean**
+$$
+\mu_1 = \mathbb{E}[X - \mu] = 0
+$$
+
+> The mean is the balance point of the distribution, so the first central moment is always zero.
+
+
+#### 2. **Second Moment About the Mean (Variance)**
+$$
+\mu_2 = \mathbb{E}[(X - \mu)^2] = \text{Var}(X)
+$$
+
+> This measures the **spread** or **dispersion** of the data. A larger value indicates a wider spread around the mean.
+
+
+#### 3. **Third Moment About the Mean (Skewness)**
+$$
+\mu_3 = \mathbb{E}[(X - \mu)^3]
+$$
+
+> A zero third central moment indicates perfect symmetry
+
 
