@@ -16,10 +16,11 @@ const props = Astro.props;
     <ul class:list={[props.class]}>
       {props.posts.map((post) => (
         <li class="mb-4">
-          <div class="mb-2">
+          <div class="mb-1">
             🧑🏻‍💻
             <a
               href={`/posts/${post.slug}`}
+              data-astro-reload 
               class="mb-2 text-sm sm:text-base md:text-xl font-bold text-content "
               transition:name={`post-title:${post.slug}`}
             >

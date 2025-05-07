@@ -20,23 +20,6 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<script>
-  // Force reload for "/posts/*" paths
-  if (typeof window !== "undefined") {
-    const currentPath = window.location.pathname;
-
-    if (currentPath.startsWith("/posts/")) {
-      const lastPath = sessionStorage.getItem("lastVisitedPath");
-
-      // Check if the current path is different from the last visited path
-      if (lastPath !== currentPath) {
-        sessionStorage.setItem("lastVisitedPath", currentPath);
-        // Force reload only if paths differ
-        window.location.reload();
-      }
-    }
-  }
-</script>
 
 <Layout title={entry.data.title}>
   <Container>
