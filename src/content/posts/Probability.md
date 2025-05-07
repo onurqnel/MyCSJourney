@@ -1,10 +1,10 @@
 ---
-title: Probability Theory
+title: Probability
 author: onur
 tags: [" Sets", " Random Variables", " Distributions", " Probability Calculus",]
 createdAt: "2025-01-31"
 updatedAt: "2025-02-06"
-description: "Modeling Uncertainty, Variation, and the Probabilistic Nature of the Real World Data." 
+description: "Introduction to Probability Theory for Computer Science" 
 ---
 
 A **deterministic model** predicts the outcome of an experiment with certainty. 

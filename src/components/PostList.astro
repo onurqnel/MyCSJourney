@@ -1,7 +1,5 @@
 ---
-import { Icon } from "astro-icon/components";
 import type { CollectionEntry } from "astro:content";
-import Tags from "~components/Tags.astro";
 
 interface Props {
   posts: CollectionEntry<"posts">[];
@@ -16,8 +14,8 @@ const props = Astro.props;
     <ul class:list={[props.class]}>
       {props.posts.map((post) => (
         <li class="mb-4">
-          <div class="mb-1">
-            🧑🏻‍💻
+          <div class="mb-2">
+            <span class="text-xs sm:text-sm md:text-base">🧑🏻‍💻 </span>
             <a
               href={`/posts/${post.slug}`}
               data-astro-reload 
@@ -27,15 +25,6 @@ const props = Astro.props;
               {post.data.title}
             </a>
           </div>
-          <div class="flex items-center mb-2 pl-0 md:pl-5 text-[8px] md:text-xs">
-            <Icon
-              name="mdi:calendar"
-              class="inline-block mr-2 w-4 h-4 text-content"
-            />
-            {post.data.updatedAt}
-            <Tags class="ml-2" tags={post.data.tags} />
-          </div>
-
           <div class="pl-0 md:pl-5 text-xs sm:text-sm md:text-base">
             {post.data.description}
           </div>
