@@ -1,7 +1,6 @@
 ---
 import "@fontsource-variable/space-grotesk";
 import { ClientRouter } from "astro:transitions";
-import GoogleAnalytics from "~components/GoogleAnalytics.astro";
 interface Props {
   title: string;
 }
@@ -20,7 +19,6 @@ interface Props {
     <meta name="generator" content={Astro.generator} />
     <title>Onur's CS Journey</title>
     <ClientRouter />
-    <GoogleAnalytics />
 
     <!-- MathJax Configuration -->
     <script type="text/x-mathjax-config">
