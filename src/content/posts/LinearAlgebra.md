@@ -1,9 +1,6 @@
 ---
 title: Linear Algebra
-author: onur
-tags: [" Matrices", " Determinants", " Vector Spcaes", " Linear Transformation"]
-createdAt: "2025-01-29"
-updatedAt: "2025-01-29"
+author: Onur Onel
 description: "Introduction to Linear Algebra"
 ---
 
@@ -118,7 +115,7 @@ C =
 \begin{bmatrix} 19 & 22 \\\ 43 & 50 \end{bmatrix}
 $$
 
-**Let's Visualize it:**![Matrix Multiplication](/AppendixLA/1.png)
+**Let's Visualize it:**![Matrix Multiplication](/AppendixLinearAlgebra/1.png)
 
 ---
 

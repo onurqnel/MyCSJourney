@@ -1,9 +1,6 @@
 ---
 title: Probability
-author: onur
-tags: [" Sets", " Random Variables", " Distributions", " Probability Calculus",]
-createdAt: "2025-01-31"
-updatedAt: "2025-02-06"
+author: Onur Onel
 description: "Introduction to Probability Theory" 
 ---
 

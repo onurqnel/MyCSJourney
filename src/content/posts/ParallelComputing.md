@@ -1,9 +1,6 @@
 ---
 title: Parallel Computing
-author: onur
-tags: [" CUDA", " C/C++", " GPU Architecture"," Acceleration", " Optimization"]
-createdAt: "2025-01-07"
-updatedAt: "2025-01-07"
+author: Onur Onel
 description: "Model Optimization Accelaration and GPU Architecture"
 ---
 
@@ -12,7 +9,7 @@ description: "Model Optimization Accelaration and GPU Architecture"
 The **latency-oriented design** of CPUs is highly advantageous for sequential operations and workloads that require low parallelism. By reducing execution latency for individual threads, CPUs excel in single-threaded performance and complex tasks involving conditional logic or frequent data accesses. However, this design approach comes with trade-offs: it demands significant chip area and power consumption to support advanced arithmetic units, large caches, and sophisticated control logic. This focus limits the CPU’s ability to handle highly parallel workloads efficiently, as the resources could have been used to include more arithmetic units or memory access channels. 
 
 In contrast, GPUs are designed for parallelism, making them more suitable for workloads involving a large number of threads but less optimized for minimizing latency in individual operations.
-![Description of Image](/AppendixPMPP/MpDesign.png)
+![Description of Image](/AppendixParallelComputing/MpDesign.png)
 Graphics applications require massive floating-point calculations and memory access, with performance often limited by data transfer rates. GPUs excel at handling large data movement in DRAM and leverage a relaxed memory model to support massive parallelism, crucial for high-quality video rendering.
 
 Reducing latency is much more costly than increasing throughput when considering power and chip area. For example, doubling arithmetic throughput requires doubling the number of arithmetic units, which results in a proportional increase in chip area and power consumption. In contrast, halving latency often involves doubling the current, leading to a more than twofold increase in chip area and a fourfold increase in power consumption. Consequently, throughput optimization is generally a more resource-efficient design choice compared to latency reduction.
@@ -33,7 +30,7 @@ NVIDIA's CUDA, introduced in 2007, facilitates joint CPU-GPU execution for such 
 
 If an application takes 10 seconds to execute in system A but takes 200 seconds to execute in System B, the speedup for the execution by system A over system B would be 200/10=20, which is referred to as a 20 times speedup.
 
-**Amdahl's Law** ![Amdahl's Law](/AppendixPMPP/AmdahlsLaw.png)
+**Amdahl's Law** ![Amdahl's Law](/AppendixParallelComputing/AmdahlsLaw.png)
 The speedup achieved by using parallel computing compared to serial computing depends on how much of the application can run in parallel. For example, if only 30% of the application can be parallelized, even making that part run 100 times faster will only reduce the total execution time by about 29.7%. This means the overall speedup will be about 1.42×. Even if the parallel part becomes infinitely fast, the total speedup will be limited to 1.43×, since 70% of the application still runs sequentially and cannot be improved by parallelization. If 99% of an application's execution time can run in parallel and the parallel part is made 100× faster, the total execution time will shrink to 1.99% of the original, giving an overall speedup of 50× for the entire application.
 
 the importance of a large portion of an application's workload being suitable for parallel execution. If the majority of the workload in an application can be parallelized, a multi-processor parallel computing system can be utilized more effectively, leading to significant performance improvements. In short, the larger the parallelizable portion of an application, the greater the speedup that can be achieved from parallel processors.
@@ -56,12 +53,12 @@ Some applications, known as embarrassingly parallel, can be easily parallelized 
 ### Data Parallelism
 
 **Example:** Grayscale Conversion of Image
-![Grayscale Conversion](/AppendixPMPP/GrayScaleConversion.png)
+![Grayscale Conversion](/AppendixParallelComputing/GrayScaleConversion.png)
 **Weighted Sum**
-![Weighted Sum RGB](/AppendixPMPP/WeightedSumRGB.png)
+![Weighted Sum RGB](/AppendixParallelComputing/WeightedSumRGB.png)
 
 If we think of an input image as an array `I` containing RGB values, and the output as another array `O` containing the corresponding luminance values, the process becomes straightforward
-![Image to Grayscale Conversion](/AppendixPMPP/ImageToGrayscaleConversion.png)
+![Image to Grayscale Conversion](/AppendixParallelComputing/ImageToGrayscaleConversion.png)
 Each luminance value in `O` is calculated by taking the weighted sum of the RGB values of the corresponding pixel in `I`. For example:
       `O[0]` is calculated using the RGB values of `I[0]`
       `O[1]` is calculated using the RGB values of `I[1]`
@@ -79,7 +76,7 @@ Data parallelism is not the only type of parallelism used in parallel programmin
 ### CUDA C Program Structure
 
 A CUDA C program combines host (CPU) and device (GPU) code in the same source file. Traditional C code runs on the host, while device code, marked with special CUDA keywords, runs on the GPU. Device code includes functions (kernels) designed for data-parallel execution.
-![CUDA Execution](/AppendixPMPP/CUDAexe.png)
+![CUDA Execution](/AppendixParallelComputing/CUDAexe.png)
 *(Figure 2.3 shows the simplified execution of two grids of threads and CPU/GPU execution do not overlap)*
 
 The execution starts with host code (CPU serial code). When a kernel function is called, a large number of threads are launched on a device to execute the kernel. All the threads that are launched by a kernel call are collectively called a grid. These threads are the primary vehicle of parallel execution in a CUDA platform. When all threads of a grid have completed their execution, the grid terminates, and the execution continues on the host until another grid is launched. Many heterogeneous computing applications manage overlapped CPU and GPU execution to take advantage of both CPUs and GPUs.
@@ -132,7 +129,7 @@ int main() {
 In examples, whenever there is a need to distinguish between host and device (CPU) data, we will suffix the names of variables that are used by the host with `_h` and those of variables that are used by a device (GPU )with `_d` to remind ourselves of the intended usage of these variables.
 
 A straightforward way to execute vector addition in parallel is to modify the `vecAdd` function and move its calculations to a device (GPU)
-![Vector Addition on GPU](/AppendixPMPP/VectorAdditionGPU.png)
+![Vector Addition on GPU](/AppendixParallelComputing/VectorAdditionGPU.png)
 
 - **Part 1** of the function allocates space in the device (GPU) memory to hold copies of the `A`, `B`, and `C` vectors and copies the `A` and `B` vectors from the host memory to the device memory.
 - **Part 2** calls the actual vector addition kernel to launch a grid of threads on the device
@@ -168,7 +165,7 @@ For the vector addition kernel, before calling the kernel, the programmer needs 
 **Part 1** Similarly, after device execution the programmer needs to transfer result data from the device global memory back to the host memory and free up the allocated space in the device global memory that is no longer needed.
 
 In **Part 1** and **Part 3** of the `vecAdd` function need to use the CUDA API functions to allocate device global memory for `A`, `B`, and `C`; transfer `A` and `B` from host to device; transfer `C` from device to host after the vector addition; and free the device global memory for `A`, `B`, and `C`.
-![CUDA API Functions](/AppendixPMPP/CUDAapiFunctions.png)
+![CUDA API Functions](/AppendixParallelComputing/CUDAapiFunctions.png)
 
 `cudaMalloc` is a CUDA function used to allocate memory **on the GPU’s global memory**. It works similarly to the `malloc` function in C but allocates memory on the GPU instead of the CPU.
 

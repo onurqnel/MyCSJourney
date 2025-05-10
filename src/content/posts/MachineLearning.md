@@ -1,9 +1,6 @@
 ---
 title: Machine Learning
-author: onur
-tags: [" Phyton", " Regression", " Classification", " Clustering", " Deep Learning"]
-createdAt: "2025-01-07"
-updatedAt: "2025-01-07"
+author: Onur Onel
 description: Machine Learning Statistics and Data Science.
 ---
 
@@ -33,7 +30,7 @@ Here:
 - **f(X)** represents the true underlying relationship between the predictors and the response.
 - **ε** denotes the error term, which is independent of **X** and has mean zero. The error term also accounts for variability in **Y** that cannot be explained by **f(X)**.
 
-![Error Term](/AppendixISL/ErrorTerm.png)
+![Error Term](/AppendixMachineLearning/ErrorTerm.png)
 
 ### Prediction 
 
@@ -148,4 +145,4 @@ $$
 \text{income} \approx \beta_0 + \beta_1 \times \text{education} + \beta_2 \times \text{seniority}.
 $$
 
-![Linear Fit](/AppendixISL/LinearFit.png)
+![Linear Fit](/AppendixMachineLearning/LinearFit.png)

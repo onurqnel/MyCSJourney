@@ -33,6 +33,4 @@ export const config: Config = {
             url: 'https://www.linkedin.com/in/onuronel13/'
         }
     ],
-    // Google Analytics tracking ID (leave blank to disable)
-    ga: ''
 };
