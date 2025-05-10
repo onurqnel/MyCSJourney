@@ -1,7 +1,7 @@
 ---
 title: Probability
 author: Onur Onel
-description: "Introduction to Probability Theory" 
+description: "Introduction to Probability" 
 ---
 
 A **deterministic model** predicts the outcome of an experiment with certainty for example:
@@ -714,10 +714,10 @@ $$
 
 ### Multivariete Disturbutions
 
-For two **discrete random variables** $X$ and $Y$, the **Joint Probability Mass Function** gives the probability of each possible pair of outcomes.
+For two **discrete random variables** $X$ and $Y$ the **Joint Probability Mass Function** gives the probability of each possible pair of outcomes.
 
 $$
-f_{X,Y}(x,y) = P(X = x,\, Y = y)
+f_{X,Y}(x,y) = P(X = x, Y = y)
 $$
 
 The total probability across all pairs of outcomes must sum to 1:
@@ -726,7 +726,7 @@ $$
 \sum_{x} \sum_{y} f_{X,Y}(x,y) = 1
 $$
 
-For two **continuous random variables** $X$ and $Y$, the **Joint Probability Density Function** describes the density of probability over a two-dimensional region. 
+The **Joint Probability Density Function** describes the density of probability over a two-dimensional region. 
 
 1. **Non-negativity**:
    $$
@@ -751,14 +751,14 @@ For two **continuous random variables** $X$ and $Y$, the **Joint Probability Den
 
 ### Marginal Distributions
 
-Given a **joint probability mass function** the **marginal probability mass functions** of x and y are obtained by summing over the other variable:
+Given a **joint probability mass function** the **marginal probability mass functions** of $X$  and $Y$ are obtained by summing over the other variable:
 
-- Marginal PMF of **x**:
+- Marginal PMF of **$X$**:
   $$
   f_X(x) = \sum_{y} f_{X,Y}(x, y)
   $$
 
-- Marginal PMF of **y**:
+- Marginal PMF of **$Y$**:
   $$
   f_Y(y) = \sum_{x} f_{X,Y}(x, y)
   $$
@@ -798,53 +798,50 @@ $$
 f_{X,Y}(x, y) = f_X(x) \cdot f_Y(y) \quad \text{for all } x, y
 $$
 
-> **Note:** Verifying independence requires checking that this factorization holds for **all** values in the domain of the joint distribution.
-
+> **Note:** Verifying independence requires checking that this factorization holds for **all** values.
 ---
 
-### Conditional Probability 
+### Discrete Conditional Probability 
 
-#### Discrete Case
-The **conditional probability mass** of **X** given **Y = y** is:
+The **conditional probability mass** of **$X$** given **$Y = y$** is:
 
 $$
 P(X = x \mid Y = y) = \frac{f_{X,Y}(x, y)}{f_Y(y)} \quad \text{for } f_Y(y) > 0
 $$
 
-Similarly, the conditional probability of **Y** given **X = x** is:
+Similarly, the conditional probability of **$Y$** given **$X = x$** is:
 
 $$
 P(Y = y \mid X = x) = \frac{f_{X,Y}(x, y)}{f_X(x)} \quad \text{for } f_X(x) > 0
 $$
 
-#### Continuous Case
-The **conditional probability density** of **X** given **Y = y** is:
+#### Continuous Conditional Probability 
+
+The **conditional probability density** of **$X$** given **$Y = y$** is:
 
 $$
 f_{X \mid Y}(x \mid y) = \frac{f_{X,Y}(x, y)}{f_Y(y)} \quad \text{for } f_Y(y) > 0
 $$
 
-Likewise, the conditional density of **Y** given **X = x** is:
+Likewise, the conditional density of **$Y$** given **$X = x$** is:
 
 $$
 f_{Y \mid X}(y \mid x) = \frac{f_{X,Y}(x, y)}{f_X(x)} \quad \text{for } f_X(x) > 0
 $$
 
-> Note: The conditional density must integrate to 1 over its variable.
-
 ---
 
 ### Expected Value
 
-The Expected Value of a random variable X, denoted by μ, represents the long-run average of outcomes weighted by their probabilities. 
+The Expected Value of a random variable $X$, denoted by **μ** represents the long-run average of outcomes weighted by their probabilities. 
 
-If **X** is a **discrete random variable** with probability mass function, the expected value is:
+If **$X$** is a **discrete random variable** with probability mass function, the expected value is:
 
 $$
 \mu = \mathbb{E}(X) = \sum x \cdot f(x)
 $$
 
-If **X** is a **continuous random variable** with probability density function , the expected value is:
+If **$X$** is a **continuous random variable** with probability density function , the expected value is:
 
 $$
 \mu = \mathbb{E}(X) = \int_{-\infty}^{\infty} x \cdot f(x) \, dx
@@ -852,22 +849,9 @@ $$
 
 > **Note:** The expected value is only defined when the **PMF or PDF** satisfies the required properties such as non-negativity and total equals 1.
 
-#### Expected Value of Function of the Random Variable
-
-$$
-\mathbb{E}[g(X)] =
-\begin{cases}
-\sum g(x) \cdot f(x) & \text{discrete case} \\\\[6pt]
-\int_{-\infty}^{\infty} g(x) \cdot f(x)  dx & \text{continuous case}
-\end{cases}
-$$
-
-
 ---
 
 ### Multivariate Expected Value
-
-Represents the average value of that function over their joint distribution. For two random variables **X** and **Y**, the **expected value of a function** $$g(X, Y)$$ 
 
 If **X** and **Y** are discrete random variables with **joint PMF** 
 $$
@@ -881,16 +865,7 @@ $$
 \mathbb{E}[g(X, Y)] = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} g(x, y) \cdot f_{X,Y}(x, y) dx dy
 $$
 
-
-**Sum of two variables:**  
-  $$g(x, y) = x + y$$  
-  Then the expected value becomes:  
-  $$
-  \mathbb{E}[X + Y] = \mathbb{E}[X] + \mathbb{E}[Y]
-  $$  
-  
-
-**Product of two variables:**  
+**Example:**  
   $$g(x, y) = x \cdot y$$  
   Then the expected value is:  
   $$
@@ -906,27 +881,14 @@ $$
 
 
 #### Linearity of Expected Value
+
 The **expected value** is **linear**, meaning it distributes over addition and allows constants to factor out.
 
   $$\mathbb{E}[aX + b] = a \cdot \mathbb{E}[X] + b$$
 
-- **Scaling** a random variable by **a** scales the expectation by **a**
-- **Shifting** a random variable by **b** shifts the expectation by **b**
-
 ---
-### Conditional Expectation
 
-The **conditional expectation** of a random variable **X** given an event or another random variable **Y** is the **expected value of X**, assuming **Y** has occurred.
-
-#### Discrete Case
-
-If **X** is a discrete random variable with conditional probability mass function $P(X = x | Y = y)$, then the conditional expectation of $X$ given $Y = y$ is:
-
-$$
-\mathbb{E}[X \mid Y = y] = \sum_{x} x \cdot P(X = x \mid Y = y)
-$$
-
-#### Example 
+### Discrete Conditional Expectation
 
 Suppose $X \in \{0, 1\}$ and $Y \in \{a, b\}$, and we are given the joint distribution:
 
@@ -973,15 +935,9 @@ $$
 \mathbb{E}[X \mid Y = a] = 0 \cdot 0.25 + 1 \cdot 0.75 = 0.75
 $$
 
-#### Continuous Case
+---
 
-If **X** is a continuous random variable with conditional probability density function $f_{X|Y}(x \mid y)$, then the conditional expectation is:
-
-$$
-\mathbb{E}[X \mid Y = y] = \int_{-\infty}^{\infty} x \cdot f_{X|Y}(x \mid y) \, dx
-$$
-
-#### Example 
+### Continuous Conditional Expectation
 
 Suppose the **joint density** of $X$ and $Y$ is:
 
@@ -1041,14 +997,13 @@ $$
 \mathbb{E}[X \mid Y = y] = \frac{1}{\frac{1}{2} + y} \left( \frac{1}{3} + \frac{y}{2} \right)
 $$
 
-This is the **conditional expectation** of $X$ given $Y = y$, derived using the joint density.
-
 ---
 
 
 
 ### Moments About the Origin
- Raw moments are often simpler to compute and useful in certain cases such as moment-generating functions.
+
+A moment is a quantitative measure that describes the shape of a distribution.
 
 - **The 0th Moment**
   $$\mathbb{E}[X^0] = 1$$
@@ -1070,11 +1025,11 @@ This is the **conditional expectation** of $X$ given $Y = y$, derived using the 
 
 ### Moments About the Mean
 
-Moments about the mean, also known as centered moments, are calculated by taking the difference between each data value and the average (mean) before raising it to a power. A moment is a quantitative measure that describes the shape of a distribution. The **moments about the mean** provide insight into a distribution’s:
+The moments about the mean provide insight into a distribution’s:
 
-- **Balance Point** (Mean)
-- **Spread** (Variance)
-- **Asymmetry** (Skewness)
+- **Mean**
+- **Variance**
+- **Skewness**
 
 
 The **$r$-th moment about the mean** also called the **central moment** for a random variable **X** is defined as:
@@ -1096,7 +1051,7 @@ $$
 \mu_2 = \mathbb{E}[(X - \mu)^2] = \text{Var}(X)
 $$
 
-> This measures the **spread** or **dispersion** of the data. A larger value indicates a wider spread around the mean.
+> This measures the **spread** of the data. A larger value indicates a wider spread around the mean.
 
 
 #### 3. **Third Moment About the Mean (Skewness)**
@@ -1110,13 +1065,13 @@ $$
 
 ### Variance
 
-The **variance** of a random variable measures how much the values **spread out** from the **mean**. It is the **second central moment**:
+Measures how much the values **spread out** from the **mean**.
 
 $$
 \text{Var}(X) = \mathbb{E}[(X - \mu)^2]
 $$
 
-#### Shortcut Formula for Variance
+#### Shortcut Formula 
 
 $$
 \text{Var}(X) = \mathbb{E}[X^2] - (\mathbb{E}[X])^2
@@ -1131,13 +1086,11 @@ $$
 \sigma = \sqrt{\text{Var}(X)}
 $$
 
-> **Note:** A smaller variance or standard deviation means the data is **more concentrated** around the mean. Larger values indicate a **wider spread**.
-
 ---
 
 ### Chebyshev's Theorem
 
-Provides a lower bound on the proportion of values that lie within a certain number of standard deviations from the mean, regardless of the distribution shape. For any random variable with  $\mu$ and standard deviation $\sigma$, the proportion of data within $k$ standard deviations of the mean is at least:
+For any random variable with  $\mu$ and standard deviation $\sigma$, the proportion of data within $k$ standard deviations of the mean is at least:
 
 $$
 P(|X - \mu| < k\sigma) \geq 1 - \frac{1}{k^2}, \quad \text{for } k > 1
@@ -1174,22 +1127,22 @@ $$
 
 ### Moment Generating Functions
 
-The **Moment Generating Function** of a random variable **X** is a function that helps us find all the **moments** of **X**, if it exists.
+The **Moment Generating Function** of a random variable **$X$** is a function that helps us find all the moments of **$X$**, if it exists.
 
 $$
 M_X(t) = \mathbb{E}[e^{tX}]
 $$
 
 
-#### MGF of Discrete Random Variables
+#### Discrete Random Variables
 
-Let **X** be a discrete random variable with PMF $p(x)$. Then:
+Let **$X$** be a discrete random variable with PMF $p(x)$. Then:
 
 $$
 M_X(t) = \sum_{x} e^{tx} \cdot p(x)
 $$
 
-Let **X** range equals to ${0, 1, 2, 3}$ and with the function $p(x)$:
+Let **$X$** range equals to ${0, 1, 2, 3}$ and with the function $p(x)$:
 
 $$
 p(x) = \frac{1}{8} \cdot \binom{3}{x}
@@ -1249,11 +1202,11 @@ $$
 
 ---
 
-### Finding the Moments from the MGF
+### Finding the Moments 
 
 We now compute the **first and second moments** using derivatives of the MGF.
 
-#### First Moment - the Mean
+#### First Moment
 
 We take the **first derivative** of:
 
@@ -1337,21 +1290,11 @@ $$
 
 ### Product Moments and Covariance
 
-
-#### Product Moments About the Origin
-
 For two random variables $X$ and $Y$, the **product moment about the origin** is defined as:
 
 $$
 \mu'_{r,s} = \mathbb{E}[X^r Y^s]
 $$
-
-If $r = s = 1$, then:
-  
-$$
-\mu'_{1,1} = \mathbb{E}[XY]
-$$
-
 
 #### Product Moments About the Mean
 
