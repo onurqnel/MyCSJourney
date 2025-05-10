@@ -1,21 +1,16 @@
 import { z } from 'zod';
 
 export const ConfigSchema = z.object({
-    brand: z.string(),
-    author: z.string(),
     social: z.array(z.object({
         name: z.string(),
         icon: z.string(),
         url: z.string().url(),
-    })),
-    ga: z.string().optional(),
+    }))
 });
 
 export type Config = z.infer<typeof ConfigSchema>;
 
 export const config: Config = {
-    brand: 'Astroberry',
-    author: 'Astroberry',
     social: [
         {
             name: 'Github',
