@@ -1,7 +1,7 @@
 ---
 title: C++
 author: Onur Onel
-description: "Introduction to C++" 
+description: "Introduction to C+ Programming" 
 ---
 
 
