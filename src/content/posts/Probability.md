@@ -4,13 +4,13 @@ author: Onur Onel
 description: "Introduction to Probability Theory" 
 ---
 
-A **deterministic model** predicts the outcome of an experiment with certainty. 
+A **deterministic model** predicts the outcome of an experiment with certainty for example:
 
 - Velocity of a falling object $v = gt$.  
 
-A **probabilistic** or **stochastic model**  assigns a probability to each possible outcome.  
+A **probabilistic** or **stochastic model**  assigns a probability to each possible outcome such as:
 
-- Rolling a die results in probability of $1/6$.  
+- Rolling a die results in probability of $\frac{1}{6}$  
 
 When there are $N$ possible equally likely outcomes, and $k$ succeses, then the probability is:
 
@@ -24,23 +24,30 @@ These values describe the frequency of the successful outcome and the proportion
 
 ### Sample Spaces  
 
-The sample space is the set of all possible outcomes of an experiment. 
-
-- A **discrete** sample space has a finite or countably infinite number of elements.  
-
-- A **continuous** sample space is an interval in **ℝ**.
+The sample space is the set of all possible outcomes of an experiment. **Discrete** sample space has a finite or countably infinite number of elements. **Continuous** sample space is an interval in **ℝ**.
 
 
-Individual elements of a sample space are called **outcomes** while subsets of a sample space are called **events**.  
+Individual elements of a sample space are called **outcomes** while subsets of a sample space are called **events**. For example the Probability Spinner has $ \text{Sample space: } { θ \in [0, 360)}$. Therefore events could be
 
-For example the Probability Spinner has $ \text{Sample space: } {θ \text{ degrees} \mid θ \in [0, 360)}$
+- Landing between 90 and 180 degrees.
+- Landing either between 45 and 90 degrees.
+- Landing precisely on 180 degrees.
 
+Two events are mutually exclusive or disjoint if they cannot occur at the same time for example:
 
+- **Event A:** Rolling at least one six 
 
-**Therefore events could be**
-- Landing between 90 and 180 degrees<br>
-- Landing either between 45 and 90 degrees or between 270 and 315 degrees  <br>
-- Landing precisely on 180 degrees.    
+  $$
+  A = \{ (d_1, 6), (6, d_2) \mid d_1, d_2 ∈ \{1, 2, 3, 4, 5, 6\} \}
+  $$  
+
+- **Event B:** Sum of the dice equals 4  
+  
+  $$
+  B = \{ (d, 4-d) \mid d ∈ \{1, 2, 3\} \}
+  $$  
+
+The events $A$ and $B$ in this case are called **mutually exclusive**. 
 
 ---
 
@@ -66,35 +73,20 @@ Let $A$ and $B$ be events in sample space $S$
   A^c = \{ x ∈ S \mid x \notin A \} = S \setminus A
   $$  
 
-A **Venn diagram** visually represents subsets of a **Universal Set $S$**  
+A **Venn diagram** visually represents subsets of a **Universal Set $S$**. 
+
+> **Note:** A set with no elements is called the **Empty Set**, denoted **∅**.  
+  
 
 <p align="center">
-  <img src="/AppendixPROB/1.png" alt="Venn Diagrams" />
+  <img src="/AppendixProbability/1.png" alt="Venn Diagrams" />
 </p>
 
-A set with no elements is called the **Empty Set**, denoted **∅**.  
-
-
----
-### Mutually Exclusive Events  
-
-Two events are mutually exclusive or disjoint if they cannot occur at the same time for example:
-
-- **Event A:** Rolling at least one six and **Event B:** Sum of the dice equals 4  
-
-  $$
-  A = \{ (d_1, 6), (6, d_2) \mid d_1, d_2 ∈ \{1, 2, 3, 4, 5, 6\} \}
-  $$  
-
-  $$
-  B = \{ (d, 4-d) \mid d ∈ \{1, 2, 3\} \}
-  $$  
-
-The events $A$ and $B$ in this case are called **mutually exclusive or disjoint**.  
 
 ---
 
 ### Algebra of the Sets  
+
 Let $A$, $B$, and $C$ be subsets of a universal set $S$.  
 
 **Idempotent Laws:**  
@@ -157,27 +149,27 @@ A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)
 $$
 
 <p align="center">
-  <img src="/AppendixPROB/2.png" alt="Set Operations" />
+  <img src="/AppendixProbability/2.png" alt="Set Operations" />
 </p>
 
 ---
 
-### Probability Axioms
+### Axioms
 
-**Probability** must satisfy the following **postulates - axioms**.  
-
-1. **Probability Interval:** The probability of any event **A** in sample space is a non-negative ℝ number. Since events can't happen less than 0% or more than 100%:  
+1. **Probability Interval:** The probability of any event **A** in sample space is a non-negative ℝ number.
 
   $$
   0 \leq P(A) \leq 1, \quad \text{for any event } A
   $$  
 
-2. **Sample Space:** Since **universal set S** includes all possible outcomes, the probability of any outcome occurring must:  
+2. **Sample Space:** Since universal set S includes all possible outcomes the probability of sample space:  
+
   $$
   P(S) = 1
   $$  
 
 3. **Additivity:** If events $A_1, A_2, ...$ are **mutually exclusive**, their total probability is the sum of their individual probabilities: 
+
   $$
   P(A_1 ∪ A_2 \dots) = P(A_1) + P(A_2)\dots
   $$  
@@ -185,7 +177,6 @@ $$
 
 ### Rules
 
-Let $S$ be a sample space with probability measure $P$, and let $A$ and $B$ be events.  
 1. **Complement Rule**  
    $$
    P(A) + P(A^c) = 1, \quad P(A^c) = 1 - P(A)
@@ -204,28 +195,22 @@ Let $S$ be a sample space with probability measure $P$, and let $A$ and $B$ be e
    P(A ∪ B) = P(A) + P(B) - P(A ∩ B)
    $$ 
 
-The Inclusion-Exclusion Principle can be generalized to more than two sets.
-
 
 ---
+
 ### Conditional Probability
 
 The $P(A|B)$ is called the **conditional probability of A given B**.
-
-If $A$ and $B$ are events in a sample space, and $P(B) ≠ 0$, then the conditional probability of A given B is defined as:
 
 $$
 P(A|B) = \frac{P(A \cap B)}{P(B)}
 $$
 
-The outcome must lie in both A and B. Therfore, A ∩ B becomes the event of interest, and B is considered the new sample space.
+Consider deck of 52 cards. Let A be drawing a **King**, and  B be drawing a **Spade**.
 
-**Example:**  
-Consider deck of 52 playing cards. Let A be drawing a **King**, and  B be drawing a **Spade**.
-
-- $P(A) = 4/52 = 1/13$ 
-- $P(B) = 13/52 = 1/4$ 
-- $P(A ∩ B) = 1/52$
+- $P(A) = \frac{4}{52}$ 
+- $P(B) = \frac{13}{52}$ 
+- $P(A ∩ B) = \frac{1}{52}$
 
 The conditional probability of drawing a King given that the card is a Spade is:
 
@@ -235,34 +220,7 @@ $$
 
 ---
 
-### Finding Intersections
-
-We can find $P(A ∩ B)$ using the **Multiplication Rule** of the probability.
-
-$$
-P(A \cap B) = P(A) \cdot P(B|A)
-$$
-
-Imagine selecting two cards from a deck without replacement:
-
-- Let A be the event **"the first card is an Ace"**.
-- Let B be the event **"the second card is an Ace"**.
-
-1. $P(A)$
-   - There are 4 Aces out of 52 cards, so **P(A) = 4/52 = 1/13**.
-
-2. $P(B|A)$:
-   - If the first card was an Ace, there are now 3 Aces left out of 51 cards, so $P(B|A) = 3/51 = 1/17$.
-
-3. Multiply them together:
-   $$
-   P(A \cap B) = P(A) \cdot P(B|A) = \frac{1}{13} \cdot \frac{1}{17} = \frac{1}{221}
-   $$
-
----
-### Dependent and Independent Events
-
-#### **Independent Events**
+### Independent Events
 
 Two events $A$ and $B$ are said to be **independent** if the occurrence of one event **does not affect** the probability of the other event occurring.
 
@@ -282,12 +240,7 @@ Consider flipping a fair coin and rolling a fair six-sided die.
 - Let event **A** be **getting Heads** on the coin flip.
 - Let event **B** be **rolling a 4** on the die.
 
-Since flipping the coin has no impact on the die roll and vice versa, A and B are independent.
-
-- $P(A) = 1/2$ 
-- $P(B) = 1/6$ 
-
-The probability of both A and B occurring is:
+Since flipping the coin has no impact on the die roll and vice versa, A and B are independent The probability of both A and B occurring is:
 
 $$
 P(A \cap B) = P(A) \cdot P(B) = \frac{1}{2} \cdot \frac{1}{6} = \frac{1}{12}
@@ -295,8 +248,9 @@ $$
 
 We can simply multiply the probabilities when events are independent.
 
+---
 
-#### Dependent Events
+### Dependent Events
 
 Two events $A$ and $B$ are **dependent** if the occurrence of one event **affects** the probability of the other event occurring. 
 
@@ -318,49 +272,24 @@ Since the first card is not replaced, the events are dependent because the outco
 1. **$P(A)$**: There are 4 Queens in the deck
 
    $$
-   P(A) = \frac{4}{52} = \frac{1}{13}
+   P(A) = \frac{4}{52} 
    $$
 
 2. **$P(B|A)$**: If the first card was a Queen, there are now 3 Queens left in a deck of 51 cards
 
    $$
-   P(B|A) = \frac{3}{51} = \frac{1}{17}
+   P(B|A) = \frac{3}{51} 
    $$
 
 3. **Joint Probability**:
 
    $$
-   P(A \cap B) = P(A) \cdot P(B|A) = \frac{1}{13} \cdot \frac{1}{17} = \frac{1}{221}
+   P(A \cap B) = P(A) \cdot P(B|A) = \frac{4}{52} \cdot \frac{3}{51} = \frac{1}{221}
    $$
-
-#### Differences Between Independent and Dependent Events
-
-- **Independent Events:** The outcome of one event **does not influence** the outcome of the other.
-- **Dependent Events:** The outcome of one event **does influence** the outcome of the other.
-
-A quick way to test for independence is to check if:
-
-$$
-P(A \cap B) = P(A) \cdot P(B)
-$$
-
-If this equality holds, the events are independent. If not, the events are dependent.
 
 ---
 
 ### Bayes' Theorem
-
-$$
-P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}
-$$
-
-Where:
-- $P(A|B)$ is the **posterior probability**
-- $P(B|A)$ is the **likelihood**
-- $P(A)$ is the **prior probability**
-- $P(B)$ is the **marginal probability**
-
-#### **Derivation of Bayes' Theorem**
 
 Derived from the definition of conditional probability:
 
@@ -416,16 +345,9 @@ So, even with a positive test result, the probability of actually having the dis
 
 ---
 
-### Random Variables
-
-**Random Variable** is a function that assigns a real number to each outcome of a probability experiment. Usually, capital **X** used to denote random variables, while their lowercase counterparts **x**, represent value that **X** can take. **Range** is the set of all values a random variable can produce. 
-
-> **Note:**  A **Discrete Random Variable** has a countable set of possible values, while a **Continuous Random Variable** has an uncountable range, covering an interval of real numbers **ℝ**.
-
-
 ### Probability Mass Function
 
-A Probability Mass Function gives the probability of each possible value of a **discrete random variable**. It tells us how likely each outcome is.
+Gives the probability of each possible value of a **discrete random variable**. It tells us how likely each outcome is.
 
 $$
 f(x) = P(X = x), \quad \text{where } 0 \leq P(X = x) \leq 1
@@ -455,6 +377,8 @@ The probability that the variable falls between two values
   P(a < X < b) = \sum_{x = a+1}^{b-1} f(x)
   $$
 
+**Example:**
+
 Let **X** be a discrete random variable with PMF:
 
 $$
@@ -478,7 +402,7 @@ P(1 \leq X \leq 3) = f(1) + f(2) + f(3) = \frac{7}{8}
 $$  
 
 $$
-P(0 < X < 3) = f(1) + f(2) = \frac{3}{8} + \frac{3}{8} = \frac{6}{8} = \frac{3}{4}
+P(0 < X < 3) = f(1) + f(2) = \frac{3}{8} + \frac{3}{8} = \frac{3}{4}
 $$
 
 
@@ -486,9 +410,7 @@ $$
 
 ### Probability Density Function
 
-A **Probability Density Function** describes the probability distribution of a **continuous random variable**. Unlike a PMF, which gives the probability of specific discrete values, the PDF represents probability **density** over an interval.
-
-For a continuous random variable $X$, the PDF satisfies:
+Describes the probability distribution of a **continuous random variable**. PDF represents probability **density** over an interval. For a continuous random variable $X$, the PDF satisfies:
 
 1. **Non-negativity**:
    $$
@@ -560,7 +482,7 @@ We find probabilities over intervals by integrating within those intervals.
 
 ### Cumulative Distribution Function
 
-A Cumulative Distribution Function gives the probability that a random variable $X$ takes on a value **less than or equal to** a specific value $x$.
+Represents the probability that a random variable $X$ takes on a value **less than or equal to** a specific value $x$.
 
 $$
 F(x) = P(X \leq x)
@@ -607,9 +529,9 @@ The derivative of the CDF gives the PDF:
 
 --- 
 
-### PMF to CDF Conversion
+### PMF to CDF 
 
-Consider a discrete random variable **X** with the following **PMF** defined over four points:
+Consider a discrete random variable **X** with the following **PMF** defined:
 
 $$
 p(x) = \begin{cases} 
@@ -659,7 +581,7 @@ $$
 
 ---
 
-### CDF to PMF Conversion
+### CDF to PMF 
 
 Using the discrete **CDF** from the previous example:
 
@@ -708,9 +630,9 @@ $$
 
 ---
 
-### PDF to CDF Conversion
+### PDF to CDF
 
-Consider a continuous random variable **X** with the following piecewise **PDF** defined:
+Consider a continuous random variable **X** with the following **PDF** defined:
 
 $$
 f(x) = \begin{cases} x, & 0 \leq x < 1, \\\ 2 - x, & 1 \leq x \leq 2, \\\ 0, & \text{otherwise}.
@@ -762,7 +684,7 @@ $$
 
 ---
 
-### CDF to PDF Conversion
+### CDF to PDF
 
 
 Using the continuous **CDF** from the previous example:
