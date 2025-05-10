@@ -16,28 +16,6 @@ const posts = await getCollection("posts");
     >
       My CS Journey
     </h1>
-    <p class="md:w-2/3 text-xs md:text-sm lg:text-base">
-      My Notes Inspired by the Books
-      <a
-        href="https://www.statlearning.com"
-        target="_blank"
-        class="underline underline-offset-4 decoration-dashed decoration-brand"
-      >
-        Introduction to Statistical Learning
-      </a>
-      &
-      <a
-        href="https://shop.elsevier.com/books/programming-massively-parallel-processors/hwu/978-0-323-91231-0"
-        target="_blank"
-        class="underline underline-offset-4 decoration-dashed decoration-brand"
-      >
-        Programming Massively Parallel Processors
-      </a>
-      <Icon
-        name="mdi:external-link"
-        class="inline-block w-3 h-3 md:w-4 md:h-4 ml-1"
-      />
-    </p>
     <PostList posts={posts} />
   </Container>
 </Layout>
