@@ -6,7 +6,6 @@ description: "Introduction to Linear Algebra"
 
 ### Matrix Addition
 Addition and subtraction can only be performed between **matrices of the same size** which means, the matrices must have the **same number of rows and columns**.
-The sum of two matrices is calculated by **adding the elements at the same position**.
 1. **Addition is commutative:** $$ A + B = B + A $$
 2. **Addition is associative:** $$ (A + B) + C = A + (B + C) $$
 3. **Scalars Over Matrix Addition**
@@ -18,7 +17,7 @@ $$
 A + (-A) = 0
 $$
 
-Example:
+**Example**:
 $$
 A =
 \begin{bmatrix} 1 & 2 \\\ 3 & 4 \end{bmatrix},
@@ -26,7 +25,6 @@ A =
 B =
 \begin{bmatrix} 5 & 6 \\\ 7 & 8 \end{bmatrix}
 $$
-Adding these two matrices:
 $$
 A + B =
 \begin{bmatrix} 1+5 & 2+6 \\\ 3+7 & 4+8 \end{bmatrix} =
@@ -52,7 +50,7 @@ $$
 A - A = 0
 $$
 
-Example:
+**Example**:
 $$
 A =
 \begin{bmatrix} 7 & 8 \\\ 9 & 10 \end{bmatrix},
@@ -60,7 +58,6 @@ A =
 B =
 \begin{bmatrix} 2 & 3 \\\ 4 & 5 \end{bmatrix}
 $$
-Subtracting these two matrices:
 $$
 A - B =
 \begin{bmatrix} 7-2 & 8-3 \\\ 9-4 & 10-5 \end{bmatrix} =
@@ -93,7 +90,7 @@ $$
 (r + s)A = rA + sA
 $$
 
-Example:
+**Example**:
 $$
 A =
 \begin{bmatrix} 1 & 2 \\\ 3 & 4 \end{bmatrix},
@@ -101,7 +98,6 @@ A =
 B =
 \begin{bmatrix} 5 & 6 \\\ 7 & 8 \end{bmatrix}
 $$
-Multiplying these matrices:
 $$
 C = A \times B =
 \begin{bmatrix} 
@@ -109,7 +105,7 @@ C = A \times B =
 (3 \times 5 + 4 \times 7) & (3 \times 6 + 4 \times 8) 
 \end{bmatrix}
 $$
-Result:
+Therefore:
 $$
 C =
 \begin{bmatrix} 19 & 22 \\\ 43 & 50 \end{bmatrix}
@@ -120,7 +116,7 @@ $$
 ---
 
 ### Identity Matrix
-The **identity matrix** **`I`** is a **square matrix** with **1's on the main diagonal** and **0's at rest**.
+The **identity matrix** **$I$** is a **square matrix** with **1's on the main diagonal** and **0's at rest**.
 
 $$ I_2 = \begin{bmatrix} 1 & 0 \\\ 0 & 1 \end{bmatrix} $$
 $$ I_3 = \begin{bmatrix} 1 & 0 & 0 \\\ 0 & 1 & 0 \\\ 0 & 0 & 1 \end{bmatrix} $$
@@ -132,14 +128,13 @@ $$ I_4 = \begin{bmatrix} 1 & 0 & 0 & 0 \\\ 0 & 1 & 0 & 0 \\\ 0 & 0 & 1 & 0 \\\ 0
    $$ I^{-1} = I $$
 
 
-If **A** is an **M × N matrix**, you can still multiply it by identity matrices:
+If **$A$** is an **$M × N$ matrix**, you can still multiply it by identity matrices In both cases, **$A$** stays the same:
    
-- Multiply by an **M × M** identity matrix **I_m** on the **left**
-- Multiply by an **N × N** identity matrix **I_n** on the **right**
+- Multiply by an **$M × M$** identity matrix **$I_m$** on the **left**
+- Multiply by an **$N × N$** identity matrix **$I_n$** on the **right**
 
-In both cases, **A** stays the same:
+**Example**
 
-Let:
 $$
 A = \begin{bmatrix} 1 & 2 & 3 \\\ 4 & 5 & 6 \end{bmatrix} \quad (2 \times 3 \)
 $$
@@ -166,8 +161,7 @@ $$
 ---
 
 ### Matrix Transpose
-The **transpose** of a matrix is obtained by **swapping its rows and columns**.
-A matrix of size **M x N** will have a transpose of size **N x M**.
+Obtained by **swapping its rows and columns**. A matrix of size **$M × N$** will have a transpose of size **$N × M$**.
 
 **Example:**
 $$
