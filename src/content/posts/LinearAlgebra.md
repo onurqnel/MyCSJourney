@@ -5,7 +5,7 @@ description: "Introduction to Linear Algebra"
 ---
 
 ### Matrix Addition
-Addition and subtraction can only be performed between **matrices of the same size** which means, the matrices must have the **same number of rows and columns**.
+Addition and subtraction can only be performed between matrices of the same size which means, the matrices must have the same number of rows and columns.
 1. **Addition is commutative:** $$ A + B = B + A $$
 2. **Addition is associative:** $$ (A + B) + C = A + (B + C) $$
 3. **Scalars Over Matrix Addition**
@@ -36,7 +36,7 @@ $$
 ---
 
 ### Matrix Subtraction
-The difference of two matrices is calculated by **subtracting the elements at the same position** and **Dimensions must be the same.**
+The difference of two matrices is calculated by subtracting the elements at the same position and Dimensions must be the same.
 
 1. **Subtraction is not commutative:** $$ A - B \neq B - A$$
 2. **Subtraction is not associative:** $$ (A - B) - C \neq A - (B - C) $$
@@ -116,13 +116,13 @@ $$
 ---
 
 ### Identity Matrix
-The **identity matrix** **$I$** is a **square matrix** with **1's on the main diagonal** and **0's at rest**.
+The identity matrix $I$ is a square matrix with 1's on the main diagonal and 0's at rest.
 
 $$ I_2 = \begin{bmatrix} 1 & 0 \\\ 0 & 1 \end{bmatrix} $$
 $$ I_3 = \begin{bmatrix} 1 & 0 & 0 \\\ 0 & 1 & 0 \\\ 0 & 0 & 1 \end{bmatrix} $$
 $$ I_4 = \begin{bmatrix} 1 & 0 & 0 & 0 \\\ 0 & 1 & 0 & 0 \\\ 0 & 0 & 1 & 0 \\\ 0 & 0 & 0 & 1 \end{bmatrix} $$
 
-1. **Multiplying any matrix by the identity matrix leaves it unchanged**
+1. **Multiplying any matrix by the identity**
    $$ A \times I = I \times A = A $$
 2. **Its inverse is itself**
    $$ I^{-1} = I $$
@@ -161,7 +161,7 @@ $$
 ---
 
 ### Matrix Transpose
-Obtained by **swapping its rows and columns**. A matrix of size **$M × N$** will have a transpose of size **$N × M$**.
+Obtained by swapping its rows and columns. A matrix of size **$M × N$** will have a transpose of size **$N × M$**.
 
 **Example:**
 $$
@@ -172,7 +172,7 @@ $$
 A^T = \begin{bmatrix} 1 & 4 \\\ 2 & 5 \\\ 3 & 6\end{bmatrix}
 $$
 
-Properties:
+**Properties**:
 
 1. **Double transpose returns the original matrix**  
    $$
@@ -206,19 +206,16 @@ Properties:
 ---
 
 ### Inverse Matrix
+
 Matrix has an inverse only if it is square matrix and its determinant is nonzero. The inverse of a matrix is unique. 
 
-Suppose 
-$$
-Ax = b,
-$$
-we can multiply by **A⁻¹** if it exists:
+Suppose $Ax = b$ we can multiply by **$A⁻¹$** if it exists:
 
 $$
 A^{-1}Ax = A^{-1}b.
 $$
 
-Since **A⁻¹  x  A = I** we get:
+Since **$A⁻¹ × A = I$** we get the solution for $x$:
 
 $$
 x = A^{-1}b.
