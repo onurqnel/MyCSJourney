@@ -1,36 +1,14 @@
 ---
-title: C++
+title: C++ Programming
 author: Onur Onel
 description: "Introduction to C+ Programming" 
 ---
 
-
-### Compiler Basics
-
-A **compiler** translates high-level language code into machine language. **Source code** is the original program written in a high-level language. **Object code** is the translated version in machine language. On most systems:
-
-- The **compiler** converts source code into object code.
-- The **linker** combines object code into a single executable program.
-
----
-
-### Types of Errors
-**Syntax error**: A compile-time error due to incorrect structure or grammar.
-**Logic error**: Occurs when a program runs without crashing but produces incorrect or unexpected results due to a flaw in the programmer’s logic.
-**Runtime error**: Occurs during the execution of a program. Examples include:
-  - Division by zero  
-  - Null pointer dereference (accessing an uninitialized variable)  
-  - Array index out of bounds  
-  - File not found
-
----
-
 ### Variables and Identifiers
-- Variables are names for memory locations.
-- Variable names are called **identifiers**.
-- The first character of an identifier must be a **letter** or **underscore** (`_`); it cannot be a digit or special character.
+Variables are names for memory locations. Variable names are called **identifiers**.
+- The first character of an identifier must be a **letter** or **underscore**.
 ```cpp
-int x = 1, y;     // x is initialized; y is declared but uninitialized
+int x = 1, y;     // x is initialized; y is declared 
 double z(2.0);    // z is initialized using constructor syntax
 ```
 
