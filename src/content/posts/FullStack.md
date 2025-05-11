@@ -177,3 +177,134 @@ React is a popular JavaScript library developed by Facebook for building dynamic
 - **Virtual DOM:** React uses a virtual representation of the DOM to efficiently update only the parts of the UI that change.
 - **Declarative Syntax:** Developers describe what the UI should look like, and React handles the rendering.
 - **JSX:** A syntax extension that allows writing HTML-like code within JavaScript.
+
+### Create React App
+
+The easiest way to get started with a modern React application is by using a tool called Vite. Vite is a fast build tool that supports modern JavaScript frameworks. It requires Node.js version 18 or higher.
+
+You can initialize a new project by running:
+
+```bash
+npm create vite@latest
+```
+
+Follow the interactive prompts:
+
+```bash
+◆ Project name:
+│  demo
+
+◆ Select a framework:
+│  ○ Vanilla
+│  ○ Vue
+│  ● React
+│  ○ Svelte
+│  ... (other options)
+
+◆ Select a variant:
+│  ○ TypeScript
+│  ● TypeScript + SWC
+│  ○ JavaScript
+│  ... (other variants)
+```
+Once the scaffolding is complete:
+
+```bash
+cd demo
+npm install
+npm run dev
+```
+
+This will start the development server and open the app in your browser. You can also create the project with a single command by specifying the name and template:
+
+```bash
+npm create vite@latest demo -- --template react
+cd demo
+npm install
+npm run dev
+```
+
+Vite starts the application by default on port 5173. If it is not free, Vite uses the next free port number.
+
+### Default App Structure 
+
+After initializing a new project with Vite and React, the directory contains several important files and folders. 
+
+```bash
+demo/                            # Root project folder
+├── eslint.config.js             # ESLint configuration
+├── index.html                   # Entry HTML file (React mounts here)
+├── node_modules/                # Installed packages (auto-generated)
+├── package.json                 # Project metadata and dependencies
+├── package-lock.json            # Locks exact versions of dependencies
+├── public/                      # Static assets (served as-is)
+├── README.md                    # Project documentation
+└── src/                         # Application source code
+    ├── App.jsx                  # Root React component
+    └── main.jsx                 # App entry point, mounts <App /> into DOM
+```
+
+- **index.html:**
+This is the HTML entry point of the application. It contains a div root where entire React app is injected.
+
+- **package.json:**
+Defines project metadata, scripts, and the list of dependencies it can be used for adding or removing packages, defining custom scripts and viewing the app's current setup.
+
+- **main.jsx:** The actual entry point of the React app. It imports the root component App.jsx and mounts it to the DOM using ReactDOM.createRoot(...)
+
+- **App.jsx:** The root component that structures the visible UI. We typically break this into smaller components as app grows.
+
+### React Components
+
+In React, all content to be rendered is typically defined as components. A component is a JavaScript function that returns JSX. The App.jsx file defines the main component of the application.
+
+```js
+// main.jsx
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import App from './App.jsx'
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)
+```
+The main.jsx file is the entry point of the application. It imports the App component and uses createRoot to render it into the HTML element with the ID "root".
+
+```html
+<!--index.html-->>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo</title> 
+  </head>
+  <body>
+    <div id="root"></div> <!--Here-->
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+```
+
+This is the base HTML file served to the browser. React injects the UI into the `<div id="root">` using the main.jsx file.
+
+
+```js
+// App.jsx
+const App = () => {
+  return (
+    <div>
+      <p>Hello World!</p>
+    </div>
+  )
+}
+
+export default App
+```
+
+When using React, all content that needs to be rendered is usually defined as React components. Here, App is a functional React component that returns a `<p>` element. It is exported for use in other parts of the application.
+
+
