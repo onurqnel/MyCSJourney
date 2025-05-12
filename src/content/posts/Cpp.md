@@ -4,23 +4,115 @@ author: Onur Onel
 description: "Introduction to C+ Programming" 
 ---
 
-### Variables and Identifiers
-Variables are names for memory locations. Variable names are called **identifiers**.
-- The first character of an identifier must be a **letter** or **underscore**.
+### Variables
+
+Variables are named memory locations that hold values during program execution. Variable name is called an identifier.
+
+- Identifiers must begin with a letter or an underscore.
+- Subsequent characters may include digits (0–9).
+- Identifiers are case-sensitive.
+
+>Note: Variable names should be descriptive
+
+Variables must be declared with a type before use. They can be initialized during declaration.
+
 ```cpp
-int x = 1, y;     // x is initialized; y is declared 
-double z(2.0);    // z is initialized using constructor syntax
+int x = 1, y;       // x is initialized; y is only declared
+double z(2.0);      // constructor-style initialization
+char grade = 'A';   // character type variable
+int a{5};           // uniform initialization
+float b{};          // b is value-initialized to 0.0
 ```
 
----
+### Data Types
 
-### Escape Sequences
+C++ is a statically typed language, meaning each variable must be declared with a specific type.
+
+| Type     | Description                     | Example           |
+| -------- | ------------------------------- | ----------------- |
+| int      | Integer numbers                 | int count = 42;   |
+| float    | Single-precision floating point | float pi = 3.14;  |
+| double   | Double-precision floating point | double x = 2.718; |
+| char     | Single character                | char grade = 'A'; |
+| bool     | Boolean (true/false)            | bool done = true; |
+
+### Modifiers
+
+Modifiers adjust the size or sign of numeric types:
+
+- short
+- long 
+- long long
+- signed
+- unsigned
+
 ```cpp
-\n    // newline
-\t    // tab
-\\    // backslash
-\'    // single quote
+unsigned int score = 90000;
+long long int large = 9223372036854775807;
 ```
+
+### Type Definitions
+
+`typedef` is a keyword in C++ that allows you to create a alias for an existing type
+
+```cpp
+typedef existing_type new_name;
+
+typedef unsigned int uint;
+uint score = 100; // same as: unsigned int score = 100;
+```
+
+Type definitions simplifies long or complex type names result in more readable code. In C++11 and newer, we can use the `using` keyword which often preferred for its cleaner syntax:
+
+```cpp
+using uint = unsigned int;
+using IntPtr = int*;
+```
+
+### Type Conversions
+
+Type conversion refers to changing a value from one data type to another. It can happen implicitly-automatically or explicitly-manually.
+
+**Implicit Conversion** Also known as automatic type conversion, this occurs when:
+
+- A value is assigned to a variable of a compatible but larger type.
+- In mixed-type expressions, smaller types are promoted
+
+```cpp
+int a = 5;
+double b = a;    // a becomes 5.0 automatically (int → double)
+```
+
+May lose data when converting double → int.
+
+```cpp
+double x = 3.14;
+int y = x;       // y = 3, fractional part is truncated
+```
+
+**Explicit Conversion**
+Also called type casting, you manually force a conversion. This is useful when:
+
+- We want to control precision loss
+- We need to override default behavior
+
+```cpp
+double pi = 3.1415;
+int val1 = int(pi);     // C style cast: truncated = 3
+int val2 = static_cast<int>(pi);  // C++ style cast: truncated = 3
+```
+
+### Global Variables and Constants
+
+
+
+
+
+
+
+
+
+
 
 ---
 
@@ -35,17 +127,7 @@ cout << "The price is " << price << endl;
 
 ---
 
-### Type Conversion
-```cpp
-int a = 5;
-double b = a;      // Implicit conversion: a becomes 5.0
 
-double x = 3.14;
-int y = x;         // Truncated: y becomes 3
-
-double pi = 3.1415;
-int truncated = int(pi);  // Explicit cast, result is 3
-```
 
 ---
 
@@ -88,13 +170,6 @@ int die = (rand() % 6) + 1; //Simulate a six-sided die (1 to 6)
 ```
 ---
 
-### Type Casting
-`static_cast` is used for **explicit type conversions** between compatible types. It is **safer and more readable** than C-style casting. Performs **compile-time** checks to ensure conversions are valid 
-```cpp
-int total = 9
-static_cast<double>(total); // 9.0
-```
-
 ---
 
 ### Procedural Abstraction 
@@ -115,21 +190,7 @@ int main() {
 
 ---
 
-### Global Variables and Const
-A **global variable** is declared **outside of all functions**, usually at the top of the file. It is **accessible from any function** in the same file (or other files using `extern`).
-```cpp
-const double PI = 3.14159;  // Global constant
 
-double areaOfCircle(double radius) {
-    return PI * radius * radius;
-}
-
-int counter = 0;  // Global variable
-
-void increment() {
-    counter++;
-}
-```
 
 ---
 
@@ -554,33 +615,7 @@ strcpy(cstr, str.c_str());  // Copies string to a C-style buffer
 ---
 
 ###  `Vector` 
-- A `vector` is a dynamic array that can grow or shrink in size.
-- Defined in the `<vector>` header.
-- Belongs to the `std` namespace.
-```cpp
-#include <vector>
-using namespace std;
-
-vector<int> numbers;            // Empty vector of ints
-vector<string> names(5);        // Vector with 5 default-initialized strings
-vector<double> scores = {90.5, 87.0, 76.2};  // Initialized with values
-
-
-// Adds an element to the end of the vector.
-numbers.push_back(10);
-
-//Returns the number of elements.
-int n = numbers.size();
-
-//Returns `true` if the vector has no elements.
-if (numbers.empty()) { ... }
-
-//Returns a reference to the element at given index with bounds checking.
-cout << numbers.at(2);
-
-//Accesses an element without bounds checking.
-cout << numbers[2];
-
+- A `vector` is a dynamic array that can growAlways be respectful. 
 //Access the first and last elements.
 int first = numbers.front();
 int last = numbers.back();
