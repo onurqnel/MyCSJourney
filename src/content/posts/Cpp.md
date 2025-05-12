@@ -8,13 +8,13 @@ description: "Introduction to C+ Programming"
 
 Variables are named memory locations that hold values during program execution. Variable name is called an identifier.
 
+
 - Identifiers must begin with a letter or an underscore.
-- Subsequent characters may include digits (0–9).
+- Subsequent characters may include digits.
 - Identifiers are case-sensitive.
 
 >Note: Variable names should be descriptive
 
-Variables must be declared with a type before use. They can be initialized during declaration.
 
 ```cpp
 int x = 1, y;       // x is initialized; y is only declared
@@ -53,7 +53,7 @@ long long int large = 9223372036854775807;
 
 ### Type Definitions
 
-`typedef` is a keyword in C++ that allows you to create a alias for an existing type
+`typedef` is a keyword that allows you to create a alias for an existing type
 
 ```cpp
 typedef existing_type new_name;
@@ -62,7 +62,7 @@ typedef unsigned int uint;
 uint score = 100; // same as: unsigned int score = 100;
 ```
 
-Type definitions simplifies long or complex type names result in more readable code. In C++11 and newer, we can use the `using` keyword which often preferred for its cleaner syntax:
+We can also use the `using` keyword.
 
 ```cpp
 using uint = unsigned int;
@@ -71,9 +71,7 @@ using IntPtr = int*;
 
 ### Type Conversions
 
-Type conversion refers to changing a value from one data type to another. It can happen implicitly-automatically or explicitly-manually.
-
-**Implicit Conversion** Also known as automatic type conversion, this occurs when:
+Type conversion refers to changing a value from one data type to another. **Implicit Conversion** also known as automatic type conversion:
 
 - A value is assigned to a variable of a compatible but larger type.
 - In mixed-type expressions, smaller types are promoted
@@ -81,17 +79,13 @@ Type conversion refers to changing a value from one data type to another. It can
 ```cpp
 int a = 5;
 double b = a;    // a becomes 5.0 automatically (int → double)
-```
 
-May lose data when converting double → int.
-
-```cpp
+// Losing data when converting double → int.
 double x = 3.14;
 int y = x;       // y = 3, fractional part is truncated
 ```
 
-**Explicit Conversion**
-Also called type casting, you manually force a conversion. This is useful when:
+**Explicit Conversion** also called type casting manually forcing a conversion:
 
 - We want to control precision loss
 - We need to override default behavior
@@ -102,93 +96,202 @@ int val1 = int(pi);     // C style cast: truncated = 3
 int val2 = static_cast<int>(pi);  // C++ style cast: truncated = 3
 ```
 
-### Global Variables and Constants
+### Global Variables
 
+A global variable is declared outside all functions, typically at the top of the source file and it is accessible from any function
 
-
-
-
-
-
-
-
-
-
----
-
-### Formatting Output 
 ```cpp
-cout.setf(ios::fixed);       // Use fixed-point notation
-cout.setf(ios::showpoint);   // Always show the decimal point
-cout.precision(2);           // Set precision to 2 decimal places
+int counter = 0;  // Global variable
 
-cout << "The price is " << price << endl;
+void increment() {
+    counter++;
+}
 ```
 
----
+- Changes made to counter in one function are visible in others.
+- Global variables persist throughout the lifetime of the program.
 
+> Note: Excessive use of globals can lead to tight coupling and bugs. Prefer local scope or encapsulation where possible.
 
+To use a global variable in multiple source files we use **`extern`** keyword for Globals across files.
 
----
+```cpp
+int counter = 0;
+extern int counter;
+```
+
+### Constants
+
+The const keyword is used to declare constants values that cannot be modified after initialization.
+
+```cpp
+const double PI = 3.14159;  // Global constant
+```
+
+- Constant variables must be initialized at declaration
+
+### Compile-time Constants
+
+The `constexpr` keyword specifies that a variable or function can be evaluated at compile time.
+
+```cpp
+constexpr int size = 10;
+constexpr double pi = 3.14159;
+
+int arr[constexpr size] = {};  // valid: size is known at compile time
+```
+
+**Difference from const:**
+| **Feature**    | `const`                 | `constexpr`                         |
+| ---------- | -----------------------     | ----------------------------------- |
+| **Meaning**    | Value can't change      | Value must be known at compile time |
+| **Evaluation** | May be runtime          | Always compile-time                 |
+| **Usage**      | Runtime or compile-time | Compile-time only                   |
+
+`const` only indicates that the value cannot be changed, but it does not guarantee when the value will be evaluated. `constexpr` are evaluated before the program runs, during compile time. This reduces the runtime load. Additionally, potential errors are caught at compile time.
+
+### Static Variables
+
+The `static` keyword changes the lifetime or visibility of variables it means the variable retains its value between function calls or has internal linkage at global scope. 
+
+```cpp
+void counterFunc() {
+    static int count = 0;
+    count++;
+    std::cout << count << std::endl;
+}
+```
+
+A `static` local variable inside a function is initialized only once and persists across function calls.
+
+- First call: prints 1
+- Second call: prints 2
+- Value is preserved between calls, unlike regular local variables
+
+**Static Global Variables**
+
+At global scope, static gives a variable internal linkage, meaning it is only visible within the current source file
+
+```cpp
+static int internalCount = 0;  // not accessible from other files
+```
 
 ### Enumerations
-`enum` defines named constant values.
+
+An `enum` is a user-defined type consisting of named constant values. By default, the first name is assigned the value 0, and each subsequent name increments by 1.
+
 ```cpp
-// Implicitly initialized to sequential integer values starting from `0`
-enum Color { Red, Green, Blue };         // Red = 0, Green = 1, Blue = 2
-enum Color { Red = 5, Green, Blue };     // Green = 6, Blue = 7
+enum Color { Red, Green, Blue };     // Red = 0, Green = 1, Blue = 2
+enum Color { Red = 5, Green, Blue }; // Green = 6, Blue = 7
 enum Status { OK = 200, NotFound = 404 };
 ```
-`enum class` provides scoped and type-safe enumerations:
+
+### Scoped Enumerations
+
+Introduced in C++11, enum class offers strong typing, scoping, and avoids implicit conversions to int.
+
 ```cpp
-// Helps avoid name conflicts by requiring scoped access
 enum class Color { Red };
 enum class Fruit { Red };
-
-// We can explicitly define underlying type like this:
-enum class MyEnum : unsigned char { A, B, C };
 
 // Usage:
 Color c = Color::Red;
 Fruit f = Fruit::Red;
 ```
 
----
+We can also explicitly define the underlying integral type
 
-### Pseudo-Random Numbers
-C++ uses **pseudo-random number generation**, which means the numbers appear random but are generated using a deterministic algorithm. To make the randomness better, seed the random number generator  using the current time.
 ```cpp
-#include <cstdlib>
-#include <ctime>
-
-srand(time(0));  // Seed the random number generator
-```
-The rand() function returns a random integer: 
-```cpp
-int r = rand();`
-int die = (rand() % 6) + 1; //Simulate a six-sided die (1 to 6)
-```
----
-
----
-
-### Procedural Abstraction 
-Procedural abstraction allows you to **hide implementation details** by encapsulating actions within **functions**. Makes programs **easier to read, maintain, debug, and reuse**.
-```cpp
-// Function that abstracts the averaging process
-double computeAverage(double x, double y, double z) {
-    return (x + y + z) / 3.0;
-}
-
-int main() {
-    double a = 4.5, b = 3.0, c = 5.5;
-    double average = computeAverage(a, b, c); // Function Call
-    cout << "Average: " << average << endl;
-    return 0;
-}
+enum class MyEnum : unsigned char { A, B, C };
 ```
 
----
+### Auto Keyword
+
+`auto` lets the compiler decide the type from the initializer.
+
+```cpp
+auto x = 42;       // int
+auto y = 3.14;     // double
+auto z = 'A';      // char
+```
+
+### C-Strings
+A C-string is an array of characters used to represent a string.
+
+- Stored as a char array
+- Null-terminated, ends with `'\0'`
+- Manually managed, unlike `std::string`
+
+```cpp
+char s[11];  // Can hold up to 10 characters + '\0'
+char s[10] = "Hi Mom!";
+
+// Memory layout:
++-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
+| 'H' | 'i' | ' ' | 'M' | 'o' | 'm' | '!' | '\0'|  ?  |  ?  |
++-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
+  s[0]  s[1]  s[2]  s[3]  s[4]  s[5]  s[6]  s[7]  s[8]  s[9]
+```
+
+Unused elements may contain garbage values.
+
+```cpp
+char myMessage[20] = "Hi there.";   // 20 bytes total, 10 used
+char shortString[] = "abc";         // Compiler adds '\0' (4 bytes)
+char shortString[] = {'a','b','c'}; // No '\0' added – not a valid C-string!
+```
+
+### String Class
+
+The C++ string class defined in the `<string>` header offers a safer, more flexible, and feature-rich alternative to C-style character arrays.
+
+```cpp
+#include <string>
+using namespace std;
+
+string word = "cat";
+```
+
+**Key Features:**
+
+- Automatic memory management
+- Supports string concatenation, comparison, and conversion
+- Easily converted to or from C-style strings when needed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -223,6 +326,8 @@ print(10);  // ❌ Compiler Error: which version to call?
 ```
 
 ---
+
+
 
 ### Call by Value
 - A **copy** of the argument is passed to the function.
@@ -467,149 +572,11 @@ int matrix[2][3] = {           // 2D array (2 rows, 3 columns)
 
 ---
 
-### C-Strings in C++
-- A **C-string** is an array of characters used to represent a string.
-- It is stored as an array of type `char` and **terminated with the null character** `'\0'`.
-- To declare a C-string, define a `char` array with enough space for the characters **plus one** for the null terminator:
-```cpp
-char s[11];  // Can hold up to 10 characters + '\0'
-```
-
-```cpp
-char s[10] = "Hi Mom!"; 
-+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
-| 'H' | 'i' | ' ' | 'M' | 'o' | 'm' | '!' | '\0'|  ?  |  ?  |
-+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
-  s[0] s[1] s[2] s[3] s[4] s[5] s[6] s[7] s[8] s[9]
-```
-Unused elements (`s[8]`, `s[9]`) may hold garbage value
-```cpp
-// Compiler allocates 20 bytes'\0' is automatically appended 10 bytes used
-char myMessage[20] = "Hi there.";  
-
-// Compiler allocates 4 bytes: 'a', 'b', 'c', '\0'
-char shortString[] = "abc";  
-
-// Compiler allocates 3 bytes: No '\0' added ❌ not a valid C-string
-char shortString[] = {'a', 'b', 'c'}; 
-
-```
-#### `char[]` (Character Array)
-- Allocates **fixed-size memory** at compile time (on the stack).
-- Safer to use for string literals or modifications within a known size.
-- Allows direct modification of characters (if not initialized with a string literal).
-- Memory managed automatically.
-- Safer for operations that require modifying the string contents.
-```cpp
-char str1[] = "hello";     // Size = 6 (5 characters + '\0')
-str1[0] = 'H';             // OK - modifiable
-```
-
-#### `char*` (Pointer to char)
-- Points to a memory location (can be a string literal or dynamically allocated).
-- String literals are read-only in modern C++, so modifying them via `char*` is undefined behavior.
-```cpp
-char* str2 = "hello";     
-str2[0] = 'H';            // ❌ Undefined behavior
-
-const char* str2 = "hello"; // ✅
-```
-- Can also be dynamically allocated:
-```cpp
-char* str3 = new char[10];  // Heap allocation
-strcpy(str3, "test");
-str3[0] = 'T'; // ✅  
-// Test
-```
-
-|Declaration Style|Is `'\0'` Automatically Appended?|Explanation|
-|---|---|---|
-|`char* str = "Hello";`|✅ Yes|The compiler creates the string as `"Hello\0"`.|
-|`char str[] = "Hello";`|✅ Yes|The compiler automatically appends `'\0'` at the end.|
-|`char str[] = {'H', 'e', 'l'};`|❌ No|You must manually add `'\0'` to make it a proper C-string.|
 
 
 ---
 
-### `strcpy` — Copying C-Strings
-- The `strcpy` function is used to **copy the contents of one C-string into another**. It is part of the C standard library `<cstring>` 
-- The destination **must have enough space** to store all characters from the source **plus the null terminator**.
-```cpp
-#include <cstring>
-    char source[] = "Hello";
-    char destination[10];
-    strcpy(destination, source); // Copies "Hello" and appends '\0'
-    cout << "Copied string: " << destination << endl;
-//Copied string: Hello
-```
 
-
-###  `strcmp` – Compare Strings
-`strcmp(s1, s2);`Returns:
-    `0` → if strings are the same
-    `< 0` → if `s1` comes before `s2`
-    `> 0` → if `s1` comes after `s2`
- Used to check if two C-strings are equal.
-
-###  `strlen` – String Length
-`strlen(str);`
-- Returns how many characters are in the string (not counting `'\0`)
-**Example:** `strlen("Hi")` → `2`
-
-###  `strcat` – Concatenate Strings
-`strcat(dest, src);`
-- Adds `src` to the end of `dest`
-- `dest` must have enough space!
-`char s[20] = "Hi "; strcat(s, "there");  // s becomes "Hi there"`
-
-
----
-### Conversion Functions in `<cstdlib>`
-The following functions are used to convert C-strings to numeric values:
-- `atoi` — Converts a C-string to an `int`
-- `atol` — Converts a C-string to a `long`
-- `atof` — Converts a C-string to a `double`
-```cpp
-    const char* intStr = "42";
-    const char* doubleStr = "3.14";
-
-    int x = atoi(intStr);       // x = 42
-    double y = atof(doubleStr); // y = 3.14
-```
-- These functions **do not perform error checking**. If the string is not a valid number, the result is undefined or may be zero.
-
----
-
-### String Class
-The C++ `string` class (defined in `<string>`) offers a safer and more convenient alternative to C-style strings. 
-```cpp
-#include <string>
-using namespace std;
-
-// Use `getline` to read an entire line, including spaces:
-string sentence;
-getline(cin, sentence);
-
-string word = "cat";
-
-char c = word[2];      // Direct access (no bounds checking)
-char d = word.at(2);   // With bounds checking (throws exception)
-
-int len = word.length();   // Returns the number of characters
-
-int i = stoi("123");       // Converts string to int
-double d = stod("3.14");   // Converts string to double
-
-string s = to_string(42);  // Converts number to string: "42"
-
-if (s1 == s2 || s1 > s2) {
-    // Process
-}
-```
-To convert a `string` to a C-style string 
-```cpp
-strcpy(cstr, str.c_str());  // Copies string to a C-style buffer
-```
 
 
 ---
